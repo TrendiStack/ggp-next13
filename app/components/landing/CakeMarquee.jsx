@@ -8,6 +8,8 @@ const CakeMarquee = () => {
   const atBottom = useAtBottom();
   const textRef = useRef(null);
 
+  console.log(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
+
   useEffect(() => {
     const el = textRef.current;
     const tl = gsap.timeline({

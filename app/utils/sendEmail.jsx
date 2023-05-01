@@ -2,9 +2,7 @@ import { render } from '@react-email/render';
 import sendgrid from '@sendgrid/mail';
 import Email from '../components/Email';
 
-sendgrid.setApiKey(
-  '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'
-);
+sendgrid.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
 
 class EmailSender {
   constructor(form) {
