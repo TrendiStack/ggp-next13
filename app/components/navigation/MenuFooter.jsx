@@ -18,7 +18,7 @@ const MenuFooter = ({ menuItem, className }) => {
           </li>
         </ul>
       ) : (
-        <ul className="flex gap-14 lg:gap-5">
+        <ul className="flex gap-5 ">
           <li>
             <Link href="/menu">Menu</Link>
           </li>

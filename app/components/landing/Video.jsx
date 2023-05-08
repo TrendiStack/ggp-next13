@@ -15,6 +15,7 @@ const Video = () => {
         muted
         playsInline
         preload="none"
+        kind="captions"
       />
     </div>
   );
