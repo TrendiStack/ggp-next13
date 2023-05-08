@@ -2,7 +2,7 @@ import CakeImage from './components/CakeImage';
 import Checkout from './components/Checkout';
 
 export const metadata = {
-  title: 'Order Cake',
+  title: 'Order Cake | Gelato Gelato Pizzeria',
 };
 
 const page = () => {

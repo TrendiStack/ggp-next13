@@ -11,6 +11,7 @@ const Button = ({
   className,
   children,
   submit,
+  ariaLabel,
 }) => {
   const menu = useMenu(state => state.menu);
   const setMenu = useMenu(state => state.setMenu);
@@ -20,7 +21,7 @@ const Button = ({
   const variants = {
     circle: `${
       menu ? 'bg-white text-[#252422]' : 'bg-[#a3a380] text-white'
-    }  text-base md:text-xl lg:text-2xl font-medium p-3 lg:p-4 aspect-square rounded-full`,
+    }  text-base md:text-xl lg:text-2xl font-medium px-3 pt-1 pb-2  lg:px-6 lg:pt-2 lg:pb-3 aspect-square rounded-full`,
     long: `${
       menu ? 'bg-white text-[#252422]' : 'bg-[#a3a380] text-white'
     } text-base md:text-xl lg:text-3xl px-6 py-3 rounded-full`,
@@ -32,6 +33,7 @@ const Button = ({
 
   return (
     <button
+      aria-label={ariaLabel}
       onClick={() => {
         menuBtn ? handleClick() : setMenu(false);
         setHasMounted(true);
@@ -49,7 +51,7 @@ const Button = ({
           : dining
           ? dining
           : null
-      } ${className}  `}
+      } ${className}`}
     >
       <div className="flex flex-col items-center relative overflow-hidden">
         <p

@@ -154,9 +154,19 @@ const Checkout = () => {
       </form>
 
       <div className="flex justify-between gap-5 mt-5 lg:mt-0 2xl:mt-5">
-        <Button onClick={() => setPage(1)}>Back</Button>
-        {page === 1 && <Button onClick={handleNext}>Next</Button>}
-        {page === 2 && <Button onClick={handleSubmit}>Submit</Button>}
+        <Button ariaLabel="Back" onClick={() => setPage(1)}>
+          Back
+        </Button>
+        {page === 1 && (
+          <Button ariaLabel="Next" onClick={handleNext}>
+            Next
+          </Button>
+        )}
+        {page === 2 && (
+          <Button ariaLabel="Submit" onClick={handleSubmit}>
+            Submit
+          </Button>
+        )}
       </div>
     </div>
   );

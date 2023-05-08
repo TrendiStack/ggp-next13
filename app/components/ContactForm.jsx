@@ -118,7 +118,12 @@ const ContactForm = () => {
           {error.message && <ErrorText>{error.message}</ErrorText>}
         </div>
         <div>
-          <Button large submit className="text-base 2xl:text-2xl">
+          <Button
+            ariaLabel="Send Form"
+            large
+            submit
+            className="text-base 2xl:text-2xl"
+          >
             Send!
           </Button>
         </div>

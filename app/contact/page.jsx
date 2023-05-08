@@ -3,7 +3,7 @@ import FormComplete from '../components/FormComplete';
 import Header from '../components/Header';
 
 export const metadata = {
-  title: 'Contact Us',
+  title: 'Contact Us | Gelato Gelato Pizzeria',
 };
 
 const page = () => {

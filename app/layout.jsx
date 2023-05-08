@@ -10,7 +10,7 @@ import './globals.css';
 const spartan = League_Spartan({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Gelato Gelato Pizzaria',
+  title: 'Gelato Gelato Pizzaria | Sicilian flavors in every scoop and slice',
   themeColor: '#ffd5c2',
   description: `Savor the authentic flavors of Italy at Gelato Gelato, located in
   the heart of Vaughan. Our menu is a celebration of Italian
@@ -35,7 +35,7 @@ export const metadata = {
   ],
   author: [{ name: 'Gelato Gelato Pizzaria', email: 'info@gelatogelato.ca' }],
   image:
-    'https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggplogo_with_bg.png',
+    'https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggpmetaimage.png',
 
   openGraph: {
     type: 'website',

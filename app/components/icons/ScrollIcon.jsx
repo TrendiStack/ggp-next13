@@ -83,6 +83,7 @@ const ScrollIcon = () => {
         <Image ref={imgRef} src={scrolltextnoggp} alt="circle scroll text" />
       </div>
       <button
+        aria-label="scroll to top"
         onClick={handleScrollToTop}
         ref={buttonRef}
         className="fixed bottom-2 lg:bottom-20 right-[1%] bg-[#a3a380] rounded-full p-5 lg:p-10 text-white text-lg lg:text-2xl cursor-pointer"

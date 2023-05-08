@@ -85,11 +85,6 @@ const Menu = () => {
         >
           <Link href="/menu">Menu</Link>
         </li>
-        {/* <li onClick={() => {
-            setMenu(false);
-          }}>
-          <a href="/catering">Cartering</a>
-        </li> */}
         <li
           onClick={() => {
             setMenu(false);
@@ -104,14 +99,13 @@ const Menu = () => {
         >
           <Link href="/contact">Contact</Link>
         </li>
+        <li className="my-5 text-xl md:text-3xl lg:absolute bottom-10 left-[5%] lg:left-[2%]">
+          <MenuFooter menuItem />
+        </li>
 
-        <MenuFooter
-          menuItem
-          className="my-5 text-xl md:text-3xl lg:absolute bottom-10 left-[5%] lg:left-[2%]"
-        />
-        <div className="lg:absolute bottom-10 right-[5%] lg:right-[2%]">
+        <li className="lg:absolute bottom-10 right-[5%] lg:right-[2%]">
           <SocialIcons />
-        </div>
+        </li>
       </ul>
     </div>
   );

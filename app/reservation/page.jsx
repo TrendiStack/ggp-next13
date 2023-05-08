@@ -2,7 +2,7 @@ import Header from '../components/Header';
 import ReservationForm from '../components/ui/ReservationForm';
 
 export const metadata = {
-  title: 'Reservation',
+  title: 'Reservation | Gelato Gelato Pizzeria',
 };
 
 const page = () => {

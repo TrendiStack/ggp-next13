@@ -140,7 +140,13 @@ const ReservationForm = () => {
           {error.message && <ErrorText>{error.message}</ErrorText>}
         </div>
         <div>
-          <Button large submit contact className="text-base 2xl:text-2xl">
+          <Button
+            ariaLabel="Send Form"
+            large
+            submit
+            contact
+            className="text-base 2xl:text-2xl"
+          >
             Send!
           </Button>
         </div>

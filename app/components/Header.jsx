@@ -133,13 +133,13 @@ const Header = forwardRef(({ route }, ref) => {
             </div>
           </div>
           {(route === 'Contact Us' || route === 'Reservation') && (
-            <Button className="">
+            <Button ariaLabel="Call">
               For Catering Call{' '}
               <Link href="tel:+905-851-0400">(905) 851-0400</Link>{' '}
             </Button>
           )}
           {route === 'menu' && (
-            <Button dining>
+            <Button ariaLabel="View full menu" dining>
               <a href="https://www.gelatogelato.ca/menu.pdf" target="_blank">
                 Full Menu
               </a>

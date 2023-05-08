@@ -1,6 +1,6 @@
 import MenuWrapper from './components/MenuWrapper';
 export const metadata = {
-  title: 'Menu',
+  title: 'Menu | Gelato Gelato Pizzeria',
 };
 
 const page = () => {
