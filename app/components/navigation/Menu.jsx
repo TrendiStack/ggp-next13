@@ -1,14 +1,14 @@
 'use client';
 
-import { useContext, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { MenuContext } from '../../context/MenuContext.jsx';
 import MenuFooter from './MenuFooter.jsx';
 import SocialIcons from '../icons/SocialIcons.jsx';
 import Link from 'next/link';
-
+import menuStore from '../../stores/menuStore.js';
 const Menu = () => {
-  const { menu, setMenu } = useContext(MenuContext);
+  const { menu, setMenu } = menuStore();
+
   const menuRef = useRef(null);
   const listRef = useRef(null);
 
@@ -19,9 +19,8 @@ const Menu = () => {
 
     const menuAnimation = () => {
       const translateY = menu ? '0%' : '-100%';
-
       gsap.to(el, {
-        '--translateY': translateY,
+        translateY,
         duration: 0.2,
       });
     };
@@ -64,24 +63,19 @@ const Menu = () => {
     <div
       ref={menuRef}
       className={`
-      ${menu ? 'block' : 'hidden'}
-      fixed
+     fixed
       top-0
       left-0
       w-full
       min-h-screen 
       bg-[#252422] 
       text-white
-      z-[998]
+      z-[999]
       flex
       flex-col
       justify-center
       items-center
       `}
-      style={{
-        '--translateY': '-100%',
-        transform: 'translateY(var(--translateY))',
-      }}
     >
       <ul ref={listRef} className="header-primary grid grid-cols-1 gap-2">
         <li

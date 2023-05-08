@@ -46,11 +46,11 @@ const customerSchema = z.object({
 });
 
 const cakeSchema = z.object({
-  flavour: z.string().min(3).max(15),
-  shape: z.string().min(3).max(10),
-  size: z.string().min(3).max(9),
+  flavour: z.array(z.string()).min(1).max(2),
+  shape: z.string().min(5).max(10),
+  size: z.string().min(2).max(9),
   quantity: z.number().min(1).max(10),
-  customQuantity: z.string().min(11).max(100),
+  customQuantity: z.string().min().max(100).optional(),
 });
 
 const orderSchema = z.object({

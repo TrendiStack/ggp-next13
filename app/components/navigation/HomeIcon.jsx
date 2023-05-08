@@ -1,11 +1,10 @@
 'use client';
 
 import Cone from '@/app/assets/images/Cone';
-import { MenuContext } from '@/app/context/MenuContext';
-import { useContext } from 'react';
+import menuStore from '@/app/stores/menuStore.js';
 
 const HomeIcon = () => {
-  const { menu } = useContext(MenuContext);
+  const { menu } = menuStore();
 
   return (
     <a href="/">

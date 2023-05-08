@@ -1,4 +1,7 @@
 import MenuWrapper from './components/MenuWrapper';
+export const metadata = {
+  title: 'Menu',
+};
 
 const page = () => {
   return (

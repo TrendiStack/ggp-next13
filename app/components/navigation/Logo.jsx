@@ -1,15 +1,15 @@
 'use client';
 
-import { MenuContext } from '@/app/context/MenuContext';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import menuStore from '@/app/stores/menuStore.js';
 
 const Logo = () => {
-  const { menu } = useContext(MenuContext);
+  const { menu } = menuStore();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      setIsScrolled(window.pageYOffset >= 200);
+      setIsScrolled(window.pageYOffset >= 50);
     });
 
     return () => {

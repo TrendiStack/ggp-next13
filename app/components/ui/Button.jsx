@@ -1,7 +1,8 @@
 'use client';
 
-import { MenuContext } from '@/app/context/MenuContext';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
+import useMenu from '@/app/stores/menuStore';
+import useClient from '@/app/stores/clientStore';
 
 const Button = ({
   menuBtn,
@@ -11,7 +12,10 @@ const Button = ({
   children,
   submit,
 }) => {
-  const { menu, handleClick, setMenu } = useContext(MenuContext);
+  const menu = useMenu(state => state.menu);
+  const setMenu = useMenu(state => state.setMenu);
+  const handleClick = useMenu(state => state.handleClick);
+  const setHasMounted = useClient(state => state.setHasMounted);
   const [mouseOver, setMouseOver] = useState(false);
   const variants = {
     circle: `${
@@ -30,6 +34,7 @@ const Button = ({
     <button
       onClick={() => {
         menuBtn ? handleClick() : setMenu(false);
+        setHasMounted(true);
       }}
       onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}

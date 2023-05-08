@@ -44,7 +44,7 @@ class EmailSender {
     const emailHtml = render(<Email form={this.form} />);
     const msg = {
       to: 'terel.almighty@gmail.com', // Change to your recipient
-      from: 'terel.phillips23@gmail.com', // Change to your verified sender
+      from: 'info@gelatogelato.ca', // Change to your verified sender
       subject: 'GGP Inquiry',
       html: emailHtml,
     };

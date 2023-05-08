@@ -12,6 +12,7 @@ import Image from 'next/image';
 import skip from '../assets/images/icons/SkipTheDishes - png.png';
 import ubereats from '../assets/images/icons/Uber Eats - jpeg.png';
 import emptyCone from '../assets/images/empty-conev2.png';
+import Link from 'next/link';
 
 // eslint-disable-next-line react/display-name
 const Header = forwardRef(({ route }, ref) => {
@@ -74,7 +75,7 @@ const Header = forwardRef(({ route }, ref) => {
               Sicilian flavors in every
               <br /> scoop and slice
             </h1>
-            <div className="relative bottom-16 lg:bottom-14 2xl:bottom-20">
+            <div className="relative bottom-16 lg:bottom-14 2xl:bottom-16">
               <h2 className="lg:hidden text-xl font-semibold">Order Now</h2>
               <div className="flex gap-4">
                 <DeliveryIcon
@@ -120,6 +121,7 @@ const Header = forwardRef(({ route }, ref) => {
             <h1 className="lg:relative header-secondary left-32 bottom-10 font-medium w-full">
               {route} <br />
             </h1>
+
             <IoMdArrowDropdown className="text-4xl animate-bounce lg:hidden" />
             <div className="hidden lg:flex items-center h-screen w-full bg-[#60604c] rounded-l-full">
               <Image
@@ -130,6 +132,12 @@ const Header = forwardRef(({ route }, ref) => {
               />
             </div>
           </div>
+          {(route === 'Contact Us' || route === 'Reservation') && (
+            <Button className="">
+              For Catering Call{' '}
+              <Link href="tel:+905-851-0400">(905) 851-0400</Link>{' '}
+            </Button>
+          )}
           {route === 'menu' && (
             <Button dining>
               <a href="https://www.gelatogelato.ca/menu.pdf" target="_blank">
@@ -138,16 +146,6 @@ const Header = forwardRef(({ route }, ref) => {
             </Button>
           )}
         </header>
-        // ) : (
-        //   <header className="grid grid-cols-1 lg:block place-items-center relative h-screen text-[#252422] spartan bg-[#ffd5c2]">
-        //     <div className="flex flex-col lg:flex-row items-center text-center">
-        //       <h1 className="lg:relative header-secondary left-32 bottom-10 font-medium w-full">
-        //         {route} <br />
-        //       </h1>
-        //       <IoMdArrowDropdown className="text-4xl animate-bounce lg:hidden" />
-        //       <div className="hidden lg:flex items-center h-screen w-full bg-[#60604c] rounded-l-full"></div>
-        //     </div>
-        //   </header>
       )}
     </div>
   );

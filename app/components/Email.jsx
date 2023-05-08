@@ -13,7 +13,7 @@ import {
   Tailwind,
   Text,
 } from '@react-email/components';
-import ggplogo from '../assets/images/ggplogo.png';
+
 import * as React from 'react';
 
 const Email = ({ form }) => {
@@ -27,11 +27,11 @@ const Email = ({ form }) => {
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
             <Section className="mt-[32px]">
               <Img
-                src={ggplogo}
-                width="40"
-                height="37"
+                src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggplogo_with_bg.png"
+                width="300"
+                height="120"
                 alt="ggp logo"
-                className="my-0 mx-auto"
+                className="h-full mx-auto"
               />
             </Section>
             <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
@@ -62,7 +62,7 @@ const Email = ({ form }) => {
                 </Link>
               </Text>
 
-              {form.date && (
+              {form.date && form.date !== 'Invalid Date' && (
                 <Text className="text-black text-[14px] leading-[24px]">
                   Date: {form.date}
                 </Text>

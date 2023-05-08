@@ -1,11 +1,11 @@
 'use client';
-import ErrorText from '@/app/components/ErrorText';
-import Button from './CakeButton';
-import DateSelect from '@/app/components/ui/DateSelect';
-import UserInput from '@/app/components/ui/UserInput';
 import { useState } from 'react';
-import CakeForm from './CakeForm';
 import { validateCake, validateCustomer } from '../../utils/validation';
+import Button from './CakeButton';
+import CakeForm from './CakeForm';
+import DateSelect from '@/app/components/ui/DateSelect';
+import ErrorText from '@/app/components/ErrorText';
+import UserInput from '@/app/components/ui/UserInput';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
@@ -20,11 +20,14 @@ const Checkout = () => {
       message: '',
     },
     cake: {
-      flavour: '',
+      flavour: [
+        { value: 'Chocolate', label: 'Chocolate' },
+        { value: 'Strawberry', label: 'Strawberry' },
+      ],
       shape: '',
       size: '',
       quantity: '',
-      customQuantity: 10,
+      customQuantity: '',
     },
   });
 
@@ -54,7 +57,8 @@ const Checkout = () => {
   };
 
   const handleNext = () => {
-    const fieldErrors = validateCake(form.cake);
+    const newArr = form.cake.flavour.map(flavour => flavour.value);
+    const fieldErrors = validateCake({ ...form.cake, flavour: newArr });
     if (fieldErrors) {
       setError(prev => ({ ...prev, cake: fieldErrors }));
     } else {
@@ -71,8 +75,12 @@ const Checkout = () => {
       setError(prev => ({ ...prev, customer: {} }));
     }
   };
+
   return (
-    <div className="text-white bg-[#a3a380] flex flex-col justify-between w-full text-lg xl:text-2xl p-5 rounded-2xl relative">
+    <div
+      data-lenis-prevent
+      className="text-white bg-[#a3a380] flex flex-col justify-between w-full text-lg lg:text-sm 2xl:text-2xl p-5 rounded-2xl relative"
+    >
       <h1 className="text-center text-2xl 2xl:text-4xl">
         {page === 1 ? 'Build a cake' : 'Finishing up'}
       </h1>
@@ -145,7 +153,7 @@ const Checkout = () => {
         </div>
       </form>
 
-      <div className="flex justify-between gap-5 mt-5">
+      <div className="flex justify-between gap-5 mt-5 lg:mt-0 2xl:mt-5">
         <Button onClick={() => setPage(1)}>Back</Button>
         {page === 1 && <Button onClick={handleNext}>Next</Button>}
         {page === 2 && <Button onClick={handleSubmit}>Submit</Button>}

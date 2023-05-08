@@ -1,12 +1,11 @@
 import { CgFacebook } from 'react-icons/cg';
 import { AiOutlineInstagram } from 'react-icons/ai';
 import { SiTripadvisor } from 'react-icons/si';
-import { MenuContext } from '../../context/MenuContext';
-import { useContext } from 'react';
+import menuStore from '../../stores/menuStore.js';
 import Link from 'next/link';
 
 const SocialIcons = () => {
-  const { menu } = useContext(MenuContext);
+  const { menu } = menuStore();
   const icons = [
     {
       name: 'Facebook',

@@ -1,4 +1,3 @@
-'use client';
 import Header from './components/Header';
 import ScrollIcon from './components/icons/ScrollIcon';
 import Banner from './components/landing/Banner';

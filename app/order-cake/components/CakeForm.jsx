@@ -1,9 +1,9 @@
 'use client';
 
 import { cakes, gelato, sorbet } from '../../../data';
+import { useEffect } from 'react';
 import ErrorText from '@/app/components/ErrorText';
 import UserInput from '@/app/components/ui/UserInput';
-import { useEffect } from 'react';
 
 const CakeForm = ({ page, form, setForm, error }) => {
   const gelatoFlavours = gelato.map(flavour => flavour.name);
@@ -45,6 +45,15 @@ const CakeForm = ({ page, form, setForm, error }) => {
     }));
   };
 
+  const handleFlavour = selectedValue => {
+    if (selectedValue && selectedValue.length <= 2) {
+      setForm(prev => ({
+        ...prev,
+        cake: { ...prev.cake, flavour: selectedValue },
+      }));
+    }
+  };
+
   useEffect(() => {
     if (form.shape === 'rectangle') {
       setForm(prev => ({ ...prev, cake: { ...prev.cake, size: '10" x 14"' } }));
@@ -57,23 +66,21 @@ const CakeForm = ({ page, form, setForm, error }) => {
     <div className={`${page === 1 ? 'grid' : 'hidden'} grid-cols-1 gap-2`}>
       <div>
         {error.flavour && <ErrorText>{error.flavour}</ErrorText>}
-        <label htmlFor="cakeFlavor">Flavour</label>
+        <label htmlFor="cakeFlavor">
+          Flavours - <span className="text-[70%]">Pick up to two*</span>
+        </label>
         <UserInput
           id="cakeFlavour"
           inputType="select"
-          onChange={value =>
-            setForm(prev => ({
-              ...prev,
-              cake: { ...prev.cake, flavour: value.value },
-            }))
-          }
+          onChange={handleFlavour}
           options={allFlavours}
           value={form.flavour}
+          length={form.flavour.length}
         />
       </div>
       <div>
         {error.shape && <ErrorText>{error.shape}</ErrorText>}
-        <label htmlFor="cakeShape">Shape</label>
+        <label htmlFor="cakeShape">Shapes</label>
         <UserInput
           id="cakeShape"
           inputType="select"
@@ -89,7 +96,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
       </div>
       <div>
         {error.size && <ErrorText>{error.size}</ErrorText>}
-        <label htmlFor="cakeSize">Size</label>
+        <label htmlFor="cakeSize">Sizes</label>
         <UserInput
           id="cakeSize"
           inputType="select"
@@ -114,6 +121,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
           options={numbers}
         />
       </div>
+      {error.customQuantity && <ErrorText>{error.customQuantity}</ErrorText>}
       {form.quantity === 'other' && (
         <UserInput
           id="customQuantity"

@@ -1,11 +1,18 @@
-import Contact from '../components/Contact';
+import ContactForm from '../components/ContactForm';
+import FormComplete from '../components/FormComplete';
 import Header from '../components/Header';
+
+export const metadata = {
+  title: 'Contact Us',
+};
 
 const page = () => {
   return (
     <main>
       <Header route="Contact Us" />
-      <Contact />
+      <div className="mx-[5%] lg:mx-[2%]">
+        <ContactForm />
+      </div>
     </main>
   );
 };

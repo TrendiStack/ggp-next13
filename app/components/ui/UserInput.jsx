@@ -11,6 +11,7 @@ const UserInput = ({
   min,
   max,
   className,
+  length,
 }) => {
   const handleValue =
     id === 'cakeFlavour'
@@ -20,6 +21,17 @@ const UserInput = ({
       : id === 'cakeSize'
       ? 'Pick a size...'
       : null;
+  const handleCloseOnSelect = () => {
+    if (id === 'cakeFlavour') {
+      if (length >= 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return true;
+    }
+  };
 
   return (
     <>
@@ -32,6 +44,8 @@ const UserInput = ({
           options={options}
           placeholder={value || handleValue}
           value={value}
+          isMulti={id === 'cakeFlavour' ? true : false}
+          closeMenuOnSelect={handleCloseOnSelect()}
           styles={{
             control: (provided, state) => ({
               ...provided,

@@ -1,4 +1,3 @@
-import { MenuProvider } from '@/app/context/MenuContext';
 import Button from '../ui/Button';
 import HomeIcon from './HomeIcon';
 import Logo from './Logo';
@@ -7,7 +6,7 @@ import Link from 'next/link';
 
 const Nav = () => {
   return (
-    <MenuProvider>
+    <>
       <nav className="flex justify-between items-center bg-transparent text-white fixed w-full py-5 z-[1000] px-[5%] lg:px-[2%]">
         <HomeIcon />
         <Logo />
@@ -19,7 +18,7 @@ const Nav = () => {
         </div>
       </nav>
       <Menu />
-    </MenuProvider>
+    </>
   );
 };
 

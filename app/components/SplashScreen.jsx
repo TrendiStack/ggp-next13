@@ -3,7 +3,7 @@
 import { gsap } from 'gsap';
 import React, { useEffect, useRef } from 'react';
 
-const SplashScreen = ({ hasMounted }) => {
+const SplashScreen = ({ hasMounted = true }) => {
   const container = useRef(null);
   const loadingText = useRef(null);
   const dots = useRef(null);

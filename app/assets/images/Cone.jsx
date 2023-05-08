@@ -1,6 +1,32 @@
-const Cone = ({ pathClassName, svgClassName }) => {
+'use client';
+
+import { gsap } from 'gsap';
+import { useEffect, useRef } from 'react';
+import formCompleteStore from '../../stores/formCompleteStore';
+
+const Cone = ({ pathClassName, svgClassName, loader }) => {
+  const { formSent, formCompleted } = formCompleteStore();
+  const iconRef = useRef(null);
+
+  useEffect(() => {
+    const el = iconRef.current;
+    if (el === null) return;
+    if (loader && formSent) {
+      gsap.to(el, {
+        duration: 2,
+        rotate: 360,
+        ease: 'none',
+        onComplete: () => {
+          gsap.to(el, {
+            rotate: 360,
+          });
+        },
+      });
+    }
+  }, [formCompleted, formSent, loader]);
   return (
     <svg
+      ref={iconRef}
       viewBox="0 0 291 747"
       xmlns="http://www.w3.org/2000/svg"
       className={svgClassName}

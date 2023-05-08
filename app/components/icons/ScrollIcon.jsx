@@ -8,10 +8,10 @@ import Image from 'next/image';
 import useMobile from '@/app/hooks/useMobile';
 import scrolltextnoggp from '../../assets/images/scrolltextnoggp.png';
 import useAtBottom from '@/app/hooks/useAtBottom';
-import LenisScroll from '@/app/hooks/useLocoScroll';
+import useScrolling from '@/app/stores/scrollingStore';
 
 const ScrollIcon = () => {
-  const { setReturnToTop } = LenisScroll();
+  const setReturnToTop = useScrolling(state => state.setReturnToTop);
   const atBottom = useAtBottom();
   const isMobile = useMobile();
   const containerRef = useRef(null);
@@ -19,11 +19,11 @@ const ScrollIcon = () => {
   const buttonRef = useRef(null);
 
   const handleScrollToTop = () => {
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: 'smooth',
-    // });
     setReturnToTop(true);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {

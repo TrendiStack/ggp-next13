@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import hero from '../../assets/images/gelatogelatopizzeria_hero_.png';
+import hero from '../../assets/images/gelatogelatopizzeria_hero_.jpg';
 import Button from '../ui/Button';
 import Link from 'next/link';
 
@@ -13,7 +13,7 @@ const Banner = () => {
       <Image
         src={hero}
         alt="hero"
-        className="w-full h-[50%] lg:h-[600px] object-cover"
+        className="w-full h-[50%] lg:h-[600px] object-cover "
       />
       <div className="px-[5%] lg:px-[2%]">
         <p className="large-text">

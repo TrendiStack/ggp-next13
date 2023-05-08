@@ -1,6 +1,9 @@
-import Footer from '../components/Footer';
 import Header from '../components/Header';
 import ReservationForm from '../components/ui/ReservationForm';
+
+export const metadata = {
+  title: 'Reservation',
+};
 
 const page = () => {
   return (
