@@ -4,12 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import menuStore from '../stores/menuStore';
 import useScrolling from '../stores/scrollingStore';
+import useMobile from '../hooks/useMobile';
 
 const Scrollbar = () => {
   const [mouseOver, setMouseOver] = useState(false);
   const [visibility, setVisibility] = useState(1);
   const { menu } = menuStore();
   const isScrolling = useScrolling(state => state.isScrolling);
+  const isMobile = useMobile();
   const scrollbar = useRef(null);
   const thumb = useRef(null);
 
@@ -103,7 +105,9 @@ const Scrollbar = () => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       ref={scrollbar}
-      className="flex justify-center fixed top-0 right-0 w-3 h-screen z-[1001] bg-transparent "
+      className={`
+      ${isMobile ? 'hidden' : 'block'}
+      flex justify-center fixed top-0 right-0 w-3 h-screen z-[1001] bg-transparent`}
     >
       <div ref={thumb} className="w-2 bg-black rounded-2xl cursor-grab"></div>
     </div>
