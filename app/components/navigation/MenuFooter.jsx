@@ -14,7 +14,7 @@ const MenuFooter = ({ menuItem, className }) => {
             </Link>
           </li>
           <li>
-            <Link href="tel:+905-851-0400">(905) 851-0400</Link>
+            <Link href="tel:+1 905-851-0400">(905) 851-0400</Link>
           </li>
         </ul>
       ) : (
