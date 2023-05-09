@@ -135,7 +135,7 @@ const Header = forwardRef(({ route }, ref) => {
           {(route === 'Contact Us' || route === 'Reservation') && (
             <Button ariaLabel="Call">
               For Catering Call{' '}
-              <Link href="tel:+905-851-0400">(905) 851-0400</Link>{' '}
+              <Link href="tel:+1 905-851-0400">(905) 851-0400</Link>{' '}
             </Button>
           )}
           {route === 'menu' && (
