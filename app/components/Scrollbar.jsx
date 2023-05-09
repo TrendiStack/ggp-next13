@@ -6,9 +6,9 @@ import menuStore from '../stores/menuStore';
 import useScrolling from '../stores/scrollingStore';
 
 const Scrollbar = () => {
-  const { menu } = menuStore();
-  const [visibility, setVisibility] = useState(0);
   const [mouseOver, setMouseOver] = useState(false);
+  const [visibility, setVisibility] = useState(1);
+  const { menu } = menuStore();
   const isScrolling = useScrolling(state => state.isScrolling);
   const scrollbar = useRef(null);
   const thumb = useRef(null);
@@ -61,15 +61,15 @@ const Scrollbar = () => {
     const scrollbarHeight = scrollbar.current.offsetHeight;
     const thumbHeight = (scrollbarHeight / bodyHeight) * scrollbarHeight;
 
-    setVisibility(prev => {
-      if (mouseOver) {
-        return (prev = 1);
-      } else if (isScrolling && !menu) {
-        return (prev = 1);
-      } else {
-        return (prev = 0);
-      }
-    });
+    if (mouseOver) {
+      setVisibility(prev => (prev = 1));
+    }
+    if (isScrolling) {
+      setVisibility(prev => (prev = 1));
+    } else if (!isScrolling && !mouseOver) {
+      setVisibility(prev => (prev = 0));
+    }
+
     gsap.to(scrollbar.current, {
       opacity: visibility,
       duration: 0.5,

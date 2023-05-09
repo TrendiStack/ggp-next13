@@ -1,11 +1,11 @@
 'use client';
 
-import useAtBottom from '@/app/hooks/useAtBottom';
+import useScrolling from '@/app/stores/scrollingStore';
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 
 const CakeMarquee = () => {
-  const atBottom = useAtBottom();
+  const atBottom = useScrolling(state => state.atBottom);
   const textRef = useRef(null);
 
   useEffect(() => {

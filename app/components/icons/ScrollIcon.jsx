@@ -7,12 +7,11 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import useMobile from '@/app/hooks/useMobile';
 import scrolltextnoggp from '../../assets/images/scrolltextnoggp.png';
-import useAtBottom from '@/app/hooks/useAtBottom';
 import useScrolling from '@/app/stores/scrollingStore';
 
 const ScrollIcon = () => {
   const setReturnToTop = useScrolling(state => state.setReturnToTop);
-  const atBottom = useAtBottom();
+  const atBottom = useScrolling(state => state.atBottom);
   const isMobile = useMobile();
   const containerRef = useRef(null);
   const imgRef = useRef(null);
@@ -20,6 +19,9 @@ const ScrollIcon = () => {
 
   const handleScrollToTop = () => {
     setReturnToTop(true);
+    setTimeout(() => {
+      setReturnToTop(false);
+    }, 100);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

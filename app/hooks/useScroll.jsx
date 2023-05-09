@@ -1,14 +1,13 @@
 'use client';
+
+import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
-import { useEffect, useState } from 'react';
-import useAtBottom from './useAtBottom';
 import useScrolling from '../stores/scrollingStore';
 
 const useScroll = () => {
   const returnToTop = useScrolling(state => state.returnToTop);
   const setReturnToTop = useScrolling(state => state.setReturnToTop);
   const setIsScrolling = useScrolling(state => state.setIsScrolling);
-  const atBottom = useAtBottom();
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -20,24 +19,37 @@ const useScroll = () => {
       touchMultiplier: 2,
       infinite: false,
     });
+
     const raf = time => {
       lenis.raf(time);
       requestAnimationFrame(raf);
-      setIsScrolling(lenis.isScrolling);
     };
     requestAnimationFrame(raf);
 
-    if (atBottom) {
-      if (returnToTop) {
-        lenis.scrollTo(0, document.body.offsetHeight);
-      }
-    } else {
-      setReturnToTop(false);
+    if (returnToTop) {
+      lenis.scrollTo(0, document.body.offsetHeight);
     }
     return () => {
       lenis.destroy();
     };
-  }, [atBottom, returnToTop, setIsScrolling, setReturnToTop]);
+  }, [returnToTop, setIsScrolling, setReturnToTop]);
+
+  useEffect(() => {
+    let timeoutId;
+
+    function handleScroll() {
+      setIsScrolling(true);
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setIsScrolling(false);
+      }, 200); // Change this value to adjust the delay time
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [setIsScrolling]);
 
   return null;
 };

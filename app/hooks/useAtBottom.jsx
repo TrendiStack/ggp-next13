@@ -1,27 +1,23 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import useScrolling from '../stores/scrollingStore';
 
 const useAtBottom = () => {
-  const [atBottom, setAtBottom] = useState(false);
+  const setAtBottom = useScrolling(state => state.setAtBottom);
   useEffect(() => {
     const scrollHandler = () => {
       const windowHeight = window.innerHeight;
       const scrollY = window.scrollY;
       const bodyHeight = document.body.offsetHeight;
-      if (windowHeight + scrollY >= bodyHeight - 200) {
-        setAtBottom(true);
-      } else {
-        setAtBottom(false);
-      }
+      setAtBottom(scrollY + windowHeight >= bodyHeight - 200);
     };
 
     window.addEventListener('scroll', scrollHandler);
-
     return () => {
       window.removeEventListener('scroll', scrollHandler);
     };
-  }, []);
-  return atBottom;
+  }, [setAtBottom]);
+  return null;
 };
 
 export default useAtBottom;
