@@ -47,7 +47,6 @@ const ContactForm = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     const isInvalid = validation();
-
     try {
       if (isInvalid) return;
       await axios.post('http://localhost:3000/api/contact', form, {

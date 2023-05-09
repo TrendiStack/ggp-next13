@@ -1,5 +1,5 @@
 import { CgFacebook } from 'react-icons/cg';
-import { AiOutlineInstagram } from 'react-icons/ai';
+import { AiOutlineInstagram, AiOutlineGoogle } from 'react-icons/ai';
 import { SiTripadvisor } from 'react-icons/si';
 import menuStore from '../../stores/menuStore.js';
 import Link from 'next/link';
@@ -21,6 +21,11 @@ const SocialIcons = () => {
       name: 'Tripadvisor',
       icon: <SiTripadvisor />,
       link: 'https://www.tripadvisor.ca/Restaurant_Review-g562671-d12870734-Reviews-Pizzeria_Gelato_Gelato-Woodbridge_Vaughan_Ontario.html',
+    },
+    {
+      name: 'Google',
+      icon: <AiOutlineGoogle />,
+      link: 'https://www.google.com/search?hl=en-CA&gl=ca&q=Gelato+Gelato+Pizzeria,+3650+Langstaff+Rd,+Woodbridge,+ON+L4L+9A8&ludocid=16934071278796745487&lsig=AB86z5XfAMMHzI0Wkby1gtk4tDE6&hl=en&gl=CA&bshm=lbse/1',
     },
   ];
 

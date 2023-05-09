@@ -63,7 +63,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
   }, [form.shape, setForm]);
 
   return (
-    <div className={`${page === 1 ? 'grid' : 'hidden'} grid-cols-1 gap-2`}>
+    <div className={`${page === 1 ? 'grid' : 'hidden'} grid-cols-1 gap-5`}>
       <div>
         {error.flavour && <ErrorText>{error.flavour}</ErrorText>}
         <label htmlFor="cakeFlavor">
@@ -76,11 +76,13 @@ const CakeForm = ({ page, form, setForm, error }) => {
           options={allFlavours}
           value={form.flavour}
           length={form.flavour.length}
+          error={error.flavour}
         />
       </div>
       <div>
-        {error.shape && <ErrorText>{error.shape}</ErrorText>}
-        <label htmlFor="cakeShape">Shapes</label>
+        <label htmlFor="cakeShape">
+          {error.shape && <ErrorText>{error.shape}</ErrorText>}
+        </label>
         <UserInput
           id="cakeShape"
           inputType="select"
@@ -92,6 +94,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
           }
           options={shapes}
           value={form.shape}
+          error={error.shape}
         />
       </div>
       <div>
@@ -108,6 +111,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
           }
           options={sizes}
           value={form.size}
+          error={error.size}
         />
       </div>
       <div>
@@ -119,6 +123,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
           onChange={handleSelect}
           inputType="select"
           options={numbers}
+          error={error.quantity}
         />
       </div>
       {error.customQuantity && <ErrorText>{error.customQuantity}</ErrorText>}
@@ -132,6 +137,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
           type="number"
           value={form.customQuantity}
           className="mt-1"
+          error={error.customQuantity}
         />
       )}
     </div>

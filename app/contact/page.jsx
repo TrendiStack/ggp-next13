@@ -1,5 +1,4 @@
 import ContactForm from '../components/ContactForm';
-import FormComplete from '../components/FormComplete';
 import Header from '../components/Header';
 
 export const metadata = {

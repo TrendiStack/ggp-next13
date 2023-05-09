@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import Select from 'react-select';
+import { boolean } from 'zod';
 
 const UserInput = ({
   id,
@@ -12,6 +14,7 @@ const UserInput = ({
   max,
   className,
   length,
+  error,
 }) => {
   const handleValue =
     id === 'cakeFlavour'
@@ -33,6 +36,10 @@ const UserInput = ({
     }
   };
 
+  useEffect(() => {
+    console.log(Boolean(error));
+  }, [error]);
+
   return (
     <>
       {inputType === 'select' && (
@@ -49,7 +56,7 @@ const UserInput = ({
           styles={{
             control: (provided, state) => ({
               ...provided,
-              border: '2px solid white',
+              border: `2px solid ${Boolean(error) ? '#b91c1c' : 'white'}}`,
               borderRadius: '0.5rem',
               backgroundColor: 'transparent',
               color: 'white',
@@ -101,7 +108,9 @@ const UserInput = ({
           onChange={onChange}
           min={min}
           max={max}
-          className={`${className} w-full border-2 border-white rounded-md py-1 bg-transparent uppercase font-semibold`}
+          className={`${className} w-full border-2 ${
+            Boolean(error) ? 'border-red-500' : 'border-white'
+          } rounded-md py-1 bg-transparent uppercase font-semibold`}
           required
         />
       )}
@@ -112,7 +121,9 @@ const UserInput = ({
           name={name}
           value={value}
           onChange={onChange}
-          className="w-full border-2 border-white rounded-md py-1 bg-transparent uppercase font-semibold"
+          className={`w-full border-2 ${
+            Boolean(error) ? 'border-red-500' : 'border-white'
+          } rounded-md py-1 bg-transparent uppercase font-semibold`}
           required
         />
       )}

@@ -12,7 +12,7 @@ const HomeIcon = () => {
         pathClassName={`${
           menu ? 'fill-white' : 'fill-[#252422]'
         } cursor-pointer`}
-        svgClassName="h-14 md:h-20 aspect-square"
+        svgClassName="h-14 md:h-20 aspect-square fixed left-0 top-5 z-[1000] mx-[5%] lg:mx-[2%]"
       />
     </a>
   );

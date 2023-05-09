@@ -7,12 +7,12 @@ export const metadata = {
 
 const page = () => {
   return (
-    <main className="flex items-center gap-48 md:gap-0 spartan min-h-screen mx-5 lg:mx-[2%] mb-10 2xl:-mb-12">
-      <div className="hidden xl:block"></div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto max-w-[900px] xl:max-w-[1200px] mt-28 2xl:mt-0">
-        <div>
-          <CakeImage />
-        </div>
+    <main
+      data-lenis-prevent
+      className="flex items-center min-h-screen mx-5 lg:mx-[2%] max-md:pt-10 "
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full mx-auto lg:max-w-[900px] 2xl:max-w-[1200px] max-2xl:pt-10">
+        <CakeImage />
         <Checkout />
       </div>
     </main>

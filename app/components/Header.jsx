@@ -103,7 +103,6 @@ const Header = forwardRef(({ route }, ref) => {
               the heart of Vaughan. Our menu is a celebration of Italian
               cuisine, featuring mouth-watering pasta dishes, wood-fired pizzas,
               and an irresistible variety of rich and creamy gelato flavors.
-              From classic Margherita to decadent Nutella.
             </p>
           </div>
           <Image

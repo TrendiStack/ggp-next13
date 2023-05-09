@@ -7,10 +7,14 @@ import Link from 'next/link';
 const Nav = () => {
   return (
     <>
-      <nav className="flex justify-between items-center bg-transparent text-white fixed w-full py-5 z-[1000] px-[5%] lg:px-[2%]">
+      <nav className="bg-transparent text-white sticky w-full z-[1000] px-[5%] lg:px-[2%]">
         <HomeIcon />
         <Logo />
-        <Button ariaLabel="menu options" menuBtn>
+        <Button
+          ariaLabel="menu options"
+          menuBtn
+          className="fixed right-0 top-5 z-[1000] mx-[5%] lg:mx-[2%]"
+        >
           menu
         </Button>
         <div className="fixed rotate-90 right-0 top-1/2 mt-10 transform translate-y-1/2 origin-top-right mx-[5%] lg:mx-[2%]">

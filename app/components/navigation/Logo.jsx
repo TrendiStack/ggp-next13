@@ -25,8 +25,8 @@ const Logo = () => {
       className={`${
         menu ? 'text-white' : 'text-[#252422]'
       } text-center nav-title uppercase wagner transition-all duration-500
-    relative 
-    ${isScrolled & !menu ? '-top-48' : 'top-0'}
+    fixed left-1/2 transform -translate-x-1/2
+    ${isScrolled & !menu ? '-top-48' : 'top-5'}
     `}
     >
       gelato gelato <br />

@@ -5,7 +5,7 @@ const ErrorText = ({ children, className }) => {
     <p
       className={`
     ${className}
-    text-red-500 text-sm
+    text-red-700 text-sm font-medium
     `}
     >
       {children}

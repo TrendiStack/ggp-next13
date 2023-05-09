@@ -21,8 +21,10 @@ const MenuWrapper = () => {
   }, []);
   return (
     <CursorProvider>
-      {show && <AnimatedMenu selected={selected} setSelected={setSelected} />}
-      <UnanimatedMenu selected={selected} setSelected={setSelected} />
+      <div data-lenis-prevent>
+        {show && <AnimatedMenu selected={selected} setSelected={setSelected} />}
+        <UnanimatedMenu selected={selected} setSelected={setSelected} />
+      </div>
     </CursorProvider>
   );
 };

@@ -21,9 +21,11 @@ const Banner = () => {
           Gelato Pizzeria has long been considered Vaughan&apos;s go-to spot for
           gelato and pizza.
         </p>
-        <Button ariaLabel="Go menu page" large className="mt-14 md:mt-20">
-          <Link href="/menu">menu</Link>
-        </Button>
+        <Link href="/menu">
+          <Button ariaLabel="Go menu page" large className="mt-14 md:mt-20">
+            menu
+          </Button>
+        </Link>
       </div>
     </div>
   );

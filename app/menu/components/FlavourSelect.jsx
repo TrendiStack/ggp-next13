@@ -66,7 +66,6 @@ const FlavourSelect = ({ selected, type }) => {
           onMouseOver={() => handleMouseOver()}
           onMouseOut={() => handleMouseOut()}
           className="relative flex justify-center h-full lg:h-96 2xl:h-[40rem] bg-[#252422] rounded-3xl overflow-y-scroll p-10 hidescrollbar"
-          data-lenis-prevent
         >
           <UL className="grid grid-cols-2 lg:grid-cols-1 place-content-start gap-5 uppercase w-full cursor-auto md:cursor-none text-xs md:text-2xl 2xl:text-6xl">
             {type === 'gelato' ? (

@@ -31,15 +31,15 @@ const ImageReveal = () => {
       });
   }, [ref]);
   return (
-    <div className="circle h-screen w-screen relative">
+    <div className="h-screen w-screen relative">
       <div
         ref={ref}
-        className="absolute left-[50%] transform -translate-x-1/2 overflow-hidden rounded-full flex justify-center"
+        className="absolute left-[50%] transform -translate-x-1/2 overflow-hidden rounded-3xl md:rounded-full flex justify-center"
       >
         <Image
           src={woodOven}
           alt="Gelato Gelato Restaurant"
-          className="w-[80vw] h-[80vh] object-cover object-left max-w-none min-w-[80vw] min-h-[80vh]"
+          className="w-[80vw] h-[80vh] object-cover md:object-left max-w-none min-w-[80vw] min-h-[80vh]"
         />
       </div>
     </div>

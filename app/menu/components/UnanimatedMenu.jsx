@@ -13,7 +13,7 @@ const UnanimatedMenu = ({ selected, setSelected }) => {
     <div className="overflow-hidden lg:hidden">
       {!isMobile && <ScrollAlert />}
       <Header route="Our Menu" />
-      <div className="flex flex-col gap-20 pt-10 pb-48">
+      <div className="flex flex-col gap-20 pt-10">
         <FlavourContainer header="gelato - flavours">
           <div className="grid grid-cols-2 text-center gap-5">
             <FlavourButton
