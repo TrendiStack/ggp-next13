@@ -80,9 +80,8 @@ const CakeForm = ({ page, form, setForm, error }) => {
         />
       </div>
       <div>
-        <label htmlFor="cakeShape">
-          {error.shape && <ErrorText>{error.shape}</ErrorText>}
-        </label>
+        {error.shape && <ErrorText>{error.shape}</ErrorText>}
+        <label htmlFor="cakeShape">Shape</label>
         <UserInput
           id="cakeShape"
           inputType="select"

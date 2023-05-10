@@ -85,13 +85,13 @@ const Menu = () => {
         >
           <Link href="/menu">Menu</Link>
         </li>
-        {/* <li
+        <li
           onClick={() => {
             setMenu(false);
           }}
         >
           <Link href="/order-cake">Order</Link>
-        </li> */}
+        </li>
         <li
           onClick={() => {
             setMenu(false);

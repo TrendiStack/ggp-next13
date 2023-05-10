@@ -81,6 +81,27 @@ const Email = ({ form }) => {
               <Text className="text-black text-[14px] leading-[24px]">
                 Message: {form.message}
               </Text>
+
+              {form.cake && form.cake.flavour && (
+                <Section className="mt-[32px]">
+                  <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
+                    Cake Order
+                  </Heading>
+                  <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
+                  <Text className="text-black text-[14px] leading-[24px]">
+                    Flavour: {form.cake.flavour}
+                  </Text>
+                  <Text className="text-black text-[14px] leading-[24px]">
+                    Shape: {form.cake.shape}
+                  </Text>
+                  <Text className="text-black text-[14px] leading-[24px]">
+                    Size: {form.cake.size}
+                  </Text>
+                  <Text className="text-black text-[14px] leading-[24px]">
+                    quantity: {form.cake.quantity}
+                  </Text>
+                </Section>
+              )}
             </Section>
 
             <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />

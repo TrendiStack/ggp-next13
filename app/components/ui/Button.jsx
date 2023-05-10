@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import useMenu from '@/app/stores/menuStore';
 import useClient from '@/app/stores/clientStore';
+import useFormComplete from '@/app/stores/formCompleteStore';
 
 const Button = ({
   menuBtn,
@@ -13,6 +14,8 @@ const Button = ({
   submit,
   ariaLabel,
 }) => {
+  const setFormSent = useFormComplete(state => state.setFormSent);
+  const setFormCompleted = useFormComplete(state => state.setFormCompleted);
   const menu = useMenu(state => state.menu);
   const setMenu = useMenu(state => state.setMenu);
   const handleClick = useMenu(state => state.handleClick);
@@ -37,6 +40,12 @@ const Button = ({
       onClick={() => {
         menuBtn ? handleClick() : setMenu(false);
         setHasMounted(true);
+        if (!submit) {
+          setTimeout(() => {
+            setFormSent(false);
+            setFormCompleted(false);
+          }, 1000);
+        }
       }}
       onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}

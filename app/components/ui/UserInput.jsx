@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Select from 'react-select';
-import { boolean } from 'zod';
 
 const UserInput = ({
   id,
@@ -8,6 +7,7 @@ const UserInput = ({
   value,
   onChange,
   type,
+  placeholder,
   inputType,
   options,
   min,
@@ -36,10 +36,6 @@ const UserInput = ({
     }
   };
 
-  useEffect(() => {
-    console.log(Boolean(error));
-  }, [error]);
-
   return (
     <>
       {inputType === 'select' && (
@@ -49,7 +45,7 @@ const UserInput = ({
           isSearchable={false}
           onChange={onChange}
           options={options}
-          placeholder={value || handleValue}
+          placeholder={error ? error : value ? value : handleValue}
           value={value}
           isMulti={id === 'cakeFlavour' ? true : false}
           closeMenuOnSelect={handleCloseOnSelect()}
@@ -59,13 +55,15 @@ const UserInput = ({
               border: `2px solid ${Boolean(error) ? '#b91c1c' : 'white'}}`,
               borderRadius: '0.5rem',
               backgroundColor: 'transparent',
-              color: 'white',
-              paddingTop: '0.2rem',
-              paddingBottom: '0.2rem',
               cursor: 'pointer',
               '&:hover': {
                 border: '2px solid white',
               },
+              ...(state.isFocused
+                ? {
+                    boxShadow: '0 0 0 0 white',
+                  }
+                : {}),
             }),
             option: (provided, state) => {
               const isDisabled = state.data.isDisabled;
@@ -94,7 +92,7 @@ const UserInput = ({
             }),
             placeholder: (provided, state) => ({
               ...provided,
-              color: 'white',
+              color: Boolean(error) ? '#b91c1c' : 'white',
             }),
           }}
         />
@@ -108,9 +106,11 @@ const UserInput = ({
           onChange={onChange}
           min={min}
           max={max}
-          className={`${className} w-full border-2 ${
-            Boolean(error) ? 'border-red-500' : 'border-white'
-          } rounded-md py-1 bg-transparent uppercase font-semibold`}
+          className={`${className} w-full border-2 
+          ${Boolean(error) ? 'border-red-700' : 'border-white'} 
+          ${Boolean(error) ? 'placeholder-red-700' : 'placeholder-white'}
+          rounded-md py-1 bg-transparent font-semibold outline-none focus:ring-2 focus:ring-white focus:border-transparent text-[70%] indent-2`}
+          placeholder={error || placeholder}
           required
         />
       )}
@@ -121,9 +121,11 @@ const UserInput = ({
           name={name}
           value={value}
           onChange={onChange}
-          className={`w-full border-2 ${
-            Boolean(error) ? 'border-red-500' : 'border-white'
-          } rounded-md py-1 bg-transparent uppercase font-semibold`}
+          className={`w-full border-2 
+          ${Boolean(error) ? 'border-red-700' : 'border-white'}
+          ${Boolean(error) ? 'placeholder-red-700' : 'placeholder-white'}
+          rounded-md py-1 bg-transparent font-semibold outline-none focus:ring-2 focus:ring-white focus:border-transparent text-[70%] indent-2`}
+          placeholder={error || placeholder}
           required
         />
       )}

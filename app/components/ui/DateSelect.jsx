@@ -30,7 +30,7 @@ const DateSelect = ({ setForm, reservation }) => {
   }, [selectedDate, setForm]);
   return (
     <div
-      onClick={() => setCalendarOpen(!calendarOpen)}
+      onClick={() => setCalendarOpen(true)}
       className={reservation ? styles.reservation : styles.cakeOrder}
     >
       <p className="flex justify-between px-2">

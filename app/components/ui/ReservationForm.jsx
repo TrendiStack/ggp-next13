@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { validateReservation } from '@/app/utils/validation';
 import Button from './Button';
 import DateSelect from './DateSelect';
@@ -68,6 +68,30 @@ const ReservationForm = () => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (formSent) {
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        time: '',
+        guests: '',
+        message: '',
+      });
+      setError({
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        time: '',
+        guests: '',
+        message: '',
+      });
+    }
+  }, [formSent, setFormCompleted, setFormSent]);
+
   return (
     <div className="relative">
       <FormComplete formCompleted={formCompleted} formSent={formSent} />

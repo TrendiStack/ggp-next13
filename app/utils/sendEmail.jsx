@@ -11,9 +11,19 @@ class EmailSender {
       name: 'Terel Phillips',
       phone: '555-555-5555',
       email: 'terel.phillips23@gmail.com',
+
       date: '',
       time: '',
       guests: '',
+
+      cake: {
+        shape: '',
+        size: '',
+        flavour: '',
+        quantity: '',
+        customQuantity: '',
+      },
+
       message: 'I would like to join your team',
     };
 
@@ -24,6 +34,7 @@ class EmailSender {
       const twelveHour = hours % 12 || 12;
       return `${twelveHour}:${minutes} ${suffix}`;
     };
+
     const formattedTime = twentyFourHourto12Hour(form.time);
     const formattedDate =
       new Date(form.date).toLocaleDateString('en-US', {
@@ -32,20 +43,45 @@ class EmailSender {
         month: 'long',
         day: 'numeric',
       }) || '';
+
+    const formattedFlavour = form?.cake?.flavour.toString().replace(/,/g, ', ');
+
     this.form = {
       ...defaultFormValues,
       ...form,
-      time: formattedTime,
       date: formattedDate,
+      time: formattedTime,
+      cake: {
+        ...form.cake,
+        flavour: formattedFlavour,
+      },
     };
   }
 
   async sendEmail() {
     const emailHtml = render(<Email form={this.form} />);
     const msg = {
-      to: 'terel.almighty@gmail.com', // Change to your recipient
-      from: 'info@gelatogelato.ca', // Change to your verified sender
+      to: 'terel.almighty@gmail.com',
+      // from: 'info@gelatogelato.ca',
+      from: 'terel.phillips23@gmail.com',
       subject: 'GGP Inquiry',
+      html: emailHtml,
+    };
+
+    try {
+      await sendgrid.send(msg);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async sendCakeEmail() {
+    const emailHtml = render(<Email form={this.form} />);
+    const msg = {
+      to: 'terel.almighty@gmail.com',
+      // from: 'info@gelatogelato.ca',
+      from: 'terel.phillips23@gmail.com',
+      subject: 'GGP Cake Order',
       html: emailHtml,
     };
 

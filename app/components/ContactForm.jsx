@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FormLabel from './ui/FormLabel';
 import ErrorText from './ErrorText';
 import Button from './ui/Button';
@@ -60,6 +60,29 @@ const ContactForm = () => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (formSent) {
+      setForm({
+        subject: '',
+        name: '',
+        phone: '',
+        email: '',
+        message: '',
+      });
+    }
+
+    return () => {
+      setError({
+        subject: '',
+        name: '',
+        phone: '',
+        email: '',
+        message: '',
+      });
+    };
+  }, [formSent, setFormCompleted, setFormSent]);
+
   return (
     <div className="relative">
       <FormComplete formCompleted={formCompleted} formSent={formSent} />
