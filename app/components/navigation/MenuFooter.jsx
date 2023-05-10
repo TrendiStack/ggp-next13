@@ -10,7 +10,8 @@ const MenuFooter = ({ menuItem, className }) => {
               href="https://www.google.com/maps?ll=43.808928,-79.54804&z=17&t=m&hl=en-US&gl=US&mapclient=embed&cid=16934071278796745487"
               target="_blank"
             >
-              3650 Langstaff Rd Woodbridge, ON
+              3650 Langstaff Rd <br className="md:hidden" />
+              Woodbridge, ON
             </Link>
           </li>
           <li>

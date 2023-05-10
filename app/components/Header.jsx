@@ -71,11 +71,11 @@ const Header = forwardRef(({ route }, ref) => {
             ref={imgRef}
             className="bg-[#ffd5c2] flex flex-col items-center justify-center h-screen text-center font-medium spartan text-[#252422] header-primary relative overflow-hidden"
           >
-            <h1 className="relative bottom-24 lg:bottom-16 2xl:bottom-20">
-              Sicilian flavors in every
+            <h1 className="header-text relative bottom-24 lg:bottom-16 2xl:bottom-20">
+              Italian flavors in every
               <br /> scoop and slice
             </h1>
-            <div className="relative bottom-16 lg:bottom-14 2xl:bottom-16">
+            <div className="icon-container relative bottom-16 lg:bottom-14 2xl:bottom-16">
               <h2 className="lg:hidden text-xl font-semibold">Order Now</h2>
               <div className="flex gap-4">
                 <DeliveryIcon
@@ -94,7 +94,7 @@ const Header = forwardRef(({ route }, ref) => {
               </div>
             </div>
             <div
-              className="absolute flex justify-center rounded-full h-[40%] bg-[#a3a380] top-[60%] left-1/2 transform -translate-x-1/2 px-40 min-w-[100%] md:min-w-[80%] lg:min-w-[40%] max-w-[100%] md:max-w-[80%] lg:max-w-[40%] min-h-[100%]
+              className="cone-bg absolute flex justify-center rounded-full h-[40%] bg-[#a3a380] top-[60%] left-1/2 transform -translate-x-1/2 px-40 min-w-[100%] md:min-w-[80%] lg:min-w-[40%] max-w-[100%] md:max-w-[80%] lg:max-w-[40%] min-h-[100%]
            "
             ></div>
 
@@ -108,7 +108,7 @@ const Header = forwardRef(({ route }, ref) => {
           <Image
             src={caramelCones}
             alt="Ice cream cone"
-            className="absolute top-[70%] lg:top-[65%] left-1/2 transform -translate-x-1/2 max-w-[50%] md:max-w-[100%] "
+            className="cone absolute top-[70%] lg:top-[65%] left-1/2 transform -translate-x-1/2 max-w-[50%] md:max-w-[100%] "
           />
         </header>
       ) : (

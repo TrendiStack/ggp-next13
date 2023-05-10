@@ -28,7 +28,7 @@ textarea:not(:placeholder-shown) ~ span {
 /* Text */
 
 .nav-title {
-  font-size: clamp(1.3rem, 5vw, 2.3rem);
+  font-size: clamp(1.2rem, 5vw, 2.3rem);
   line-height: 1;
 }
 
@@ -82,4 +82,29 @@ html {
 .wagner {
   font-family: 'Nt wagner', Frank Ruhl Libre, sans-serif;
   @apply font-bold;
+}
+
+/* media queiry for landscape mode on mobile */
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  .navigation {
+    padding-top: 5rem;
+  }
+  .nav-title {
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+  .header-primary {
+    font-size: clamp(1rem, 4vw, 3rem);
+  }
+
+  .cone {
+    width: 100%;
+    height: 100%;
+    top: 65%;
+  }
+
+  .cone-bg {
+    min-width: 20%;
+  }
 }

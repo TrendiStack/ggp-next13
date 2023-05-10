@@ -26,11 +26,11 @@ const Logo = () => {
         menu ? 'text-white' : 'text-[#252422]'
       } text-center nav-title uppercase wagner transition-all duration-500
     fixed left-1/2 transform -translate-x-1/2
-    ${isScrolled & !menu ? '-top-48' : 'top-5'}
+    ${isScrolled & !menu ? '-top-48' : 'top-9 md:top-10 '}
     `}
     >
       gelato gelato <br />
-      <span className="text-lg md:text-xl lg:text-2xl">
+      <span className="text-base md:text-xl lg:text-2xl">
         <span className="text-green-800">piz</span>
         <span className="text-white">ze</span>
         <span className="text-red-600">ria</span>

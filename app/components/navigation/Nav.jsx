@@ -7,7 +7,7 @@ import Link from 'next/link';
 const Nav = () => {
   return (
     <>
-      <nav className="bg-transparent text-white sticky w-full z-[1000] px-[5%] lg:px-[2%]">
+      <nav className="navigation bg-transparent sticky w-full z-[1000]">
         <HomeIcon />
         <Logo />
         <Button
