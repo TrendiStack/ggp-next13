@@ -137,7 +137,7 @@ const Checkout = () => {
         }
       }
     }
-  }, [form, page]);
+  }, [form, page, setError]);
 
   return (
     <div

@@ -98,7 +98,7 @@ const Scrollbar = () => {
       el.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('scroll', updateScroll);
     };
-  }, [isScrolling, menu, mouseOver, visibility]);
+  }, [isScrolling, menu, mouseOver, visibility, setVisibility]);
 
   return (
     <div

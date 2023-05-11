@@ -1,11 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
+
 import Cone from '../assets/images/Cone';
 import { TbConfetti } from 'react-icons/tb';
-import { gsap } from 'gsap';
 
 const FormComplete = ({ formCompleted, formSent }) => {
-  useEffect(() => {}, []);
   return (
     <div
       className={`

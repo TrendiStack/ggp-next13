@@ -88,7 +88,7 @@ const ScrollIcon = () => {
         aria-label="scroll to top"
         onClick={handleScrollToTop}
         ref={buttonRef}
-        className="fixed bottom-2 lg:bottom-12 right-[1%] bg-[#a3a380] rounded-full p-6  text-white text-lg lg:text-2xl cursor-pointer z-[997]"
+        className="fixed bottom-20 md:bottom-12 right-3 mr-[1%] bg-[#a3a380] rounded-full p-6  text-white text-lg lg:text-2xl cursor-pointer z-[997]"
       >
         <TbArrowBigUpFilled />
       </button>

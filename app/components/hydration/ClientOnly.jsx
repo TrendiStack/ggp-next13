@@ -12,7 +12,7 @@ const ClientOnly = ({ children }) => {
     setTimeout(() => {
       setHasMounted(true);
     }, 2000);
-  }, [, setHasMounted]);
+  }, [setHasMounted]);
 
   if (!hasMounted) return <SplashScreen hasMounted={hasMounted} />;
 
