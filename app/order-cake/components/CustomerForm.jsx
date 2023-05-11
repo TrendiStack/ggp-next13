@@ -1,11 +1,14 @@
 import DateSelect from '@/app/components/ui/DateSelect';
 import UserInput from '@/app/components/ui/UserInput';
+import CakeLabel from './CakeLabel';
 
 const CustomerForm = ({ page, setForm, handleCustomer, error }) => {
   return (
     <div className={`${page === 2 ? 'grid' : 'hidden'} grid-cols-1 gap-2 `}>
       <div>
-        <label htmlFor="name">Name</label>
+        <CakeLabel htmlFor="name" title="Name">
+          Name
+        </CakeLabel>
         <UserInput
           type="text"
           id="name"
@@ -13,11 +16,14 @@ const CustomerForm = ({ page, setForm, handleCustomer, error }) => {
           inputType="input"
           onChange={handleCustomer}
           error={error.name}
+          placeholder="e.g. John Doe"
           required
         />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <CakeLabel htmlFor="email" title="Email">
+          Email
+        </CakeLabel>
         <UserInput
           type="email"
           id="email"
@@ -25,11 +31,14 @@ const CustomerForm = ({ page, setForm, handleCustomer, error }) => {
           inputType="input"
           onChange={handleCustomer}
           error={error.email}
+          placeholder="e.g. example@gmail.com  "
           required
         />
       </div>
       <div>
-        <label htmlFor="phone">Phone</label>
+        <CakeLabel htmlFor="phone" title="Phone">
+          Phone
+        </CakeLabel>
         <UserInput
           type="tel"
           id="phone"
@@ -37,12 +46,15 @@ const CustomerForm = ({ page, setForm, handleCustomer, error }) => {
           inputType="input"
           onChange={handleCustomer}
           error={error.phone}
+          placeholder="e.g. 905 123 4567"
           required
         />
       </div>
       <DateSelect setForm={setForm} />
       <div>
-        <label htmlFor="message">Special instructions</label>
+        <CakeLabel htmlFor="message" title="Special instructions">
+          Special instructions
+        </CakeLabel>
         <UserInput
           type="text"
           id="message"
@@ -50,6 +62,7 @@ const CustomerForm = ({ page, setForm, handleCustomer, error }) => {
           inputType="textarea"
           onChange={handleCustomer}
           error={error.message}
+          placeholder="e.g. general theme, color, etc."
           required
         />
       </div>

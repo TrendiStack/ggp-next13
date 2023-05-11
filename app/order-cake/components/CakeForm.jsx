@@ -2,8 +2,8 @@
 
 import { cakes, gelato, sorbet } from '../../../data';
 import { useEffect } from 'react';
-import ErrorText from '@/app/components/ErrorText';
 import UserInput from '@/app/components/ui/UserInput';
+import CakeLabel from './CakeLabel';
 
 const CakeForm = ({ page, form, setForm, error }) => {
   const gelatoFlavours = gelato.map(flavour => flavour.name);
@@ -62,12 +62,17 @@ const CakeForm = ({ page, form, setForm, error }) => {
     }
   }, [form.shape, setForm]);
 
+  useEffect(() => {
+    const option = document.getElementsByClassName('css-9yazq3-control')[2];
+    console.log(option);
+  }, []);
+
   return (
     <div className={`${page === 1 ? 'grid' : 'hidden'} grid-cols-1 gap-5`}>
       <div>
-        <label htmlFor="cakeFlavor">
+        <CakeLabel htmlFor="cakeFlavor" title="Flavours">
           Flavours - <span className="text-[70%]">Pick up to two*</span>
-        </label>
+        </CakeLabel>
         <UserInput
           id="cakeFlavour"
           inputType="select"
@@ -79,7 +84,9 @@ const CakeForm = ({ page, form, setForm, error }) => {
         />
       </div>
       <div>
-        <label htmlFor="cakeShape">Shape</label>
+        <CakeLabel htmlFor="cakeShape" title="Shape">
+          Shape
+        </CakeLabel>
         <UserInput
           id="cakeShape"
           inputType="select"
@@ -95,7 +102,9 @@ const CakeForm = ({ page, form, setForm, error }) => {
         />
       </div>
       <div>
-        <label htmlFor="cakeSize">Sizes</label>
+        <CakeLabel htmlFor="cakeSize" title="Size">
+          Size
+        </CakeLabel>
         <UserInput
           id="cakeSize"
           inputType="select"
@@ -111,7 +120,9 @@ const CakeForm = ({ page, form, setForm, error }) => {
         />
       </div>
       <div>
-        <label htmlFor="cakeQuantity">Quantity</label>
+        <CakeLabel htmlFor="cakeQuantity" title="Quantity">
+          Quantity
+        </CakeLabel>
         <UserInput
           id="cakeQuantity"
           value={form.quantity}
@@ -130,6 +141,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
           onChange={handleCustomQuantity}
           type="number"
           value={form.customQuantity}
+          placeholder="Enter quantity..."
           className="mt-1"
           error={error.customQuantity}
         />

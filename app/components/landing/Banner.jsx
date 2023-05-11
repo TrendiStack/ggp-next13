@@ -22,7 +22,7 @@ const Banner = () => {
           gelato and pizza.
         </p>
         <Link href="/menu">
-          <Button ariaLabel="Go menu page" large className="mt-14 md:mt-20">
+          <Button ariaLabel="menu" large className="mt-14 md:mt-20">
             menu
           </Button>
         </Link>

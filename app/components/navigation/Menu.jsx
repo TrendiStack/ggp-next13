@@ -83,21 +83,27 @@ const Menu = () => {
             setMenu(false);
           }}
         >
-          <Link href="/menu">Menu</Link>
+          <Link href="/menu" title="Product Menu">
+            Menu
+          </Link>
         </li>
         <li
           onClick={() => {
             setMenu(false);
           }}
         >
-          <Link href="/order-cake">Order</Link>
+          <Link href="/order-cake" title="Order Cake">
+            Order
+          </Link>
         </li>
         <li
           onClick={() => {
             setMenu(false);
           }}
         >
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact" title="Contact Us">
+            Contact
+          </Link>
         </li>
         <li className="my-5 text-xl md:text-3xl lg:absolute bottom-10 left-[5%] lg:left-[2%]">
           <MenuFooter menuItem />

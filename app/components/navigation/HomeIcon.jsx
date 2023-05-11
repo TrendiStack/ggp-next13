@@ -7,7 +7,7 @@ const HomeIcon = () => {
   const { menu } = menuStore();
 
   return (
-    <a href="/" aria-label="Home-icon">
+    <a href="/" aria-label="Home Icon" title="Home Icon">
       <Cone
         pathClassName={`${
           menu ? 'fill-white' : 'fill-[#252422]'

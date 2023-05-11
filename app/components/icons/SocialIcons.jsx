@@ -1,6 +1,6 @@
 import { CgFacebook } from 'react-icons/cg';
 import { AiOutlineInstagram, AiOutlineGoogle } from 'react-icons/ai';
-import { SiTripadvisor } from 'react-icons/si';
+import { FaTripadvisor } from 'react-icons/fa';
 import menuStore from '../../stores/menuStore.js';
 import Link from 'next/link';
 
@@ -19,7 +19,7 @@ const SocialIcons = () => {
     },
     {
       name: 'Tripadvisor',
-      icon: <SiTripadvisor />,
+      icon: <FaTripadvisor />,
       link: 'https://www.tripadvisor.ca/Restaurant_Review-g562671-d12870734-Reviews-Pizzeria_Gelato_Gelato-Woodbridge_Vaughan_Ontario.html',
     },
     {
@@ -33,6 +33,7 @@ const SocialIcons = () => {
     <div className="flex gap-5">
       {icons.map(icon => (
         <Link
+          title={icon.name}
           key={icon.name}
           href={icon.link}
           target="_blank"

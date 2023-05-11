@@ -1,4 +1,5 @@
 import { render } from '@react-email/render';
+import { formatDate } from './formatDate';
 import sendgrid from '@sendgrid/mail';
 import Email from '../components/Email';
 
@@ -34,22 +35,13 @@ class EmailSender {
       const twelveHour = hours % 12 || 12;
       return `${twelveHour}:${minutes} ${suffix}`;
     };
-
     const formattedTime = twentyFourHourto12Hour(form.time);
-    const formattedDate =
-      new Date(form.date).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      }) || '';
-
     const formattedFlavour = form?.cake?.flavour.toString().replace(/,/g, ', ');
 
     this.form = {
       ...defaultFormValues,
       ...form,
-      date: formattedDate,
+      date: formatDate(form.time) || '',
       time: formattedTime,
       cake: {
         ...form.cake,

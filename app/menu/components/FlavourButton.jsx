@@ -1,6 +1,7 @@
 const FlavourButton = ({ selected, setSelected, category, type }) => {
   return (
     <h3
+      title={category}
       onClick={() =>
         setSelected(prev => {
           if (type === 'gelato') {

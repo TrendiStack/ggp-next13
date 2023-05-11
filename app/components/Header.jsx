@@ -81,15 +81,18 @@ const Header = forwardRef(({ route }, ref) => {
                 <DeliveryIcon
                   href="https://order.online/store/gelato-gelato-pizzeria-vaughan-2415193/?hideModal=true&pickup=true"
                   src={doorDash}
+                  title="DoorDash"
                 />
 
                 <DeliveryIcon
                   href="https://www.ubereats.com/ca/store/gelato-gelato-pizzeria/TcypftTcQp-c0ym2D0KPRQ"
                   src={ubereats}
+                  title="Uber Eats"
                 />
                 <DeliveryIcon
                   href="https://www.skipthedishes.com/gelato-gelato-pizzeria"
                   src={skip}
+                  title="Skip The Dishes"
                 />
               </div>
             </div>
@@ -132,13 +135,13 @@ const Header = forwardRef(({ route }, ref) => {
             </div>
           </div>
           {(route === 'Contact Us' || route === 'Reservation') && (
-            <Button ariaLabel="Call">
+            <Button ariaLabel="Call for Catering">
               For Catering Call{' '}
               <Link href="tel:+1 905-851-0400">(905) 851-0400</Link>{' '}
             </Button>
           )}
-          {route === 'menu' && (
-            <Button ariaLabel="View full menu" dining>
+          {route === 'Menu' && (
+            <Button ariaLabel="View full menu">
               <a href="https://www.gelatogelato.ca/menu.pdf" target="_blank">
                 Full Menu
               </a>

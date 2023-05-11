@@ -21,7 +21,8 @@ const Logo = () => {
   return (
     <a
       href="/"
-      aria-label="Home-Logo"
+      aria-label="Home Logo"
+      title="Gelato Gelato Pizzeria"
       className={`${
         menu ? 'text-white' : 'text-[#252422]'
       } text-center nav-title uppercase wagner transition-all duration-500

@@ -23,7 +23,11 @@ const UserInput = ({
       ? 'Pick a shape...'
       : id === 'cakeSize'
       ? 'Pick a size...'
-      : null;
+      : id === 'cakeQuantity'
+      ? 'Pick a quantity...'
+      : id === 'customQuantity'
+      ? 'Enter a quantity...'
+      : 'Enter a value...';
   const handleCloseOnSelect = () => {
     if (id === 'cakeFlavour') {
       if (length >= 1) {
@@ -34,6 +38,10 @@ const UserInput = ({
     } else {
       return true;
     }
+  };
+
+  const handleplaceholder = () => {
+    return Boolean(error) ? '#b91c1c' : value ? 'white' : '#404040';
   };
 
   return (
@@ -77,7 +85,9 @@ const UserInput = ({
               };
               return {
                 ...provided,
+                textTransform: 'capitalize',
                 color: 'black',
+                fontSize: '85%',
                 backgroundColor: 'white',
                 cursor: 'pointer',
                 '&:hover': {
@@ -86,13 +96,15 @@ const UserInput = ({
                 ...(isDisabled ? disabledStyle : {}),
               };
             },
-            singleValue: (provided, state) => ({
-              ...provided,
-              color: 'white',
-            }),
+            // singleValue: (provided, state) => ({
+            //   ...provided,
+            //   color: 'blue',
+            // }),
             placeholder: (provided, state) => ({
               ...provided,
-              color: Boolean(error) ? '#b91c1c' : 'white',
+              fontSize: '70%',
+              fontWeight: '600',
+              color: handleplaceholder(),
             }),
           }}
         />
@@ -108,7 +120,7 @@ const UserInput = ({
           max={max}
           className={`${className} w-full border-2 
           ${Boolean(error) ? 'border-red-700' : 'border-white'} 
-          ${Boolean(error) ? 'placeholder-red-700' : 'placeholder-white'}
+          ${Boolean(error) ? 'placeholder-red-700' : 'placeholder-neutral-700'}
           rounded-md py-1 bg-transparent font-semibold outline-none focus:ring-2 focus:ring-white focus:border-transparent text-[70%] indent-2`}
           placeholder={error || placeholder}
           required
@@ -123,7 +135,7 @@ const UserInput = ({
           onChange={onChange}
           className={`w-full border-2 
           ${Boolean(error) ? 'border-red-700' : 'border-white'}
-          ${Boolean(error) ? 'placeholder-red-700' : 'placeholder-white'}
+          ${Boolean(error) ? 'placeholder-red-700' : 'placeholder-neutral-700'}
           rounded-md py-1 bg-transparent font-semibold outline-none focus:ring-2 focus:ring-white focus:border-transparent text-[70%] indent-2`}
           placeholder={error || placeholder}
           required

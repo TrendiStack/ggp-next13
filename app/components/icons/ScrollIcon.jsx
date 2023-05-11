@@ -72,6 +72,7 @@ const ScrollIcon = () => {
   return (
     <>
       <div
+        title="Scroll Down"
         ref={containerRef}
         className={`hidden xl:block fixed bottom-6 right-0 scale-75 z-[997] ${
           isMobile ? 'hidden' : 'block'
@@ -85,7 +86,8 @@ const ScrollIcon = () => {
         <Image ref={imgRef} src={scrolltextnoggp} alt="circle scroll text" />
       </div>
       <button
-        aria-label="scroll to top"
+        aria-label="Scroll to Top"
+        title="Scroll to Top"
         onClick={handleScrollToTop}
         ref={buttonRef}
         className="fixed bottom-20 md:bottom-12 right-3 mr-[1%] bg-[#a3a380] rounded-full p-6  text-white text-lg lg:text-2xl cursor-pointer z-[997]"

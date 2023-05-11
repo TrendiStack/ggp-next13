@@ -108,3 +108,29 @@ html {
     min-width: 20%;
   }
 }
+
+/* React-select */
+
+.css-24pjkf-placeholder {
+  @apply capitalize;
+}
+
+.css-wsp0cs-MultiValueGeneric {
+  @apply capitalize;
+  @apply bg-white;
+}
+.css-12a83d4-MultiValueRemove {
+  @apply bg-white;
+}
+
+.css-12a83d4-MultiValueRemove > svg {
+  @apply text-black;
+}
+
+.css-1p3m7a8-multiValue {
+  @apply bg-white !important;
+}
+
+.css-tj5bde-Svg {
+  @apply text-white;
+}

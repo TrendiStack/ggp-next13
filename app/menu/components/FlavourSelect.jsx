@@ -17,9 +17,11 @@ import {
   pizza,
 } from '../../../data';
 import { CursorContext } from '@/app/context/CursorContext';
+import useMobile from '@/app/hooks/useMobile';
 
 const FlavourSelect = ({ selected, type }) => {
   const { handleMouseOut, handleMouseOver } = useContext(CursorContext);
+  const isMobile = useMobile();
   const listContainerRef = useRef(null);
   const [scrollValue, setScrollValue] = useState({
     atTop: true,
@@ -65,9 +67,15 @@ const FlavourSelect = ({ selected, type }) => {
           ref={listContainerRef}
           onMouseOver={() => handleMouseOver()}
           onMouseOut={() => handleMouseOut()}
-          className="relative flex justify-center h-full lg:h-96 2xl:h-[40rem] bg-[#252422] rounded-3xl overflow-y-scroll p-10 hidescrollbar"
+          className={`
+          ${isMobile ? '' : 'lg:cursor-none '}
+          relative flex justify-center h-full lg:h-96 2xl:h-[40rem] bg-[#252422] rounded-3xl overflow-y-scroll p-10 hidescrollbar`}
         >
-          <UL className="grid grid-cols-2 lg:grid-cols-1 place-content-start gap-5 uppercase w-full cursor-auto md:cursor-none text-xs md:text-2xl 2xl:text-6xl">
+          <UL
+            className={`
+            ${isMobile ? '' : 'lg:cursor-none '}
+            grid grid-cols-2 lg:grid-cols-1 place-content-start gap-5 uppercase w-full cursor-auto text-xs md:text-2xl 2xl:text-6xl`}
+          >
             {type === 'gelato' ? (
               <>
                 {selected === 'regular' &&

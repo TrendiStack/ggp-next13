@@ -38,7 +38,7 @@ const AnimatedMenu = ({ selected, setSelected }) => {
   return (
     <div className="overflow-hidden hidden lg:block">
       {!isMobile && <ScrollAlert />}
-      <Header route="Our Menu" />
+      <Header route="Menu" />
       <div className="flex items-center h-screen 2xl:pt-36 " ref={containerRef}>
         <FlavourContainer header="gelato - flavours">
           <div className="flex flex-col items-stretch justify-center gap-10">
