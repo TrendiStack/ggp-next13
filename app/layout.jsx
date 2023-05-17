@@ -1,4 +1,4 @@
-import { League_Spartan } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 import Nav from './components/navigation/Nav';
 import Footer from './components/Footer';
 import Scrollbar from './components/Scrollbar';
@@ -6,8 +6,11 @@ import ClientOnly from './components/hydration/ClientOnly';
 import LenisSmoothScroll from './components/LenisSmoothScroll';
 
 import './globals.css';
+import ScrollIcon from './components/icons/ScrollIcon';
 
-const spartan = League_Spartan({ subsets: ['latin'] });
+const raleway = Raleway({
+  subsets: ['latin'],
+});
 
 export const metadata = {
   title: 'Gelato Gelato Pizzeria | Sicilian flavors in every scoop and slice',
@@ -123,9 +126,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${spartan.className}`}>
+      <body className={`${raleway.className}`}>
         <Nav />
         <ClientOnly>
+          <ScrollIcon />
           <LenisSmoothScroll />
           <Scrollbar />
         </ClientOnly>

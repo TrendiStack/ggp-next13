@@ -39,8 +39,8 @@ const SocialIcons = () => {
           target="_blank"
           rel="noreferrer"
           className={`${
-            menu ? 'bg-white text-[#252422]' : 'bg-[#252422] text-white'
-          } text-lg lg:text-3xl p-2 lg:p-8 rounded-full`}
+            menu ? ' text-lg lg:text-3xl p-2 lg:p-8' : ''
+          } text-lg p-2 lg:p-4 bg-white text-[#252422] hover:text-white rounded-full hover:bg-[#a3a380] transition-colors duration-300 ease-in-out `}
         >
           {icon.icon}
         </Link>

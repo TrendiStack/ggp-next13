@@ -140,10 +140,7 @@ const Checkout = () => {
   }, [form, page, setError]);
 
   return (
-    <div
-      data-lenis-prevent
-      className="text-white bg-[#a3a380] flex flex-col gap-3 justify-between w-full text-xl xl:text-sm 2xl:text-2xl p-5 rounded-2xl relative"
-    >
+    <div className="text-white bg-[#a3a380] flex flex-col gap-3 justify-between w-full text-xl xl:text-sm 2xl:text-2xl p-5 rounded-2xl relative">
       <p>{error.cake.shape}</p>
       <h1 className="text-center text-2xl 2xl:text-4xl">
         {page === 1

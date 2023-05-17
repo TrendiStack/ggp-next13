@@ -13,6 +13,7 @@ import skip from '../assets/images/icons/SkipTheDishes - png.png';
 import ubereats from '../assets/images/icons/Uber Eats - jpeg.png';
 import emptyCone from '../assets/images/empty-conev2.png';
 import Link from 'next/link';
+import marg from '../assets/images/marg.png';
 
 // eslint-disable-next-line react/display-name
 const Header = forwardRef(({ route }, ref) => {
@@ -69,37 +70,36 @@ const Header = forwardRef(({ route }, ref) => {
         <header>
           <div
             ref={imgRef}
-            className="bg-[#ffd5c2] flex flex-col items-center justify-center h-screen text-center font-medium spartan text-[#252422] header-primary relative overflow-hidden"
+            className="flex min-h-screen lg:h-screen flex-col items-center justify-between overflow-hidden bg-[#ffd5c2] font-semibold text-[#252422] header-primary"
           >
-            <h1 className="header-text relative bottom-24 lg:bottom-16 2xl:bottom-20">
-              Italian flavors in every
-              <br /> scoop and slice
-            </h1>
-            <div className="icon-container relative bottom-16 lg:bottom-14 2xl:bottom-16">
-              <h2 className="lg:hidden text-xl font-semibold">Order Now</h2>
-              <div className="flex gap-4">
-                <DeliveryIcon
-                  href="https://order.online/store/gelato-gelato-pizzeria-vaughan-2415193/?hideModal=true&pickup=true"
-                  src={doorDash}
-                  title="DoorDash"
-                />
+            <div className="cta flex flex-col items-center gap-3 mt-[25vh] text-center">
+              <h1>
+                Italian flavors in every
+                <br /> scoop and slice
+              </h1>
+              <div className="icon-container relative ">
+                <h2 className="lg:hidden text-xl font-semibold">Order Now</h2>
+                <div className="flex gap-4">
+                  <DeliveryIcon
+                    href="https://order.online/store/gelato-gelato-pizzeria-vaughan-2415193/?hideModal=true&pickup=true"
+                    src={doorDash}
+                    title="DoorDash"
+                  />
 
-                <DeliveryIcon
-                  href="https://www.ubereats.com/ca/store/gelato-gelato-pizzeria/TcypftTcQp-c0ym2D0KPRQ"
-                  src={ubereats}
-                  title="Uber Eats"
-                />
-                <DeliveryIcon
-                  href="https://www.skipthedishes.com/gelato-gelato-pizzeria"
-                  src={skip}
-                  title="Skip The Dishes"
-                />
+                  <DeliveryIcon
+                    href="https://www.ubereats.com/ca/store/gelato-gelato-pizzeria/TcypftTcQp-c0ym2D0KPRQ"
+                    src={ubereats}
+                    title="Uber Eats"
+                  />
+                  <DeliveryIcon
+                    href="https://www.skipthedishes.com/gelato-gelato-pizzeria"
+                    src={skip}
+                    title="Skip The Dishes"
+                  />
+                </div>
               </div>
             </div>
-            <div
-              className="cone-bg absolute flex justify-center rounded-full h-[40%] bg-[#a3a380] top-[60%] left-1/2 transform -translate-x-1/2 px-40 min-w-[100%] md:min-w-[80%] lg:min-w-[40%] max-w-[100%] md:max-w-[80%] lg:max-w-[40%] min-h-[100%]
-           "
-            ></div>
+            <div className="half-circle bg-[#A3A380] w-full h-[250px] md:h-[40vh] max-w-[768px] rounded-t-full"></div>
 
             <p className="opacity-0 xl:opacity-100 absolute bottom-12 left-10 text-base 2xl:text-xl font-light text-right w-[20rem] 2xl:w-[28rem] text-black">
               Savor the authentic flavors of Italy at Gelato Gelato, located in
@@ -111,20 +111,29 @@ const Header = forwardRef(({ route }, ref) => {
           <Image
             src={caramelCones}
             alt="Ice cream cone"
+            priority={true}
             className="cone absolute top-[70%] lg:top-[65%] left-1/2 transform -translate-x-1/2 max-w-[50%] md:max-w-[100%] "
           />
         </header>
       ) : (
         <header
           ref={ref}
-          className="grid grid-cols-1 lg:block place-items-center relative h-screen text-[#252422] spartan bg-[#ffd5c2]"
+          className="grid grid-cols-1 lg:block place-items-center relative h-screen text-[#252422] bg-[#ffd5c2] rounded-b-3xl overflow-hidden"
         >
           <div className="flex flex-col lg:flex-row items-center text-center">
             <h1 className="lg:relative header-secondary left-32 bottom-10 font-medium w-full">
               {route} <br />
             </h1>
-
+            <p className="mt-2 lg:hidden">Scroll down</p>
             <IoMdArrowDropdown className="text-4xl animate-bounce lg:hidden" />
+            {/* <div className="hidden lg:block items-center h-screen w-full bg-[#60604c] rounded-l-full">
+              <Image
+                ref={emptyConeRef}
+                src={marg}
+                alt="Empty ice cream cone"
+                className="w-[480px] 2xl:w-1/2 mt-36 relative left-20"
+              />
+            </div> */}
             <div className="hidden lg:flex items-center h-screen w-full bg-[#60604c] rounded-l-full">
               <Image
                 ref={emptyConeRef}
@@ -140,11 +149,16 @@ const Header = forwardRef(({ route }, ref) => {
               <Link href="tel:+1 905-851-0400">(905) 851-0400</Link>{' '}
             </Button>
           )}
-          {route === 'Menu' && (
+          {route === 'Our Menu' && (
             <Button ariaLabel="View full menu">
-              <a href="https://www.gelatogelato.ca/menu.pdf" target="_blank">
+              <Link href="https://www.gelatogelato.ca/menu.pdf" target="_blank">
                 Full Menu
-              </a>
+              </Link>
+            </Button>
+          )}
+          {route === 'Build a Cake' && (
+            <Button ariaLabel="Reservation" className="lg:hidden">
+              <Link href="/reservation">Reserve a Table</Link>
             </Button>
           )}
         </header>

@@ -90,7 +90,7 @@ const ContactForm = () => {
         onSubmit={handleSubmit}
         className={`
         ${formSent ? 'opacity-0' : 'opacity-100'}
-        grid grid-cols-1 gap-6 md:gap-10 lg:gap-14 lg:pt-24 lg:pb-6 `}
+        grid grid-cols-1 gap-6 md:gap-10 lg:gap-14 mt-32 py-12 px-5 lg:p-10 rounded-3xl`}
       >
         <div className="w-full">
           <FormLabel

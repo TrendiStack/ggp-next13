@@ -15,10 +15,11 @@ const Nav = () => {
           menuBtn
           className="fixed right-0 top-5 z-[1000] mx-[5%] lg:mx-[2%]"
         >
-          More
+          open
         </Button>
-        <div className="fixed rotate-90 right-0 top-1/2 mt-10 transform translate-y-1/2 origin-top-right mx-[5%] lg:mx-[2%]">
-          <Link href="reservation">
+
+        <div className="">
+          <Link href="/reservation">
             <Button ariaLabel="Reservation" reservation>
               Reservation
             </Button>

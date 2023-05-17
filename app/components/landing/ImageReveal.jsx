@@ -3,7 +3,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useEffect, useRef } from 'react';
-import woodOven from '../../assets/images/woodoven.avif';
 import Image from 'next/image';
 
 const ImageReveal = () => {
@@ -34,12 +33,21 @@ const ImageReveal = () => {
     <div className="h-screen w-screen relative">
       <div
         ref={ref}
-        className="absolute left-[50%] transform -translate-x-1/2 overflow-hidden rounded-3xl md:rounded-full flex justify-center"
+        className="absolute left-[50%] transform -translate-x-1/2 overflow-hidden rounded-full flex justify-center"
       >
         <Image
-          src={woodOven}
+          src="https://images.unsplash.com/photo-1651978595432-905a420b879d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          width={1000}
+          height={1000}
           alt="Gelato Gelato Restaurant"
-          className="w-[80vw] h-[80vh] object-cover md:object-left max-w-none min-w-[80vw] min-h-[80vh]"
+          className="hidden lg:block w-[80vw] h-[80vh] object-cover max-w-none min-w-[80vw] min-h-[80vh]"
+        />
+        <Image
+          src="https://images.unsplash.com/photo-1662043591511-59ffee7fe503?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          width={1000}
+          height={1000}
+          alt="Gelato Gelato Restaurant"
+          className="lg:hidden w-[80vw] h-[80vh] object-cover  max-w-none min-w-[80vw] min-h-[80vh]"
         />
       </div>
     </div>

@@ -1,5 +1,4 @@
 import Header from '../components/Header';
-import ScrollIcon from '../components/icons/ScrollIcon';
 import ReservationForm from '../components/ui/ReservationForm';
 
 export const metadata = {
@@ -9,7 +8,6 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <ScrollIcon />
       <Header route="Reservation" />
       <div className="mx-[5%] lg:mx-[2%] ">
         <ReservationForm />

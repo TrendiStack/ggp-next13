@@ -1,4 +1,3 @@
-import ScrollIcon from '../components/icons/ScrollIcon';
 import MenuWrapper from './components/MenuWrapper';
 export const metadata = {
   title: 'Menu | Gelato Gelato Pizzeria',
@@ -7,7 +6,6 @@ export const metadata = {
 const page = () => {
   return (
     <main>
-      <ScrollIcon />
       <MenuWrapper />;
     </main>
   );

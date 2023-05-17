@@ -1,7 +1,6 @@
 import FlavourButton from './FlavourButton';
 import FlavourContainer from './FlavourContainer';
 import FlavourSelect from './FlavourSelect';
-import Footer from '@/app/components/Footer';
 import Header from '@/app/components/Header';
 import ScrollAlert from './ScrollAlert';
 import useMobile from '@/app/hooks/useMobile';

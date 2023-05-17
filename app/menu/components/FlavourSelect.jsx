@@ -69,7 +69,7 @@ const FlavourSelect = ({ selected, type }) => {
           onMouseOut={() => handleMouseOut()}
           className={`
           ${isMobile ? '' : 'lg:cursor-none '}
-          relative flex justify-center h-full lg:h-96 2xl:h-[40rem] bg-[#252422] rounded-3xl overflow-y-scroll p-10 hidescrollbar`}
+          relative flex justify-center h-full lg:h-96 2xl:h-[40rem] bg-[#252422] rounded-3xl overflow-y-scroll p-10 hidescrollbar `}
         >
           <UL
             className={`

@@ -22,7 +22,7 @@ const MenuFooter = ({ menuItem, className }) => {
           </li>
         </ul>
       ) : (
-        <ul className="flex gap-5 ">
+        <ul className="flex flex-col gap-5 mb-5">
           <li>
             <Link href="/menu" title="Product Menu">
               Menu
@@ -34,8 +34,13 @@ const MenuFooter = ({ menuItem, className }) => {
             </Link>
           </li>
           <li>
-            <Link href="/" title="Contact Us">
+            <Link href="/contact" title="Contact Us">
               Contact
+            </Link>
+          </li>
+          <li>
+            <Link href="/reservation" title="Reservation">
+              Reservation
             </Link>
           </li>
           <li>

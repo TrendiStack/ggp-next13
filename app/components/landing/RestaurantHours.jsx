@@ -1,28 +1,4 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
-
 const RestaurantHours = () => {
-  const textRef = useRef(null);
-  const [width, setWidth] = useState(0);
-  useEffect(() => {
-    const elWidth = textRef.current?.clientWidth;
-
-    if (!textRef) return;
-    setWidth(elWidth);
-    window.addEventListener('resize', () => {
-      const elWidth = textRef.current?.clientWidth;
-      setWidth(elWidth);
-    });
-
-    return () => {
-      window.removeEventListener('resize', () => {
-        const elWidth = textRef.current?.clientWidth;
-        setWidth(elWidth);
-      });
-    };
-  }, [textRef, width, setWidth]);
-
   return (
     <section className="pt-[60vh] pb-32 font-light">
       <div className="grid grid-cols-1 gap-14 lg:gap-36 2xl:gap-56">
@@ -37,11 +13,11 @@ const RestaurantHours = () => {
             <ul className="grid gap-3 text-xl md:text-3xl">
               <li className="flex justify-between uppercase">
                 <p>sunday</p>
-                <p ref={textRef}>12:30 PM - 9:30 PM</p>
+                <p>12:30 PM - 9:30 PM</p>
               </li>
               <li className="flex justify-between uppercase">
-                <p className="">monday</p>
-                <p className={`w-[${width}px]`}>closed</p>
+                <p>monday</p>
+                <p className="w-[172px] md:w-[256px]">closed</p>
               </li>
               <li className="flex justify-between uppercase">
                 <p>Tuesday</p>

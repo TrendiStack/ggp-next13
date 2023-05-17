@@ -41,7 +41,7 @@ class EmailSender {
     this.form = {
       ...defaultFormValues,
       ...form,
-      date: formatDate(form.time) || '',
+      date: formatDate(new Date(form.date)) || '',
       time: formattedTime,
       cake: {
         ...form.cake,
@@ -53,9 +53,8 @@ class EmailSender {
   async sendEmail() {
     const emailHtml = render(<Email form={this.form} />);
     const msg = {
-      to: 'terel.almighty@gmail.com',
-      // from: 'info@gelatogelato.ca',
-      from: 'terel.phillips23@gmail.com',
+      to: 'info@gelatogelato.ca',
+      from: 'info@gelatogelato.ca',
       subject: 'GGP Inquiry',
       html: emailHtml,
     };
@@ -70,9 +69,8 @@ class EmailSender {
   async sendCakeEmail() {
     const emailHtml = render(<Email form={this.form} />);
     const msg = {
-      to: 'terel.almighty@gmail.com',
-      // from: 'info@gelatogelato.ca',
-      from: 'terel.phillips23@gmail.com',
+      to: 'info@gelatogelato.ca',
+      from: 'info@gelatogelato.ca',
       subject: 'GGP Cake Order',
       html: emailHtml,
     };
