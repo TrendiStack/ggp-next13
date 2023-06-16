@@ -5,15 +5,9 @@ import { gsap } from 'gsap';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Button from './ui/Button';
-import caramelCones from '../assets/images/caramel-cone.svg';
 import DeliveryIcon from './icons/DeliveryIcon';
-import doorDash from '../assets/images/icons/DoorDash - jpeg.png';
 import Image from 'next/image';
-import skip from '../assets/images/icons/SkipTheDishes - png.png';
-import ubereats from '../assets/images/icons/Uber Eats - jpeg.png';
-import emptyCone from '../assets/images/empty-conev2.png';
 import Link from 'next/link';
-import marg from '../assets/images/marg.png';
 
 // eslint-disable-next-line react/display-name
 const Header = forwardRef(({ route }, ref) => {
@@ -65,9 +59,9 @@ const Header = forwardRef(({ route }, ref) => {
     }
   }, []);
   return (
-    <div className="relative">
+    <header aria-label="Header" className="relative">
       {route === 'landing' ? (
-        <header>
+        <div>
           <div
             ref={imgRef}
             className="flex min-h-screen lg:h-screen flex-col items-center justify-between overflow-hidden bg-[#ffd5c2] font-semibold text-[#252422] header-primary"
@@ -82,18 +76,18 @@ const Header = forwardRef(({ route }, ref) => {
                 <div className="flex gap-4">
                   <DeliveryIcon
                     href="https://order.online/store/gelato-gelato-pizzeria-vaughan-2415193/?hideModal=true&pickup=true"
-                    src={doorDash}
+                    src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/DoorDash+-+jpeg.png"
                     title="DoorDash"
                   />
 
                   <DeliveryIcon
                     href="https://www.ubereats.com/ca/store/gelato-gelato-pizzeria/TcypftTcQp-c0ym2D0KPRQ"
-                    src={ubereats}
+                    src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/Uber+Eats+-+jpeg.png"
                     title="Uber Eats"
                   />
                   <DeliveryIcon
                     href="https://www.skipthedishes.com/gelato-gelato-pizzeria"
-                    src={skip}
+                    src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/SkipTheDishes+-+png.png"
                     title="Skip The Dishes"
                   />
                 </div>
@@ -101,7 +95,10 @@ const Header = forwardRef(({ route }, ref) => {
             </div>
             <div className="half-circle bg-[#A3A380] w-full h-[250px] md:h-[40vh] max-w-[768px] rounded-t-full"></div>
 
-            <p className="opacity-0 xl:opacity-100 absolute bottom-12 left-10 text-base 2xl:text-xl font-light text-right w-[20rem] 2xl:w-[28rem] text-black">
+            <p
+              aria-label="Restaurant Description"
+              className="opacity-0 xl:opacity-100 absolute bottom-12 left-10 text-base 2xl:text-xl font-light text-right w-[20rem] 2xl:w-[28rem] text-black"
+            >
               Savor the authentic flavors of Italy at Gelato Gelato, located in
               the heart of Vaughan. Our menu is a celebration of Italian
               cuisine, featuring mouth-watering pasta dishes, wood-fired pizzas,
@@ -109,14 +106,16 @@ const Header = forwardRef(({ route }, ref) => {
             </p>
           </div>
           <Image
-            src={caramelCones}
+            src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/caramel-cone.svg"
             alt="Ice cream cone"
             priority={true}
             className="cone absolute top-[70%] lg:top-[65%] left-1/2 transform -translate-x-1/2 max-w-[50%] md:max-w-[100%] "
+            width={280}
+            height={600}
           />
-        </header>
+        </div>
       ) : (
-        <header
+        <div
           ref={ref}
           className="grid grid-cols-1 lg:block place-items-center relative h-screen text-[#252422] bg-[#ffd5c2] rounded-b-3xl overflow-hidden"
         >
@@ -126,20 +125,16 @@ const Header = forwardRef(({ route }, ref) => {
             </h1>
             <p className="mt-2 lg:hidden">Scroll down</p>
             <IoMdArrowDropdown className="text-4xl animate-bounce lg:hidden" />
-            {/* <div className="hidden lg:block items-center h-screen w-full bg-[#60604c] rounded-l-full">
-              <Image
-                ref={emptyConeRef}
-                src={marg}
-                alt="Empty ice cream cone"
-                className="w-[480px] 2xl:w-1/2 mt-36 relative left-20"
-              />
-            </div> */}
+
             <div className="hidden lg:flex items-center h-screen w-full bg-[#60604c] rounded-l-full">
               <Image
                 ref={emptyConeRef}
-                src={emptyCone}
+                src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/empty-conev2.png"
                 alt="Empty ice cream cone"
                 className="ml-36 rotate-[20deg] w-[30%] 2xl:w-auto ]"
+                width={500}
+                height={500}
+                priority={true}
               />
             </div>
           </div>
@@ -151,7 +146,7 @@ const Header = forwardRef(({ route }, ref) => {
           )}
           {route === 'Our Menu' && (
             <Button ariaLabel="View full menu">
-              <Link href="https://www.gelatogelato.ca/menu.pdf" target="_blank">
+              <Link href="menu.pdf" target="_blank">
                 Full Menu
               </Link>
             </Button>
@@ -161,9 +156,9 @@ const Header = forwardRef(({ route }, ref) => {
               <Link href="/reservation">Reserve a Table</Link>
             </Button>
           )}
-        </header>
+        </div>
       )}
-    </div>
+    </header>
   );
 });
 

@@ -7,12 +7,12 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div>
+    <main aria-label="Reservation Page">
       <Header route="Reservation" />
       <div className="mx-[5%] lg:mx-[2%] ">
         <ReservationForm />
       </div>
-    </div>
+    </main>
   );
 };
 

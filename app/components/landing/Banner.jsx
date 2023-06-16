@@ -1,19 +1,24 @@
 import Image from 'next/image';
-import hero from '../../assets/images/gelatogelatopizzeria_hero_.jpg';
+
 import Button from '../ui/Button';
 import Link from 'next/link';
 
 const Banner = () => {
   return (
-    <div className="flex flex-col gap-14 md:gap-24 text-center mt-36 sm:mt-48 md:mt-52 xl:mt-48 2xl:mt-96">
+    <section
+      aria-label="About us"
+      className="flex flex-col gap-14 md:gap-24 text-center mt-36 sm:mt-48 md:mt-52 xl:mt-48 2xl:mt-96"
+    >
       <h1 className="header-secondary font-medium">
         Made
         <br /> Fresh daily
       </h1>
       <Image
-        src={hero}
+        src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/gelatogelatopizzeria_hero_.jpg"
         alt="hero"
-        className="w-full h-[50%] lg:h-[600px] object-cover "
+        className="w-full h-[50%] lg:h-[600px] object-cover"
+        width={1920}
+        height={1080}
       />
       <div className="px-[5%] lg:px-[2%]">
         <p className="large-text">
@@ -27,7 +32,7 @@ const Banner = () => {
           </Button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

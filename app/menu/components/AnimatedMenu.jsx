@@ -36,11 +36,11 @@ const AnimatedMenu = ({ selected, setSelected }) => {
     };
   }, [containerRef]);
   return (
-    <div className="overflow-hidden hidden lg:block">
+    <main aria-label="Menu Page" className="overflow-hidden hidden lg:block">
       {!isMobile && <ScrollAlert />}
       <Header route="Our Menu" />
       <div className="flex items-center h-screen 2xl:pt-36 " ref={containerRef}>
-        <FlavourContainer header="gelato - flavours">
+        <FlavourContainer header="gelato - flavours" label="Gelato menu">
           <div className="flex flex-col items-stretch justify-center gap-10">
             <FlavourButton
               selected={selected.categoryOne}
@@ -67,7 +67,7 @@ const AnimatedMenu = ({ selected, setSelected }) => {
             type="gelato"
           />
         </FlavourContainer>
-        <FlavourContainer header="dining - options">
+        <FlavourContainer header="dining - options" label="Dining menu">
           <div className="grid grid-cols-2 place-content-center justify-center text-center gap-10">
             <FlavourButton
               selected={selected.categoryTwo}
@@ -102,7 +102,7 @@ const AnimatedMenu = ({ selected, setSelected }) => {
           />
         </FlavourContainer>
       </div>
-    </div>
+    </main>
   );
 };
 

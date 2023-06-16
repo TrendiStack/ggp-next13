@@ -1,18 +1,20 @@
-const FormInput = ({ inputType, inputName, value, onChange }) => {
+const FormInput = ({ htmlFor, inputType, name, value, onChange }) => {
   return (
     <>
       {inputType === 'message' ? (
         <textarea
-          className="w-full h-20 lg:h-40 p-2 bg-transparent border-2 border-[#a3a380] rounded-lg focus:outline-none "
-          name={inputName}
+          id={htmlFor}
+          name={name}
           value={value}
           onChange={onChange}
           placeholder=" "
+          className="w-full h-20 lg:h-40 p-2 bg-transparent border-2 border-[#a3a380] rounded-lg focus:outline-none "
         />
       ) : (
         <input
+          id={htmlFor}
           type={inputType}
-          name={inputName}
+          name={name}
           value={value}
           onChange={onChange}
           placeholder=" "

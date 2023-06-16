@@ -9,11 +9,11 @@ const UnanimatedMenu = ({ selected, setSelected }) => {
   const isMobile = useMobile();
 
   return (
-    <div className="overflow-hidden lg:hidden">
+    <section aria-label="menu" className="overflow-hidden lg:hidden">
       {!isMobile && <ScrollAlert />}
       <Header route="Our Menu" />
       <div className="flex flex-col gap-20 pt-10">
-        <FlavourContainer header="gelato - flavours">
+        <FlavourContainer header="gelato - flavours" label="Gelato menu">
           <div className="grid grid-cols-2 text-center gap-5">
             <FlavourButton
               selected={selected.categoryOne}
@@ -36,7 +36,7 @@ const UnanimatedMenu = ({ selected, setSelected }) => {
           </div>
           <FlavourSelect selected={selected.categoryOne} type="gelato" />
         </FlavourContainer>
-        <FlavourContainer header="dining - options">
+        <FlavourContainer header="dining - options" label="Dining menu">
           <div className="grid grid-cols-2 gap-5">
             <FlavourButton
               selected={selected.categoryTwo}
@@ -67,7 +67,7 @@ const UnanimatedMenu = ({ selected, setSelected }) => {
           <FlavourSelect selected={selected.categoryTwo} type="dining" />
         </FlavourContainer>
       </div>
-    </div>
+    </section>
   );
 };
 

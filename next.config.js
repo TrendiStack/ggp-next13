@@ -4,7 +4,10 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['images.unsplash.com'],
+    domains: [
+      'images.unsplash.com',
+      'bobward-image-bucket.s3.ca-central-1.amazonaws.com',
+    ],
   },
 };
 

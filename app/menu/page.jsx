@@ -5,9 +5,9 @@ export const metadata = {
 
 const page = () => {
   return (
-    <main>
-      <MenuWrapper />;
-    </main>
+    <>
+      <MenuWrapper />
+    </>
   );
 };
 

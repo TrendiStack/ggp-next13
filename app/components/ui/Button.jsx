@@ -65,10 +65,11 @@ const Button = ({
       {...(submit && { type: 'submit' })}
       className={`${
         menuBtn ? circle : reservation ? long : large ? lg : base
-      } ${className} hover:bg-[#a3a380]  `}
+      } ${className}`}
     >
       <div className="flex flex-col items-center relative overflow-hidden">
         <p
+          aria-label={children}
           className={`relative ${
             mouseOver ? 'bottom-8' : 'bottom-0'
           } transition-all duration-500`}
@@ -76,6 +77,7 @@ const Button = ({
           {children}
         </p>
         <p
+          aria-hidden="true"
           className={`absolute ${
             mouseOver ? 'top-0' : 'top-8'
           } transition-all duration-500`}

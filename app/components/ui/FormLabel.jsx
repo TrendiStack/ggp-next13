@@ -1,24 +1,30 @@
 import FormInput from './FormInput';
 const FormLabel = ({
+  htmlFor,
   label,
   inputType,
-  inputName,
+  name,
   value,
   onChange,
   className,
 }) => {
   return (
-    <label htmlFor={inputName} className={`relative w-full ${className}`}>
+    <label
+      aria-label={label}
+      htmlFor={htmlFor}
+      className={`relative w-full ${className}`}
+    >
       <FormInput
+        id={htmlFor}
         inputType={inputType}
-        inputName={inputName}
+        name={name}
         value={value}
         onChange={onChange}
         className="your-custom-class-here"
       />
       <span
         className={`${
-          inputName === 'message' && 'pt-1'
+          name === 'message' && 'pt-1'
         } absolute left-2 transition-all duration-700 pointer-events-none text-xl lg:text-2xl bg-transparent w-full`}
       >
         {label}:

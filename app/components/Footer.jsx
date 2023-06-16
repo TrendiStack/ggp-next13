@@ -1,13 +1,14 @@
 'use client';
 
-import Link from 'next/link';
-import usePathname from '../hooks/usePathname';
-import SocialIcons from './icons/SocialIcons';
-import MenuFooter from './navigation/MenuFooter';
 import { useEffect } from 'react';
+import Link from 'next/link';
+import MenuFooter from './navigation/MenuFooter';
+import SocialIcons from './icons/SocialIcons';
+import usePathname from '../hooks/usePathname';
 
 const Footer = () => {
   const pathname = usePathname();
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     const body = document.querySelector('body');
@@ -19,6 +20,7 @@ const Footer = () => {
   }, [pathname]);
   return (
     <footer
+      aria-label="Footer"
       className={`
       bg-[#252422]
       ${pathname === '/' ? '' : 'mt-32'}
@@ -28,6 +30,8 @@ const Footer = () => {
     >
       <Link
         href="/"
+        aria-label="Gelato Gelato Pizzeria"
+        title="Gelato Gelato Pizzeria"
         className="font-semibold text-2xl lg:text-4xl cursor-pointer"
       >
         Gelato Gelato Pizzeria
@@ -36,8 +40,11 @@ const Footer = () => {
       <MenuFooter />
       <SocialIcons />
       <div className="w-full h-[1px] bg-neutral-400 my-5"></div>
-      <p className="text-sm lg:text-base">
-        © 2023 Gelato Gelato Pizzeria / All Rights Reserved
+      <p
+        aria-label="© 2023 Gelato Gelato Pizzeria / All Rights Reserved"
+        className="text-sm lg:text-base"
+      >
+        © {currentYear} Gelato Gelato Pizzeria / All Rights Reserved
       </p>
     </footer>
   );

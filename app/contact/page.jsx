@@ -7,7 +7,7 @@ export const metadata = {
 
 const page = () => {
   return (
-    <main>
+    <main aria-label="Contact page">
       <Header route="Contact Us" />
       <div className="mx-[5%] lg:mx-[2%]">
         <ContactForm />

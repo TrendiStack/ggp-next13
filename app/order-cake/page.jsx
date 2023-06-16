@@ -8,12 +8,15 @@ export const metadata = {
 
 const page = () => {
   return (
-    <main>
+    <main aria-label="Order Cake Page">
       <Header route="Build a Cake" />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full mx-auto lg:max-w-[900px] 2xl:max-w-[1200px] mt-32">
+      <section
+        aria-label="Cake builder"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full mx-auto lg:max-w-[900px] 2xl:max-w-[1200px] mt-32"
+      >
         <CakeImage />
         <Checkout />
-      </div>
+      </section>
     </main>
   );
 };

@@ -110,6 +110,17 @@ html {
   @apply text-white;
 }
 
+/* React Time picker */
+
+.react-time-picker__wrapper {
+  @apply border-none !important;
+}
+
+.react-time-picker__inputGroup__divider,
+.react-time-picker__inputGroup__leadingZero {
+  display: contents !important;
+}
+
 /* media queiry for landscape mode on mobile */
 
 @media only screen and (max-width: 900px) and (orientation: landscape) {

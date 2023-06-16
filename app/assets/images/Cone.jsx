@@ -27,6 +27,7 @@ const Cone = ({ pathClassName, svgClassName, loader }) => {
   return (
     <svg
       ref={iconRef}
+      aria-label="Cone svg"
       viewBox="0 0 291 747"
       xmlns="http://www.w3.org/2000/svg"
       className={svgClassName}

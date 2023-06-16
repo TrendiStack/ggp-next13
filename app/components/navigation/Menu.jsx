@@ -60,7 +60,8 @@ const Menu = () => {
   }, [menu]);
 
   return (
-    <div
+    <nav
+      aria-label="Navigation Menu"
       ref={menuRef}
       className={`
      fixed
@@ -77,8 +78,13 @@ const Menu = () => {
       items-center
       `}
     >
-      <ul ref={listRef} className="header-primary grid grid-cols-1 gap-2">
+      <ul
+        aria-label="Menu options"
+        ref={listRef}
+        className="header-primary grid grid-cols-1 gap-2"
+      >
         <li
+          aria-label="Menu"
           onClick={() => {
             setMenu(false);
           }}
@@ -88,6 +94,7 @@ const Menu = () => {
           </Link>
         </li>
         <li
+          aria-label="Order"
           onClick={() => {
             setMenu(false);
           }}
@@ -97,6 +104,7 @@ const Menu = () => {
           </Link>
         </li>
         <li
+          aria-label="Contact"
           onClick={() => {
             setMenu(false);
           }}
@@ -105,15 +113,21 @@ const Menu = () => {
             Contact
           </Link>
         </li>
-        <li className="my-5 text-xl md:text-3xl lg:absolute bottom-10 left-[5%] lg:left-[2%]">
+        <li
+          aria-label="Location and Contact Information"
+          className="my-5 text-xl md:text-3xl lg:absolute bottom-10 left-[5%] lg:left-[2%]"
+        >
           <MenuFooter menuItem />
         </li>
 
-        <li className="lg:absolute bottom-10 right-[5%] lg:right-[2%]">
+        <li
+          aria-label="Social Icons"
+          className="lg:absolute bottom-10 right-[5%] lg:right-[2%]"
+        >
           <SocialIcons />
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 

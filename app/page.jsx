@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <main
       id="main-container"
+      aria-label="Landing Page"
       className="overflow-hidden flex flex-col gap-y-44 lg:gap-y-52 bg-white"
     >
       <CakeMarquee />

@@ -54,7 +54,13 @@ const ScrollAlert = () => {
       text-sm
       "
     >
-      <p className="py-2 px-3 text-white">Scroll</p>
+      <p
+        aria-hidden={isHovered ? 'false' : 'true'}
+        aria-label="Scroll indicator"
+        className="py-2 px-3 text-white"
+      >
+        Scroll
+      </p>
     </div>
   );
 };

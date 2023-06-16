@@ -392,7 +392,7 @@ export const insalate = [
 export const meat = [
   {
     id: 1,
-    name: 'focaccia children sandwich',
+    name: 'focaccia chicken sandwich',
     price: 5.99,
   },
   {

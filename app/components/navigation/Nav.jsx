@@ -7,7 +7,10 @@ import Link from 'next/link';
 const Nav = () => {
   return (
     <>
-      <nav className="navigation bg-transparent sticky w-full z-[1000]">
+      <nav
+        aria-label="Navigation Bar"
+        className="navigation bg-transparent sticky w-full z-[1000]"
+      >
         <HomeIcon />
         <Logo />
         <Button

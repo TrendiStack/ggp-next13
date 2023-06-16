@@ -30,7 +30,10 @@ const ImageReveal = () => {
       });
   }, [ref]);
   return (
-    <div className="h-screen w-screen relative">
+    <section
+      aria-label="Wood oven image reveal"
+      className="h-screen w-screen relative"
+    >
       <div
         ref={ref}
         className="absolute left-[50%] transform -translate-x-1/2 overflow-hidden rounded-full flex justify-center"
@@ -50,7 +53,7 @@ const ImageReveal = () => {
           className="lg:hidden w-[80vw] h-[80vh] object-cover  max-w-none min-w-[80vw] min-h-[80vh]"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

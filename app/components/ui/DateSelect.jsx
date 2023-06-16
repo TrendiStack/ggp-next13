@@ -1,4 +1,5 @@
 'use client';
+
 import { Calendar } from 'react-date-range';
 import { useEffect, useState } from 'react';
 import { formatDate } from '@/app/utils/formatDate';
@@ -37,7 +38,7 @@ const DateSelect = ({ setForm, reservation }) => {
     >
       <p className="flex justify-between px-2">
         <span className="text-xl lg:text-2xl" title="Date">
-          Date
+          Date:
         </span>
         <span title={formatDate(selectedDate)}>{formatDate(selectedDate)}</span>
       </p>

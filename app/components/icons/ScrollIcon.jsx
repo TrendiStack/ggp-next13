@@ -6,7 +6,6 @@ import { TbArrowBigUpFilled } from 'react-icons/tb';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import useMobile from '@/app/hooks/useMobile';
-import scrolltextnoggp from '../../assets/images/scrolltextnoggp.png';
 import useScrolling from '@/app/stores/scrollingStore';
 
 const ScrollIcon = () => {
@@ -78,12 +77,23 @@ const ScrollIcon = () => {
           isMobile ? 'hidden' : 'block'
         }}`}
       >
-        <p className="relative text-4xl font-bold rotate-12 uppercase left-14 top-[8.3rem]">
+        <p
+          aria-hidden="true"
+          className="relative text-4xl font-bold rotate-12 uppercase left-14 top-[8.3rem]"
+        >
           <span className="text-green-800">g</span>
           <span className="text-white">g</span>
           <span className="text-red-600">p</span>
         </p>
-        <Image ref={imgRef} src={scrolltextnoggp} alt="circle scroll text" />
+        <Image
+          ref={imgRef}
+          aria-label="Scroll down indicator"
+          src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/scrolltextnoggp.png"
+          alt="circle scroll text"
+          className="w-full h-auto"
+          width={193}
+          height={197}
+        />
       </div>
       <button
         aria-label="Scroll to Top"
@@ -92,7 +102,7 @@ const ScrollIcon = () => {
         ref={buttonRef}
         className="fixed bottom-24 right-3 mr-[1%] bg-[#a3a380] rounded-full p-6  text-white text-lg lg:text-2xl cursor-pointer z-[997]"
       >
-        <TbArrowBigUpFilled />
+        <TbArrowBigUpFilled aria-label="Arrow up" />
       </button>
     </>
   );

@@ -87,6 +87,7 @@ const ContactForm = () => {
     <div className="relative">
       <FormComplete formCompleted={formCompleted} formSent={formSent} />
       <form
+        aria-label="Contact Form"
         onSubmit={handleSubmit}
         className={`
         ${formSent ? 'opacity-0' : 'opacity-100'}

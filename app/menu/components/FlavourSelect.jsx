@@ -61,7 +61,10 @@ const FlavourSelect = ({ selected, type }) => {
     <>
       <FlavourSelectContainer>
         {scrollValue.atTop === false && (
-          <MdArrowDropUp className="text-red-500 text-5xl absolute top-0 left-1/2 transform animate-pulse -translate-x-1/2 z-50" />
+          <MdArrowDropUp
+            aria-label="Scroll up indicator"
+            className="text-red-500 text-5xl absolute top-0 left-1/2 transform animate-pulse -translate-x-1/2 z-50"
+          />
         )}
         <div
           ref={listContainerRef}
@@ -72,6 +75,7 @@ const FlavourSelect = ({ selected, type }) => {
           relative flex justify-center h-full lg:h-96 2xl:h-[40rem] bg-[#252422] rounded-3xl overflow-y-scroll p-10 hidescrollbar `}
         >
           <UL
+            selected={selected}
             className={`
             ${isMobile ? '' : 'lg:cursor-none '}
             grid grid-cols-2 lg:grid-cols-1 place-content-start gap-5 uppercase w-full cursor-auto text-xs md:text-2xl 2xl:text-6xl`}
@@ -120,7 +124,10 @@ const FlavourSelect = ({ selected, type }) => {
           </UL>
         </div>
         {scrollValue.atBottom === false && (
-          <MdArrowDropDown className="text-red-500 text-5xl absolute bottom-0 left-1/2 transform animate-pulse -translate-x-1/2 z-[999]" />
+          <MdArrowDropDown
+            aria-label="Scroll down indicator"
+            className="text-red-500 text-5xl absolute bottom-0 left-1/2 transform animate-pulse -translate-x-1/2 z-[999]"
+          />
         )}
       </FlavourSelectContainer>
     </>

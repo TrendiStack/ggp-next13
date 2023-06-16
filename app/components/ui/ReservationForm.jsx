@@ -9,6 +9,7 @@ import FormLabel from './FormLabel';
 import axios from 'axios';
 import useFormComplete from '@/app/stores/formCompleteStore';
 import FormComplete from '../FormComplete';
+import TimeSelect from './TimeSelect';
 
 const ReservationForm = () => {
   const formSent = useFormComplete(state => state.formSent);
@@ -96,6 +97,7 @@ const ReservationForm = () => {
     <div className="relative">
       <FormComplete formCompleted={formCompleted} formSent={formSent} />
       <form
+        aria-label="Reservation Form"
         onSubmit={handleSubmit}
         className={`
         ${formSent ? 'opacity-0' : 'opacity-100'}
@@ -104,27 +106,30 @@ const ReservationForm = () => {
         <div className="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-20">
           <div className="w-full">
             <FormLabel
+              htmlFor="name"
               label="Name"
-              inputType="name"
-              inputName="name"
+              inputType="text"
+              name="name"
               onChange={handleChange}
             />
             {error.name && <ErrorText>{error.name}</ErrorText>}
           </div>
           <div className="w-full">
             <FormLabel
+              htmlFor="email"
               label="Email"
               inputType="email"
-              inputName="email"
+              name="email"
               onChange={handleChange}
             />
             {error.email && <ErrorText>{error.email}</ErrorText>}
           </div>
           <div className="w-full">
             <FormLabel
+              htmlFor="phone"
               label="Phone"
-              inputType="phone"
-              inputName="phone"
+              inputType="tel"
+              name="phone"
               onChange={handleChange}
             />
             {error.phone && <ErrorText>{error.phone}</ErrorText>}
@@ -136,19 +141,15 @@ const ReservationForm = () => {
             {error.date && <ErrorText>{error.date}</ErrorText>}
           </div>
           <div className="w-full">
-            <FormLabel
-              label="Time"
-              inputType="time"
-              inputName="time"
-              onChange={handleChange}
-            />
+            <TimeSelect setForm={setForm} reservation />
             {error.time && <ErrorText>{error.time}</ErrorText>}
           </div>
           <div className="w-full">
             <FormLabel
+              htmlFor="guests"
               label="Guests"
-              inputType="guests"
-              inputName="guests"
+              inputType="number"
+              name="guests"
               onChange={handleChange}
             />
             {error.guests && <ErrorText>{error.guests}</ErrorText>}
@@ -156,9 +157,10 @@ const ReservationForm = () => {
         </div>
         <div className="w-full">
           <FormLabel
+            htmlFor="message"
             label="Message"
             inputType="message"
-            inputName="message"
+            name="message"
             onChange={handleChange}
           />
           {error.message && <ErrorText>{error.message}</ErrorText>}
