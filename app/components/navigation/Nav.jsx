@@ -14,7 +14,7 @@ const Nav = () => {
       >
         <HomeIcon />
         <Logo />
-        <div className="flex gap-4 lg:gap-7 fixed right-0 top-5 z-[1000] mx-[5%] lg:mx-[2%]">
+        <div className="flex gap-7 fixed right-0 top-5 z-[1000] mx-[5%] lg:mx-[2%]">
           <CartIcon />
           <Button ariaLabel="Navigation Menu" style="menuBtn" className="">
             open

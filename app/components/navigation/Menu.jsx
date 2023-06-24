@@ -1,6 +1,7 @@
 'use client';
 
 import { gsap } from 'gsap';
+import { useCartStore } from '../../../stores/cartStore.js';
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import MenuFooter from './MenuFooter.jsx';
@@ -9,7 +10,7 @@ import SocialIcons from '../icons/SocialIcons.jsx';
 
 const Menu = () => {
   const { menu, setMenu } = menuStore();
-
+  const { toggleCart } = useCartStore(state => state);
   const menuRef = useRef(null);
   const listRef = useRef(null);
 
@@ -113,6 +114,16 @@ const Menu = () => {
           <Link href="/contact" title="Contact Us">
             Contact
           </Link>
+        </li>
+        <li
+          aria-label="Cart"
+          className="lg:hidden"
+          onClick={() => {
+            setMenu(false);
+            toggleCart();
+          }}
+        >
+          Cart
         </li>
         <li
           aria-label="Location and Contact Information"

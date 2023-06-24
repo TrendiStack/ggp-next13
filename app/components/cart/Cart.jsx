@@ -88,15 +88,22 @@ const Cart = () => {
         {/* Menu Toggle */}
         <BsBoxArrowInRight
           className="absolute right-[5%] lg:right-[2%] top-5 text-3xl cursor-pointer text-white"
-          onClick={toggleCart}
+          onClick={() => {
+            toggleCart();
+            setTimeout(() => {
+              setPage(1);
+            }, 500);
+          }}
         />
 
-        <button
-          onClick={clearCart}
-          className="absolute left-[5%] lg:left-[2%] top-5 font-medium text-black bg-white rounded-md p-2"
-        >
-          clear cart
-        </button>
+        {page === 1 && (
+          <button
+            onClick={clearCart}
+            className="absolute left-[5%] lg:left-[2%] top-5 font-medium text-black bg-white rounded-md p-2"
+          >
+            clear cart
+          </button>
+        )}
 
         {/* Cart Items */}
         {page === 1 && (
