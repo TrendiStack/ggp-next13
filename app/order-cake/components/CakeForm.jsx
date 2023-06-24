@@ -2,10 +2,10 @@
 
 import { cakes, gelato, sorbet } from '../../../data';
 import { useEffect } from 'react';
-import UserInput from '@/app/components/ui/UserInput';
+import UserInput from '../../components/ui/UserInput';
 import CakeLabel from './CakeLabel';
 
-const CakeForm = ({ page, form, setForm, error }) => {
+const CakeForm = ({ form, setForm, error }) => {
   const gelatoFlavours = gelato.map(flavour => flavour.name);
   const sorbetFlavours = sorbet.map(flavour => flavour.name);
   const flavours = cakes.flavours;
@@ -21,7 +21,9 @@ const CakeForm = ({ page, form, setForm, error }) => {
     label: size,
     isDisabled:
       (form.shape === 'rectangle' && size !== `10" x 14"`) ||
-      (form.shape !== 'rectangle' && size === `10" x 14"`),
+      (form.shape !== 'rectangle' && size === `10" x 14"`) ||
+      (form.shape === 'log' && size !== '9"') ||
+      (form.shape !== 'log' && size === '9"'),
   }));
 
   const numbers = Array.from({ length: 10 }, (_, i) => i + 1)
@@ -30,45 +32,33 @@ const CakeForm = ({ page, form, setForm, error }) => {
 
   const handleSelect = selectedValue => {
     const { value } = selectedValue;
-    setForm(prev => ({ ...prev, cake: { ...prev.cake, quantity: value } }));
+    setForm('quantity', value);
     if (value === 'other' || form.quantity.length > 1) {
-      setForm(prev => ({
-        ...prev,
-        cake: { ...prev.cake, customQuantity: '' },
-      }));
+      setForm('customQuantity', '');
     }
   };
   const handleCustomQuantity = e => {
-    setForm(prev => ({
-      ...prev,
-      cake: { ...prev.cake, customQuantity: e.target.value },
-    }));
+    setForm('customQuantity', e.target.value);
   };
 
   const handleFlavour = selectedValue => {
     if (selectedValue && selectedValue.length <= 2) {
-      setForm(prev => ({
-        ...prev,
-        cake: { ...prev.cake, flavour: selectedValue },
-      }));
+      setForm('flavour', selectedValue);
     }
   };
 
   useEffect(() => {
     if (form.shape === 'rectangle') {
-      setForm(prev => ({ ...prev, cake: { ...prev.cake, size: '10" x 14"' } }));
+      setForm('size', '10" x 14"');
+    } else if (form.shape === 'log') {
+      setForm('size', '9"');
     } else {
-      setForm(prev => ({ ...prev, cake: { ...prev.cake, size: '' } }));
+      setForm('size', '');
     }
   }, [form.shape, setForm]);
 
-  useEffect(() => {
-    const option = document.getElementsByClassName('css-9yazq3-control')[2];
-    console.log(option);
-  }, []);
-
   return (
-    <div className={`${page === 1 ? 'grid' : 'hidden'} grid-cols-1 gap-5`}>
+    <div className={`grid grid-cols-1 gap-5`}>
       <div>
         <CakeLabel htmlFor="cakeFlavor" title="Flavours">
           Flavours - <span className="text-[70%]">Pick up to two*</span>
@@ -90,12 +80,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
         <UserInput
           id="cakeShape"
           inputType="select"
-          onChange={value =>
-            setForm(prev => ({
-              ...prev,
-              cake: { ...prev.cake, shape: value.value },
-            }))
-          }
+          onChange={value => setForm('shape', value.value)}
           options={shapes}
           value={form.shape}
           error={error.shape}
@@ -108,12 +93,7 @@ const CakeForm = ({ page, form, setForm, error }) => {
         <UserInput
           id="cakeSize"
           inputType="select"
-          onChange={value =>
-            setForm(prev => ({
-              ...prev,
-              cake: { ...prev.cake, size: value.value },
-            }))
-          }
+          onChange={value => setForm('size', value.value)}
           options={sizes}
           value={form.size}
           error={error.size}

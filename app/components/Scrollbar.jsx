@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import menuStore from '../stores/menuStore';
-import useScrolling from '../stores/scrollingStore';
-import useMobile from '../hooks/useMobile';
+import { useEffect, useRef, useState } from 'react';
+import menuStore from '../../stores/menuStore';
+import useMobile from '../../hooks/useMobile';
+import useScrolling from '../../stores/scrollingStore';
 
 const Scrollbar = () => {
   const [mouseOver, setMouseOver] = useState(false);

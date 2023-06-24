@@ -2,45 +2,63 @@
 
 import { Calendar } from 'react-date-range';
 import { useEffect, useState } from 'react';
-import { formatDate } from '@/app/utils/formatDate';
+import { formatDate } from '../../../utils/formatDate';
 
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
-const DateSelect = ({ setForm, reservation }) => {
+const DateSelect = ({ setForm, reservation, error }) => {
   const styles = {
-    cakeOrder: 'cursor-pointer border-2 border-white mt-2 rounded-md p-2',
+    cakeOrder: `cursor-pointer border-2 ${
+      Boolean(error) ? 'border-red-700' : 'border-white'
+    } mt-2 rounded-md p-2`,
     reservation:
       'cursor-pointer bg-transparent outline-none border-b-2 border-[#a3a380] w-full pb-3 rounded-none',
   };
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState();
   const [calendarOpen, setCalendarOpen] = useState(false);
 
   const handleSelect = date => {
     setSelectedDate(date);
     setCalendarOpen(false);
-    setForm(prev => ({
-      ...prev,
-      date: date,
-    }));
+    if (reservation) {
+      setForm(prev => ({ ...prev, date: date }));
+    } else {
+      setForm('date', date);
+    }
   };
 
   useEffect(() => {
-    setForm(prev => ({
-      ...prev,
-      date: selectedDate,
-    }));
-  }, [selectedDate, setForm]);
+    if (reservation) {
+      setForm(prev => ({ ...prev, date: selectedDate }));
+    }
+  }, [reservation, selectedDate, setForm]);
   return (
     <div
       onClick={() => setCalendarOpen(true)}
       className={reservation ? styles.reservation : styles.cakeOrder}
     >
       <p className="flex justify-between px-2">
-        <span className="text-xl lg:text-2xl" title="Date">
-          Date:
+        <span
+          className={`
+          ${
+            Boolean(error)
+              ? 'text-red-700'
+              : reservation
+              ? 'text-black'
+              : 'text-white'
+          }
+        ${reservation ? 'lg:text-2xl' : 'lg:text-xl'}
+        text-lg `}
+          title="Date"
+        >
+          {reservation ? 'Date' : 'Pickup Date'}
         </span>
-        <span title={formatDate(selectedDate)}>{formatDate(selectedDate)}</span>
+        {selectedDate && (
+          <span title={formatDate(selectedDate)}>
+            {formatDate(selectedDate)}
+          </span>
+        )}
       </p>
 
       {calendarOpen && (

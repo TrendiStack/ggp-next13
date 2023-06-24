@@ -81,7 +81,7 @@ const cakeSchema = z.object({
     .max(2),
   shape: z
     .string()
-    .min(5, {
+    .min(3, {
       message: 'Please select a shape',
     })
     .max(10),

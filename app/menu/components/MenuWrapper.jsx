@@ -1,6 +1,6 @@
 'use client';
 
-import { CursorProvider } from '@/app/context/CursorContext';
+import { CursorProvider } from '../../../context/CursorContext';
 import { useEffect, useState } from 'react';
 import AnimatedMenu from './AnimatedMenu';
 import UnanimatedMenu from './UnanimatedMenu';

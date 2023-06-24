@@ -5,8 +5,8 @@ import { ScrollTrigger } from 'gsap/all';
 import { TbArrowBigUpFilled } from 'react-icons/tb';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import useMobile from '@/app/hooks/useMobile';
-import useScrolling from '@/app/stores/scrollingStore';
+import useMobile from '../../../hooks/useMobile';
+import useScrolling from '../../../stores/scrollingStore';
 
 const ScrollIcon = () => {
   const setReturnToTop = useScrolling(state => state.setReturnToTop);

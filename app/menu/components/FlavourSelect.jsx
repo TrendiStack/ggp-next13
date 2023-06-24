@@ -3,9 +3,7 @@
 import { MdArrowDropUp, MdArrowDropDown } from 'react-icons/md';
 import { useContext, useEffect, useRef, useState } from 'react';
 import FlavourSelectContainer from './FlavourSelectContainer';
-import LI from './LI';
-import UL from './UL';
-
+import { CursorContext } from '../../../context/CursorContext';
 import {
   gelato,
   sorbet,
@@ -16,8 +14,9 @@ import {
   pasta,
   pizza,
 } from '../../../data';
-import { CursorContext } from '@/app/context/CursorContext';
-import useMobile from '@/app/hooks/useMobile';
+import useMobile from '../../../hooks/useMobile';
+import LI from './LI';
+import UL from './UL';
 
 const FlavourSelect = ({ selected, type }) => {
   const { handleMouseOut, handleMouseOver } = useContext(CursorContext);

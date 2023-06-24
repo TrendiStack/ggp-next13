@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import menuStore from '@/app/stores/menuStore.js';
+import menuStore from '../../../stores/menuStore';
 
 const Logo = () => {
   const { menu } = menuStore();

@@ -1,7 +1,7 @@
 'use client';
 
-import Cone from '../assets/images/Cone';
 import { TbConfetti } from 'react-icons/tb';
+import Cone from '../assets/images/Cone';
 
 const FormComplete = ({ formCompleted, formSent }) => {
   return (

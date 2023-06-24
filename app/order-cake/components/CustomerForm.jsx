@@ -1,10 +1,10 @@
-import DateSelect from '@/app/components/ui/DateSelect';
-import UserInput from '@/app/components/ui/UserInput';
 import CakeLabel from './CakeLabel';
+import DateSelect from '../../components/ui/DateSelect';
+import UserInput from '../../components/ui/UserInput';
 
-const CustomerForm = ({ page, setForm, handleCustomer, error }) => {
+const CustomerForm = ({ setForm, handleCustomer, error }) => {
   return (
-    <div className={`${page === 2 ? 'grid' : 'hidden'} grid-cols-1 gap-2 `}>
+    <div className={`grid grid-cols-1 gap-2 `}>
       <div>
         <CakeLabel htmlFor="name" title="Name">
           Name
@@ -50,7 +50,7 @@ const CustomerForm = ({ page, setForm, handleCustomer, error }) => {
           required
         />
       </div>
-      <DateSelect setForm={setForm} />
+      <DateSelect setForm={setForm} error={error.date} />
       <div>
         <CakeLabel htmlFor="message" title="Special instructions">
           Special instructions

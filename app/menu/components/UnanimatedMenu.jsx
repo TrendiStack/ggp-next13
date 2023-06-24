@@ -1,9 +1,9 @@
 import FlavourButton from './FlavourButton';
 import FlavourContainer from './FlavourContainer';
 import FlavourSelect from './FlavourSelect';
-import Header from '@/app/components/Header';
+import Header from '../../components/Header';
 import ScrollAlert from './ScrollAlert';
-import useMobile from '@/app/hooks/useMobile';
+import useMobile from '../../../hooks/useMobile';
 
 const UnanimatedMenu = ({ selected, setSelected }) => {
   const isMobile = useMobile();

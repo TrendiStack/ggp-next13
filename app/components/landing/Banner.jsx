@@ -1,6 +1,5 @@
-import Image from 'next/image';
-
 import Button from '../ui/Button';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Banner = () => {
@@ -27,7 +26,7 @@ const Banner = () => {
           gelato and pizza.
         </p>
         <Link href="/menu">
-          <Button ariaLabel="menu" large className="mt-14 md:mt-20">
+          <Button ariaLabel="menu" style="large" className="mt-14 md:mt-20">
             menu
           </Button>
         </Link>

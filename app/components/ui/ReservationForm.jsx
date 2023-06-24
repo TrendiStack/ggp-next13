@@ -1,15 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { validateReservation } from '@/app/utils/validation';
+import { validateReservation } from '../../../utils/validation';
 import Button from './Button';
 import DateSelect from './DateSelect';
 import ErrorText from '../ErrorText';
 import FormLabel from './FormLabel';
 import axios from 'axios';
-import useFormComplete from '@/app/stores/formCompleteStore';
+import useFormComplete from '../../../stores/formCompleteStore';
 import FormComplete from '../FormComplete';
 import TimeSelect from './TimeSelect';
+import toaster from 'react-hot-toast';
 
 const ReservationForm = () => {
   const formSent = useFormComplete(state => state.formSent);
@@ -62,6 +63,7 @@ const ReservationForm = () => {
         withCredentials: true,
       });
       setFormSent(true);
+      toaster.success('Request submitted!');
       setTimeout(() => {
         setFormCompleted(true);
       }, 2000);
@@ -106,30 +108,33 @@ const ReservationForm = () => {
         <div className="flex flex-col lg:flex-row gap-6 md:gap-10 lg:gap-20">
           <div className="w-full">
             <FormLabel
+              id="name"
               htmlFor="name"
-              label="Name"
-              inputType="text"
               name="name"
+              inputType="text"
+              label="Name"
               onChange={handleChange}
             />
             {error.name && <ErrorText>{error.name}</ErrorText>}
           </div>
           <div className="w-full">
             <FormLabel
+              id="email"
               htmlFor="email"
-              label="Email"
-              inputType="email"
               name="email"
+              inputType="email"
+              label="Email"
               onChange={handleChange}
             />
             {error.email && <ErrorText>{error.email}</ErrorText>}
           </div>
           <div className="w-full">
             <FormLabel
+              id="phone"
               htmlFor="phone"
-              label="Phone"
-              inputType="tel"
               name="phone"
+              inputType="tel"
+              label="Phone"
               onChange={handleChange}
             />
             {error.phone && <ErrorText>{error.phone}</ErrorText>}
@@ -146,6 +151,7 @@ const ReservationForm = () => {
           </div>
           <div className="w-full">
             <FormLabel
+              id="guests"
               htmlFor="guests"
               label="Guests"
               inputType="number"
@@ -157,6 +163,7 @@ const ReservationForm = () => {
         </div>
         <div className="w-full">
           <FormLabel
+            id="message"
             htmlFor="message"
             label="Message"
             inputType="message"
@@ -168,7 +175,7 @@ const ReservationForm = () => {
         <div>
           <Button
             ariaLabel="Send Form"
-            large
+            style="large"
             submit
             contact
             className="text-base 2xl:text-2xl"

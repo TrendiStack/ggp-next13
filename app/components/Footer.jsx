@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import MenuFooter from './navigation/MenuFooter';
 import SocialIcons from './icons/SocialIcons';
-import usePathname from '../hooks/usePathname';
+import usePathname from '../../hooks/usePathname';
 
 const Footer = () => {
   const pathname = usePathname();

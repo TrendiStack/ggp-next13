@@ -1,5 +1,3 @@
-'use client';
-
 const CakeButton = ({ onClick, children, className }) => {
   return (
     <button

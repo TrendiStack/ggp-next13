@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import EmailSender from '../../utils/sendEmail';
+import EmailSender from '../../../utils/sendEmail';
 
 export async function POST(request) {
   const body = await request.json();

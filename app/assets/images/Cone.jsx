@@ -2,7 +2,7 @@
 
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
-import formCompleteStore from '../../stores/formCompleteStore';
+import formCompleteStore from '../../../stores/formCompleteStore';
 
 const Cone = ({ pathClassName, svgClassName, loader }) => {
   const { formSent, formCompleted } = formCompleteStore();

@@ -1,4 +1,4 @@
-import { CursorContext } from '@/app/context/CursorContext';
+import { CursorContext } from '../../../context/CursorContext';
 import { gsap } from 'gsap';
 import { useContext, useEffect, useRef, useState } from 'react';
 

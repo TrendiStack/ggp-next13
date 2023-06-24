@@ -3,11 +3,11 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import Button from './ui/Button';
 import DeliveryIcon from './icons/DeliveryIcon';
 import Image from 'next/image';
 import Link from 'next/link';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // eslint-disable-next-line react/display-name
 const Header = forwardRef(({ route }, ref) => {
@@ -79,7 +79,6 @@ const Header = forwardRef(({ route }, ref) => {
                     src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/DoorDash+-+jpeg.png"
                     title="DoorDash"
                   />
-
                   <DeliveryIcon
                     href="https://www.ubereats.com/ca/store/gelato-gelato-pizzeria/TcypftTcQp-c0ym2D0KPRQ"
                     src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/Uber+Eats+-+jpeg.png"
@@ -97,7 +96,7 @@ const Header = forwardRef(({ route }, ref) => {
 
             <p
               aria-label="Restaurant Description"
-              className="opacity-0 xl:opacity-100 absolute bottom-12 left-10 text-base 2xl:text-xl font-light text-right w-[20rem] 2xl:w-[28rem] text-black"
+              className="opacity-0 xl:opacity-100 absolute bottom-12 left-9 font-light text-right text-black text-lg 2xl:text-xl w-[15rem] 2xl:w-[25rem]"
             >
               Savor the authentic flavors of Italy at Gelato Gelato, located in
               the heart of Vaughan. Our menu is a celebration of Italian
@@ -139,20 +138,20 @@ const Header = forwardRef(({ route }, ref) => {
             </div>
           </div>
           {(route === 'Contact Us' || route === 'Reservation') && (
-            <Button ariaLabel="Call for Catering">
+            <Button ariaLabel="Call for Catering" style="base">
               For Catering Call{' '}
               <Link href="tel:+1 905-851-0400">(905) 851-0400</Link>{' '}
             </Button>
           )}
           {route === 'Our Menu' && (
-            <Button ariaLabel="View full menu">
+            <Button ariaLabel="View full menu" style="base">
               <Link href="menu.pdf" target="_blank">
                 Full Menu
               </Link>
             </Button>
           )}
           {route === 'Build a Cake' && (
-            <Button ariaLabel="Reservation" className="lg:hidden">
+            <Button ariaLabel="Reservation" style="base" className="lg:hidden">
               <Link href="/reservation">Reserve a Table</Link>
             </Button>
           )}

@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import MenuFooter from './MenuFooter.jsx';
-import SocialIcons from '../icons/SocialIcons.jsx';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import menuStore from '../../stores/menuStore.js';
+import MenuFooter from './MenuFooter.jsx';
+import menuStore from '../../../stores/menuStore.js';
+import SocialIcons from '../icons/SocialIcons.jsx';
+
 const Menu = () => {
   const { menu, setMenu } = menuStore();
 

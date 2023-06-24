@@ -420,6 +420,6 @@ export const meat = [
 export const cakes = {
   flavours: ['chocolate', 'vanilla', 'strawberry', 'lemon', 'raspberry'],
   excluded: ['bilberry', 'blackberry', 'raspberry', 'cream caramel', 'malaga'],
-  shapes: ['round', 'rectangle', 'heart'],
-  sizes: ['8"', '10"', '10" x 14"'],
+  shapes: ['round', 'rectangle', 'heart', 'log'],
+  sizes: ['8"', '9"', '10"', '10" x 14"'],
 };

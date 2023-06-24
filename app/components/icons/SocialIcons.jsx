@@ -1,8 +1,8 @@
-import { CgFacebook } from 'react-icons/cg';
 import { AiOutlineInstagram, AiOutlineGoogle } from 'react-icons/ai';
+import { CgFacebook } from 'react-icons/cg';
 import { FaTripadvisor } from 'react-icons/fa';
-import menuStore from '../../stores/menuStore.js';
 import Link from 'next/link';
+import menuStore from '../../../stores/menuStore.js';
 
 const SocialIcons = () => {
   const { menu } = menuStore();

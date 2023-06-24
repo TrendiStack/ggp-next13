@@ -20,7 +20,6 @@ const FormLabel = ({
         name={name}
         value={value}
         onChange={onChange}
-        className="your-custom-class-here"
       />
       <span
         className={`${

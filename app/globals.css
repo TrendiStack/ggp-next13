@@ -17,12 +17,12 @@ body {
 
 input:focus ~ span,
 input:not(:placeholder-shown) ~ span {
-  @apply transform -translate-y-6 text-lg lg:text-xl;
+  @apply transform -translate-y-6;
 }
 
 textarea:focus ~ span,
 textarea:not(:placeholder-shown) ~ span {
-  @apply transform -translate-y-8 text-lg lg:text-xl;
+  @apply transform -translate-y-8;
 }
 
 /* Text */

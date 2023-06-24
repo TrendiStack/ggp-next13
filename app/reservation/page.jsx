@@ -9,7 +9,7 @@ const page = () => {
   return (
     <main aria-label="Reservation Page">
       <Header route="Reservation" />
-      <div className="mx-[5%] lg:mx-[2%] ">
+      <div className="mx-[5%] lg:mx-[2%]">
         <ReservationForm />
       </div>
     </main>

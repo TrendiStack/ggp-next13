@@ -1,13 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import FormLabel from './ui/FormLabel';
-import ErrorText from './ErrorText';
-import Button from './ui/Button';
+import { validateContact } from '../../utils/validation';
 import axios from 'axios';
-import { validateContact } from '../utils/validation';
+import Button from './ui/Button';
+import ErrorText from './ErrorText';
 import FormComplete from './FormComplete';
-import useFormComplete from '../stores/formCompleteStore';
+import FormLabel from './ui/FormLabel';
+import useFormComplete from '../../stores/formCompleteStore';
+import toaster from 'react-hot-toast';
 
 const ContactForm = () => {
   const formSent = useFormComplete(state => state.formSent);
@@ -28,6 +29,9 @@ const ContactForm = () => {
     email: '',
     message: '',
   });
+
+  console.log('form', form);
+  console.log('error', error);
   const handleChange = e => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
@@ -53,6 +57,7 @@ const ContactForm = () => {
         withCredentials: true,
       });
       setFormSent(true);
+      toaster.success('Message sent successfully!');
       setTimeout(() => {
         setFormCompleted(true);
       }, 2000);
@@ -95,9 +100,11 @@ const ContactForm = () => {
       >
         <div className="w-full">
           <FormLabel
+            type="text"
+            htmlFor="subject"
+            name="subject"
+            inputType="text"
             label="Subject"
-            inputType="subject"
-            inputName="subject"
             onChange={handleChange}
           />
           {error.subject && <ErrorText>{error.subject}</ErrorText>}
@@ -105,27 +112,33 @@ const ContactForm = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-6 md:gap-10 lg:gap-20">
           <div className="w-full">
             <FormLabel
+              type="text"
+              htmlFor="name"
+              name="name"
+              inputType="text"
               label="Name"
-              inputType="name"
-              inputName="name"
               onChange={handleChange}
             />
             {error.name && <ErrorText>{error.name}</ErrorText>}
           </div>
           <div className="w-full">
             <FormLabel
+              type="text"
+              htmlFor="phone"
+              name="phone"
+              inputType="tel"
               label="Phone"
-              inputType="phone"
-              inputName="phone"
               onChange={handleChange}
             />
             {error.phone && <ErrorText>{error.phone}</ErrorText>}
           </div>
           <div className="w-full">
             <FormLabel
-              label="Email"
+              type="text"
+              htmlFor="email"
+              name="email"
               inputType="email"
-              inputName="email"
+              label="Email"
               onChange={handleChange}
             />
             {error.email && <ErrorText>{error.email}</ErrorText>}
@@ -133,9 +146,11 @@ const ContactForm = () => {
         </div>
         <div className="w-full">
           <FormLabel
-            label="Message"
+            type="text"
+            htmlFor="message"
+            name="message"
             inputType="message"
-            inputName="message"
+            label="Message"
             onChange={handleChange}
           />
           {error.message && <ErrorText>{error.message}</ErrorText>}
@@ -143,7 +158,7 @@ const ContactForm = () => {
         <div>
           <Button
             ariaLabel="Send Form"
-            large
+            style="large"
             submit
             className="text-base 2xl:text-2xl"
           >

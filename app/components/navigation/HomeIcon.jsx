@@ -1,7 +1,7 @@
 'use client';
 
-import Cone from '@/app/assets/images/Cone';
-import menuStore from '@/app/stores/menuStore.js';
+import Cone from '../../assets/images/Cone';
+import menuStore from '../../../stores/menuStore';
 
 const HomeIcon = () => {
   const { menu } = menuStore();

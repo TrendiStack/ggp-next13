@@ -71,7 +71,7 @@ const RestaurantHours = () => {
               aria-label="Dining closed"
               className="text-zinc-600 text-xl md:text-3xl"
             >
-              *Dining closed from 3PM - 5PM*
+              *Kitchen closed from 3-5PM Tuesday to Saturday*
             </p>
           </div>
         </div>

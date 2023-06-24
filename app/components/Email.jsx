@@ -1,6 +1,5 @@
 import {
   Body,
-  Button,
   Container,
   Head,
   Heading,
@@ -27,7 +26,7 @@ const Email = ({ form }) => {
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
             <Section className="mt-[32px]">
               <Img
-                src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggplogo_with_bg.png"
+                src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/ggplogo_with_bg.png"
                 width="300"
                 height="120"
                 alt="ggp logo"
@@ -64,7 +63,7 @@ const Email = ({ form }) => {
 
               {form.date && form.date !== 'Invalid Date' && (
                 <Text className="text-black text-[14px] leading-[24px]">
-                  Date: {form.date}
+                  {form.cart ? 'Pickup' : 'Date'}: {form.date}
                 </Text>
               )}
               {form.time && (
@@ -79,27 +78,34 @@ const Email = ({ form }) => {
               )}
 
               <Text className="text-black text-[14px] leading-[24px]">
-                Message: {form.message}
+                Special Instructions: {form.message}
               </Text>
 
-              {form.cake && form.cake.flavour && (
+              {form.cart && (
                 <Section className="mt-[32px]">
                   <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
                     Cake Order
                   </Heading>
-                  <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
-                  <Text className="text-black text-[14px] leading-[24px]">
-                    Flavour: {form.cake.flavour}
-                  </Text>
-                  <Text className="text-black text-[14px] leading-[24px]">
-                    Shape: {form.cake.shape}
-                  </Text>
-                  <Text className="text-black text-[14px] leading-[24px]">
-                    Size: {form.cake.size}
-                  </Text>
-                  <Text className="text-black text-[14px] leading-[24px]">
-                    quantity: {form.cake.quantity}
-                  </Text>
+                  {form.cart?.map((cake, index) => (
+                    <Section key={index} className="mt-[24px]">
+                      <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
+                      <Text className="text-black text-lg font-medium leading-[24px]">
+                        Cake {index + 1}
+                      </Text>
+                      <Text className="text-black text-[14px] leading-[24px]">
+                        Flavour: {cake.flavour}
+                      </Text>
+                      <Text className="text-black text-[14px] leading-[24px]">
+                        Shape: {cake.shape}
+                      </Text>
+                      <Text className="text-black text-[14px] leading-[24px]">
+                        Size: {cake.size}
+                      </Text>
+                      <Text className="text-black text-[14px] leading-[24px]">
+                        quantity: {cake.quantity}
+                      </Text>
+                    </Section>
+                  ))}
                 </Section>
               )}
             </Section>

@@ -1,12 +1,15 @@
 import { Raleway } from 'next/font/google';
+
 import Nav from './components/navigation/Nav';
 import Footer from './components/Footer';
 import Scrollbar from './components/Scrollbar';
 import ClientOnly from './components/hydration/ClientOnly';
 import LenisSmoothScroll from './components/LenisSmoothScroll';
+import ScrollIcon from './components/icons/ScrollIcon';
+import CartWrapper from './components/CartWrapper';
 
 import './globals.css';
-import ScrollIcon from './components/icons/ScrollIcon';
+import { Toaster } from 'react-hot-toast';
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -129,9 +132,11 @@ export default function RootLayout({ children }) {
       <body className={`${raleway.className}`}>
         <Nav />
         <ClientOnly>
+          <Toaster position="top-center" reverseOrder={false} />
           <ScrollIcon />
           <LenisSmoothScroll />
           <Scrollbar />
+          <CartWrapper />
         </ClientOnly>
         {children}
         <Footer />

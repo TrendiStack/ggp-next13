@@ -1,7 +1,7 @@
 'use client';
 
-import useAtBottom from '../hooks/useAtBottom';
-import useScroll from '../hooks/useScroll';
+import useAtBottom from '../../hooks/useAtBottom';
+import useScroll from '../../hooks/useScroll';
 
 const LenisSmoothScroll = () => {
   useScroll();

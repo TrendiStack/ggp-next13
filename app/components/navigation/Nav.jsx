@@ -1,8 +1,9 @@
 import Button from '../ui/Button';
+import CartIcon from './CartIcon';
 import HomeIcon from './HomeIcon';
+import Link from 'next/link';
 import Logo from './Logo';
 import Menu from './Menu';
-import Link from 'next/link';
 
 const Nav = () => {
   return (
@@ -13,17 +14,16 @@ const Nav = () => {
       >
         <HomeIcon />
         <Logo />
-        <Button
-          ariaLabel="Navigation Menu"
-          menuBtn
-          className="fixed right-0 top-5 z-[1000] mx-[5%] lg:mx-[2%]"
-        >
-          open
-        </Button>
+        <div className="flex gap-4 lg:gap-7 fixed right-0 top-5 z-[1000] mx-[5%] lg:mx-[2%]">
+          <CartIcon />
+          <Button ariaLabel="Navigation Menu" style="menuBtn" className="">
+            open
+          </Button>
+        </div>
 
         <div className="">
           <Link href="/reservation">
-            <Button ariaLabel="Reservation" reservation>
+            <Button ariaLabel="Reservation" style="reservation">
               Reservation
             </Button>
           </Link>

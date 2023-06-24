@@ -1,8 +1,8 @@
 'use client';
 
-import useScrolling from '@/app/stores/scrollingStore';
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
+import useScrolling from '../../../stores/scrollingStore';
 
 const CakeMarquee = () => {
   const atBottom = useScrolling(state => state.atBottom);

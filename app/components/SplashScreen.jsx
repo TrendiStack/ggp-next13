@@ -1,7 +1,7 @@
 'use client';
 
 import { gsap } from 'gsap';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const SplashScreen = ({ hasMounted = true }) => {
   const container = useRef(null);
