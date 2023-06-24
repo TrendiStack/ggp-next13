@@ -25,7 +25,7 @@ class EmailSender {
   async sendEmail() {
     const emailHtml = render(<Email form={this.form} />);
     const msg = {
-      to: 'terel.phillips23@gmail.com',
+      to: 'info@gelatogelato.ca',
       from: 'info@gelatogelato.ca',
       subject: 'GGP Inquiry',
       html: emailHtml,
@@ -41,7 +41,7 @@ class EmailSender {
   async sendCakeEmail() {
     const emailHtml = render(<Email form={this.form} />);
     const msg = {
-      to: 'terel.phillips23@gmail.com',
+      to: 'info@gelatogelato.ca',
       from: 'info@gelatogelato.ca',
       subject: 'GGP Cake Order',
       html: emailHtml,
