@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     domains: [
       'images.unsplash.com',
-      'bobward-image-bucket.s3.ca-central-1.amazonaws.com',
+      'gelatogelatobucket.s3.us-east-2.amazonaws.com',
     ],
   },
 };

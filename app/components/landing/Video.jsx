@@ -12,7 +12,7 @@ const Video = () => {
       </div>
       <video
         aria-label="Dining video"
-        src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/ggpvideo.mp4"
+        src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-video.mp4"
         className="mb-14 md:mb-0 h-[50vh] lg:h-full w-full object-cover order-first md:order-last"
         autoPlay
         loop

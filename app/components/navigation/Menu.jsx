@@ -117,7 +117,7 @@ const Menu = () => {
         </li>
         <li
           aria-label="Cart"
-          className="lg:hidden"
+          className="lg:hidden cursor-pointer"
           onClick={() => {
             setMenu(false);
             toggleCart();

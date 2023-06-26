@@ -26,7 +26,7 @@ const Email = ({ form }) => {
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
             <Section className="mt-[32px]">
               <Img
-                src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/ggplogo_with_bg.png"
+                src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-email-image.png"
                 width="300"
                 height="120"
                 alt="ggp logo"

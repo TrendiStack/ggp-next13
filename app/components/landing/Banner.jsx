@@ -13,7 +13,7 @@ const Banner = () => {
         <br /> Fresh daily
       </h1>
       <Image
-        src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/gelatogelatopizzeria_hero_.jpg"
+        src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-wood-bg.jpg"
         alt="hero"
         className="w-full h-[50%] lg:h-[600px] object-cover"
         width={1920}

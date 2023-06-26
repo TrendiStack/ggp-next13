@@ -88,7 +88,7 @@ const ScrollIcon = () => {
         <Image
           ref={imgRef}
           aria-label="Scroll down indicator"
-          src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/scrolltextnoggp.png"
+          src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-scrolldown-text.png"
           alt="circle scroll text"
           className="w-full h-auto"
           width={193}

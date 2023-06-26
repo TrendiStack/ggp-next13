@@ -24,7 +24,7 @@ const CartItem = ({ item }) => {
   return (
     <article className="flex gap-5 bg-[#a3a380] rounded-lg p-2">
       <Image
-        src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/cake_no_bg.png"
+        src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-cake-nobg.png"
         alt="cake"
         className="min-w-[9rem] max-w-[9rem] p-4"
         width={100}

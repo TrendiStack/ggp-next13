@@ -1,5 +1,5 @@
 import { Raleway } from 'next/font/google';
-
+import { Toaster } from 'react-hot-toast';
 import Nav from './components/navigation/Nav';
 import Footer from './components/Footer';
 import Scrollbar from './components/Scrollbar';
@@ -9,7 +9,6 @@ import ScrollIcon from './components/icons/ScrollIcon';
 import CartWrapper from './components/CartWrapper';
 
 import './globals.css';
-import { Toaster } from 'react-hot-toast';
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -41,7 +40,7 @@ export const metadata = {
   ],
   author: [{ name: 'Gelato Gelato Pizzeria', email: 'info@gelatogelato.ca' }],
   image:
-    'https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggpmetaimage.png',
+    'https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-email-image.png',
 
   openGraph: {
     type: 'website',
@@ -57,7 +56,7 @@ export const metadata = {
     defaultImageHeight: '630',
     images: [
       {
-        url: 'https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggplogo_with_bg.png',
+        url: 'https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-email-image.png',
         width: '1200',
         height: '630',
         alt: 'Gelato Gelato Pizzeria logo',
@@ -71,21 +70,13 @@ export const metadata = {
     site: '@gelatogelato',
     cardType: 'summary_large_image',
     image: {
-      url: 'https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggplogo_with_bg.png',
+      url: 'https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-email-image.png',
       alt: 'Gelato Gelato Pizzeria logo',
       width: '1200',
       height: '630',
     },
     creator: '@gelatogelato',
   },
-
-  // facebook: {
-  //   appId: 'GelatoGelatoPizzeria',
-  // },
-
-  // googleAnalytics: {
-  //   id: 'UA-206896-1',
-  // },
 
   icon: {
     href: 'favicon.ico',

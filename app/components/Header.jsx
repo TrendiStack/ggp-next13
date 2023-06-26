@@ -76,17 +76,17 @@ const Header = forwardRef(({ route }, ref) => {
                 <div className="flex gap-4">
                   <DeliveryIcon
                     href="https://order.online/store/gelato-gelato-pizzeria-vaughan-2415193/?hideModal=true&pickup=true"
-                    src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/DoorDash+-+jpeg.png"
+                    src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-doordash.png"
                     title="DoorDash"
                   />
                   <DeliveryIcon
                     href="https://www.ubereats.com/ca/store/gelato-gelato-pizzeria/TcypftTcQp-c0ym2D0KPRQ"
-                    src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/Uber+Eats+-+jpeg.png"
+                    src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-skipthedishes.png"
                     title="Uber Eats"
                   />
                   <DeliveryIcon
                     href="https://www.skipthedishes.com/gelato-gelato-pizzeria"
-                    src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/SkipTheDishes+-+png.png"
+                    src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-ubereats.png"
                     title="Skip The Dishes"
                   />
                 </div>
@@ -105,7 +105,7 @@ const Header = forwardRef(({ route }, ref) => {
             </p>
           </div>
           <Image
-            src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/caramel-cone.svg"
+            src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-caramel-cone.svg"
             alt="Ice cream cone"
             priority={true}
             className="cone absolute top-[70%] lg:top-[65%] left-1/2 transform -translate-x-1/2 max-w-[50%] md:max-w-[100%] "
@@ -128,7 +128,7 @@ const Header = forwardRef(({ route }, ref) => {
             <div className="hidden lg:flex items-center h-screen w-full bg-[#60604c] rounded-l-full">
               <Image
                 ref={emptyConeRef}
-                src="https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/empty-conev2.png"
+                src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/gg-empty-cone.png"
                 alt="Empty ice cream cone"
                 className="ml-36 rotate-[20deg] w-[30%] 2xl:w-auto ]"
                 width={500}

@@ -23,7 +23,9 @@ const CakeForm = ({ form, setForm, error }) => {
       (form.shape === 'rectangle' && size !== `10" x 14"`) ||
       (form.shape !== 'rectangle' && size === `10" x 14"`) ||
       (form.shape === 'log' && size !== '9"') ||
-      (form.shape !== 'log' && size === '9"'),
+      (form.shape !== 'log' && size === '9"') ||
+      (form.shape === 'heart' && size !== '10"') ||
+      (form.shape !== 'heart' && size === '10"'),
   }));
 
   const numbers = Array.from({ length: 10 }, (_, i) => i + 1)
@@ -52,6 +54,8 @@ const CakeForm = ({ form, setForm, error }) => {
       setForm('size', '10" x 14"');
     } else if (form.shape === 'log') {
       setForm('size', '9"');
+    } else if (form.shape === 'heart') {
+      setForm('size', '10"');
     } else {
       setForm('size', '');
     }

@@ -20,7 +20,7 @@ export async function POST(request) {
               new Date(customer.date)
             )}\nSpecial Instructions: ${customer.message}`,
             images: [
-              'https://bobward-image-bucket.s3.ca-central-1.amazonaws.com/ggp/cake_no_bg.png',
+              'https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-cake-nobg.png',
             ],
           },
           unit_amount: item.price * 100,
@@ -33,10 +33,8 @@ export async function POST(request) {
       payment_method_types: ['card'],
       line_items,
       mode: 'payment',
-      success_url: `${
-        process.env.URL || 'http://localhost:3000'
-      }/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: request.headers.origin,
+      success_url: `${process.env.URL}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.URL}/`,
       metadata: {
         cart: JSON.stringify(cart),
         customer: JSON.stringify(customer),
