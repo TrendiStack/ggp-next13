@@ -331,7 +331,7 @@ export const antipasti = [
   },
   {
     id: 10,
-    name: 'fagoli al forno',
+    name: 'fagioli al forno',
     price: 5.99,
   },
   {
