@@ -39,7 +39,8 @@ const CakeForm = ({ form, setForm, error }) => {
     }
   };
   const handleCustomQuantity = e => {
-    setForm('customQuantity', e.target.value);
+    const valueToNumber = Number(e.target.value);
+    setForm('customQuantity', valueToNumber);
   };
 
   const handleFlavour = selectedValue => {
