@@ -15,7 +15,7 @@ const Banner = () => {
       <Image
         src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-wood-bg.jpg"
         alt="hero"
-        className="w-full h-[50%] lg:h-[600px] object-cover"
+        className="w-auto h-[50%] lg:h-[600px] object-cover"
         width={1920}
         height={1080}
       />

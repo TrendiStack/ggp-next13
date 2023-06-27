@@ -108,7 +108,7 @@ const Header = forwardRef(({ route }, ref) => {
             src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-caramel-cone.svg"
             alt="Ice cream cone"
             priority={true}
-            className="cone absolute top-[70%] lg:top-[65%] left-1/2 transform -translate-x-1/2 max-w-[50%] md:max-w-[100%] "
+            className="cone absolute top-[70%] lg:top-[65%] left-1/2 transform -translate-x-1/2 max-w-[50%] w-auto h-auto md:max-w-[100%] "
             width={280}
             height={600}
           />

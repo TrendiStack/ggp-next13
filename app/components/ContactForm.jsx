@@ -30,8 +30,6 @@ const ContactForm = () => {
     message: '',
   });
 
-  console.log('form', form);
-  console.log('error', error);
   const handleChange = e => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
