@@ -21,13 +21,13 @@ const Nav = () => {
           </Button>
         </div>
 
-        <div className="">
+        {/* <div>
           <Link href="/reservation">
             <Button ariaLabel="Reservation" style="reservation">
               Reservation
             </Button>
           </Link>
-        </div>
+        </div> */}
       </nav>
       <Menu />
     </>
