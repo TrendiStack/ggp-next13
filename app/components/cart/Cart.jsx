@@ -45,7 +45,7 @@ const Cart = () => {
     try {
       if (handleNext()) return;
       const { data } = await axios.post(
-        '/api/checkout',
+        `${process.env.NEXT_PUBLIC_URL}/api/checkout`,
         { cart, customer: customerForm },
         { headers: { 'Content-Type': 'application/json' } }
       );

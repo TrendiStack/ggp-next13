@@ -21,7 +21,7 @@ const PageContainer = () => {
   const sendEmail = async (cart, customer) => {
     try {
       const { data } = await axios.post(
-        '/api/checkout/confirmation',
+        `${process.env.NEXT_PUBLIC_URL}/api/checkout/confirmation`,
         { cart, customer },
         { headers: { 'Content-Type': 'application/json' } }
       );
@@ -33,7 +33,9 @@ const PageContainer = () => {
 
     const fetchSession = async () => {
       try {
-        const { data } = await axios.get(`/api/checkout/session/${session_id}`);
+        const { data } = await axios.get(
+          `${process.env.NEXT_PUBLIC_URL}/api/checkout/session/${session_id}`
+        );
         setSessionData(data.session);
       } catch (error) {
         console.log(error);

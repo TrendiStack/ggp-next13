@@ -59,7 +59,7 @@ const ReservationForm = () => {
 
     try {
       if (isInvalid) return;
-      await axios.post('http://localhost:3000/api/contact', form, {
+      await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/contact`, form, {
         withCredentials: true,
       });
       setFormSent(true);
