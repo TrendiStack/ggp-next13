@@ -28,7 +28,7 @@ const CakeForm = ({ form, setForm, error }) => {
   }));
 
   const numbers = Array.from({ length: 10 }, (_, i) => i + 1)
-    .concat('other')
+    // .concat('other')
     .map(number => (number = { value: number, label: number }));
 
   const handleSelect = selectedValue => {
@@ -38,10 +38,9 @@ const CakeForm = ({ form, setForm, error }) => {
       setForm('customQuantity', '');
     }
   };
-  const handleCustomQuantity = e => {
-    const valueToNumber = Number(e.target.value);
-    setForm('customQuantity', valueToNumber);
-  };
+  // const handleCustomQuantity = e => {
+  //   setForm('customQuantity', e.target.value);
+  // };
 
   const handleFlavour = selectedValue => {
     if (selectedValue && selectedValue.length <= 2) {
@@ -116,7 +115,7 @@ const CakeForm = ({ form, setForm, error }) => {
           error={error.quantity}
         />
       </div>
-      {form.quantity === 'other' && (
+      {/* {form.quantity === 'other' && (
         <UserInput
           id="customQuantity"
           inputType="input"
@@ -129,7 +128,7 @@ const CakeForm = ({ form, setForm, error }) => {
           className="mt-1"
           error={error.customQuantity}
         />
-      )}
+      )} */}
     </div>
   );
 };

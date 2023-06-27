@@ -97,17 +97,7 @@ const cakeSchema = z.object({
       message: 'Please select a quantity',
     })
     .max(10),
-  customQuantity: z
-    .number({
-      message: 'Please enter a valid quantity',
-    })
-    .min(11, {
-      message: '11 is the minimum quantity',
-    })
-    .max(20, {
-      message: '20 is the maximum quantity',
-    })
-    .optional(),
+  // customQuantity: z.string().min().max(20).optional(),
 });
 
 const orderSchema = z.object({
