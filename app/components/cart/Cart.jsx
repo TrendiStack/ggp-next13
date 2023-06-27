@@ -2,12 +2,12 @@
 
 import { BsBoxArrowInRight } from 'react-icons/bs';
 import { loadStripe } from '@stripe/stripe-js';
+import { useEffect, useState } from 'react';
 import { useCartStore } from '../../../stores/cartStore';
 import { useCustomerFormStore } from '../../../stores/customerFormStore';
-import { useEffect, useState } from 'react';
 import { validateCustomer } from '../../../utils/validation';
 import axios from 'axios';
-import Button from '../ui/Button';
+import CartBtnContainer from './CartBtnContainer';
 import CartItem from './CartItem';
 import CustomerForm from '../../order-cake/components/CustomerForm';
 
@@ -75,13 +75,20 @@ const Cart = () => {
     }
   }, [customerForm, setIndividualError]);
 
+  useEffect(() => {
+    if (cartOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [cartOpen]);
+
   return (
     <>
       <main
         className={`
       ${cartOpen ? 'translate-x-0' : 'translate-x-full'}
-      ${cart.length === 0 && 'flex items-center justify-center'}
-      fixed min-h-screen max-md:w-full max-xl:w-1/2 w-2/6 bg-[#252422] right-0 z-[2000]
+      fixed min-h-screen max-md:w-full max-xl:w-1/2 w-2/6 bg-[#252422] right-0 top-0 z-[2000]
       transition-all duration-500 ease-in-out pt-6
       `}
       >
@@ -131,65 +138,13 @@ const Cart = () => {
             />
           </div>
         )}
-
-        <div className="fixed bottom-5 w-full">
-          <div className="px-[5%] lg:px-[2%]">
-            <div className="flex justify-between md:text-xl">
-              <p>
-                Subtotal:{' '}
-                <span className="text-zinc-400">
-                  ({`${cart.length} items`})
-                </span>
-              </p>
-              <p>
-                C$<span className="font-semibold">{total}</span>
-              </p>
-            </div>
-            {page === 1 && (
-              <Button
-                ariaLabel="Continue Checkout"
-                style="cartBtn"
-                className="mt-5 w-full bg-white"
-                onClick={() => {
-                  cart.length !== 0 && setPage(2);
-                }}
-                disabled={cart.length === 0}
-              >
-                Checkout
-              </Button>
-            )}
-          </div>
-          {page === 2 && (
-            <div className="px-[5%] lg:px-[2%]">
-              <Button
-                ariaLabel="Pay with Stripe"
-                style="cartBtn"
-                className="bg-red-500 mt-5 w-full text-white"
-                onClick={() => {
-                  checkout();
-                }}
-              >
-                Pay with Stripe
-              </Button>
-            </div>
-          )}
-
-          {page > 1 && (
-            <div className="px-[5%] lg:px-[2%]">
-              <Button
-                ariaLabel="Go back"
-                style="cartBtn"
-                className="w-full mt-3 bg-white"
-                onClick={() => {
-                  setPage(prev => prev - 1);
-                }}
-              >
-                Go back
-              </Button>
-            </div>
-          )}
-        </div>
       </main>
+      <CartBtnContainer
+        cart={cart}
+        cartOpen={cartOpen}
+        total={total}
+        page={page}
+      />
     </>
   );
 };

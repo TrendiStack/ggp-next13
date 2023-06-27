@@ -22,11 +22,11 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <article className="flex gap-5 bg-[#a3a380] rounded-lg p-2">
+    <article className="flex gap-5 bg-[#a3a380] rounded-lg p-2 text-sm lg:text-base">
       <Image
         src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-cake-nobg.png"
         alt="cake"
-        className="min-w-[9rem] max-w-[9rem] p-4"
+        className="py-5"
         width={100}
         height={100}
       />

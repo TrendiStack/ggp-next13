@@ -66,7 +66,7 @@ const DateSelect = ({ setForm, reservation, error }) => {
       </div>
 
       {calendarOpen && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#a3a380] max-w-min p-3 rounded-xl z-50">
+        <div className="absolute top-20 xl:top-1/2 left-1/2 -translate-x-1/2 xl:-translate-y-1/2  bg-[#a3a380] max-w-min p-3 rounded-xl z-50 ">
           <IoIosClose
             onClick={() => setCalendarOpen(false)}
             className="float-right cursor-pointer text-white text-3xl"
@@ -79,6 +79,7 @@ const DateSelect = ({ setForm, reservation, error }) => {
                 ? new Date()
                 : new Date(Date.now() + 2 * 24 * 60 * 60 * 1000)
             }
+            className="max-md:text-[0.6rem]"
           />
         </div>
       )}

@@ -11,10 +11,6 @@
       format('woff');
 }
 
-body {
-  @apply bg-[#ffd5c2];
-}
-
 input:focus ~ span,
 input:not(:placeholder-shown) ~ span {
   @apply transform -translate-y-6;
