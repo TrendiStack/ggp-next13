@@ -81,12 +81,12 @@ const Header = forwardRef(({ route }, ref) => {
                   />
                   <DeliveryIcon
                     href="https://www.ubereats.com/ca/store/gelato-gelato-pizzeria/TcypftTcQp-c0ym2D0KPRQ"
-                    src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-skipthedishes.png"
+                    src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-ubereats.png"
                     title="Uber Eats"
                   />
                   <DeliveryIcon
                     href="https://www.skipthedishes.com/gelato-gelato-pizzeria"
-                    src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-ubereats.png"
+                    src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-skipthedishes.png"
                     title="Skip The Dishes"
                   />
                 </div>
