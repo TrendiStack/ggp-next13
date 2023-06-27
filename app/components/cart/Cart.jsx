@@ -144,6 +144,8 @@ const Cart = () => {
         cartOpen={cartOpen}
         total={total}
         page={page}
+        setPage={setPage}
+        checkout={checkout}
       />
     </>
   );

@@ -1,6 +1,13 @@
 import Button from '../ui/Button';
 
-const CartBtnContainer = ({ cart, cartOpen, total, page }) => {
+const CartBtnContainer = ({
+  cart,
+  cartOpen,
+  total,
+  page,
+  setPage,
+  checkout,
+}) => {
   return (
     <div
       className={`
