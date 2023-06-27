@@ -24,8 +24,7 @@ const CakeForm = ({ form, setForm, error }) => {
       (form.shape !== 'rectangle' && size === `10" x 14"`) ||
       (form.shape === 'log' && size !== '9"') ||
       (form.shape !== 'log' && size === '9"') ||
-      (form.shape === 'heart' && size !== '10"') ||
-      (form.shape !== 'heart' && size === '10"'),
+      (form.shape === 'heart' && size !== '10"'),
   }));
 
   const numbers = Array.from({ length: 10 }, (_, i) => i + 1)
