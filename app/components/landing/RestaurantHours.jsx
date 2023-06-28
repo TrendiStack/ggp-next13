@@ -7,12 +7,12 @@ const RestaurantHours = () => {
       <div className="grid grid-cols-1 gap-14 lg:gap-36 2xl:gap-56">
         <div className="footer-header text-center">
           <h2>
-            Find us every day at <br /> 3650 Langstaff Rd, <br /> Woodbridge, ON
+            Located at 3650 <br /> Langstaff Rd, <br /> Woodbridge, ON L4L 9A8
           </h2>
         </div>
         <div className="container mx-auto px-[5%] lg:px-[2%]">
           <div className="flex flex-col gap-10 text-center">
-            <h3 className="text-3xl md:text-5xl">Hour of Operation</h3>
+            <h3 className="text-3xl md:text-5xl">Hours of Operation</h3>
             <ul
               aria-label="Hours of Operation"
               className="grid gap-3 text-xl md:text-3xl"
@@ -71,7 +71,7 @@ const RestaurantHours = () => {
               aria-label="Dining closed"
               className="text-zinc-600 text-xl md:text-3xl"
             >
-              *Kitchen closed from 3-5PM Tuesday to Saturday*
+              *Kitchen closed from 3-5PM on Tuesday to Saturday*
             </p>
           </div>
         </div>

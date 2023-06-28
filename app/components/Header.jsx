@@ -137,9 +137,13 @@ const Header = forwardRef(({ route }, ref) => {
               />
             </div>
           </div>
-          {(route === 'Contact Us' || route === 'Reservation') && (
-            <Button ariaLabel="Call for Catering" style="base">
-              For Catering Call{' '}
+          {route === 'Contact Us' && (
+            <Button
+              ariaLabel="Call for Catering"
+              style="base"
+              className="text-sm"
+            >
+              Give us a call at{' '}
               <Link href="tel:+1 905-851-0400">(905) 851-0400</Link>{' '}
             </Button>
           )}
@@ -148,11 +152,6 @@ const Header = forwardRef(({ route }, ref) => {
               <Link href="menu.pdf" target="_blank">
                 Full Menu
               </Link>
-            </Button>
-          )}
-          {route === 'Build a Cake' && (
-            <Button ariaLabel="Reservation" style="base" className="lg:hidden">
-              <Link href="/reservation">Reserve a Table</Link>
             </Button>
           )}
         </div>

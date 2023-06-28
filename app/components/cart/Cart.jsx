@@ -108,7 +108,7 @@ const Cart = () => {
             onClick={clearCart}
             className="absolute left-[5%] lg:left-[2%] top-5 font-medium text-black bg-white rounded-md p-2"
           >
-            clear cart
+            Clear Cart
           </button>
         )}
 
@@ -120,7 +120,7 @@ const Cart = () => {
           >
             <div className="grid grid-cols-1 gap-7 text-white px-[5%] lg:px-[2%]">
               {cart.length === 0 ? (
-                <h1 className="text-center text-2xl">Your Cart is Empty :(</h1>
+                <h1 className="text-center text-2xl">Your Cart is Empty!</h1>
               ) : (
                 cart.map((item, i) => <CartItem key={i} item={item} />)
               )}

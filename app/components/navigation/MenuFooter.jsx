@@ -36,11 +36,6 @@ const MenuFooter = ({ menuItem, className }) => {
             </Link>
           </li>
           <li>
-            <Link href="/reservation" title="Reservation">
-              Reservation
-            </Link>
-          </li>
-          <li>
             <Link
               href="https://www.google.com/maps?ll=43.808928,-79.54804&z=17&t=m&hl=en-US&gl=US&mapclient=embed&cid=16934071278796745487"
               target="_blank"

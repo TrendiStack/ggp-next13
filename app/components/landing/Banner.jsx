@@ -10,7 +10,7 @@ const Banner = () => {
     >
       <h1 className="header-secondary font-medium">
         Made
-        <br /> Fresh daily
+        <br /> Fresh Daily
       </h1>
       <Image
         src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-wood-bg.jpg"
@@ -27,7 +27,7 @@ const Banner = () => {
         </p>
         <Link href="/menu">
           <Button ariaLabel="menu" style="large" className="mt-14 md:mt-20">
-            menu
+            Menu
           </Button>
         </Link>
       </div>

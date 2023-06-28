@@ -12,7 +12,6 @@ export default function Home() {
       aria-label="Landing Page"
       className="overflow-hidden flex flex-col gap-y-44 lg:gap-y-52 bg-white"
     >
-      <CakeMarquee />
       <Header route="landing" />
       <Banner />
       <VideoSection />
