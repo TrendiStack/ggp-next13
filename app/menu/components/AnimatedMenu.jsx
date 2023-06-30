@@ -13,35 +13,14 @@ import useMobile from '../../../hooks/useMobile';
 const AnimatedMenu = ({ selected, setSelected }) => {
   const isMobile = useMobile();
   const containerRef = useRef(null);
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (!containerRef.current) return;
-    let scrollTween;
-    const animateHorizontalScroll = () => {
-      scrollTween = gsap.to(containerRef.current, {
-        xPercent: -100 * (containerRef.current.offsetWidth / window.innerWidth),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          pin: true,
-          scrub: 1,
-          end: () => `+=${containerRef.current.offsetWidth}`,
-        },
-      });
-    };
 
-    animateHorizontalScroll();
-    return () => {
-      scrollTween.kill();
-    };
-  }, [containerRef]);
   return (
-    <main aria-label="Menu Page" className="overflow-hidden hidden lg:block">
+    <main aria-label="Menu Page" className="">
       {!isMobile && <ScrollAlert />}
       <Header route="Our Menu" />
-      <div className="flex items-center h-screen 2xl:pt-36 " ref={containerRef}>
+      <div className="flex flex-col items-center 2xl:pt-36 " ref={containerRef}>
         <FlavourContainer header="gelato - flavours" label="Gelato menu">
-          <div className="flex flex-col items-stretch justify-center gap-10">
+          <div className="">
             <FlavourButton
               selected={selected.categoryOne}
               setSelected={setSelected}
@@ -68,7 +47,7 @@ const AnimatedMenu = ({ selected, setSelected }) => {
           />
         </FlavourContainer>
         <FlavourContainer header="dining - options" label="Dining menu">
-          <div className="grid grid-cols-2 place-content-center justify-center text-center gap-10">
+          <div className="grid grid-cols-2 ">
             <FlavourButton
               selected={selected.categoryTwo}
               setSelected={setSelected}
@@ -107,3 +86,26 @@ const AnimatedMenu = ({ selected, setSelected }) => {
 };
 
 export default AnimatedMenu;
+
+// useEffect(() => {
+//   gsap.registerPlugin(ScrollTrigger);
+//   if (!containerRef.current) return;
+//   let scrollTween;
+//   const animateHorizontalScroll = () => {
+//     scrollTween = gsap.to(containerRef.current, {
+//       xPercent: -100 * (containerRef.current.offsetWidth / window.innerWidth),
+//       ease: 'none',
+//       scrollTrigger: {
+//         trigger: containerRef.current,
+//         pin: true,
+//         scrub: 1,
+//         end: () => `+=${containerRef.current.offsetWidth}`,
+//       },
+//     });
+//   };
+
+//   animateHorizontalScroll();
+//   return () => {
+//     scrollTween.kill();
+//   };
+// }, [containerRef]);

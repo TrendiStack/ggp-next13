@@ -52,3 +52,56 @@ export const useCustomerFormStore = create(set => ({
     }));
   },
 }));
+
+export const useContactFormStore = create(set => ({
+  contactForm: {
+    subject: '',
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  },
+  contactErrors: {
+    subject: '',
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  },
+
+  setContactForm: (field, value) => {
+    set(state => ({
+      contactForm: {
+        ...state.contactForm,
+        [field]: value,
+      },
+    }));
+  },
+
+  setIndividualError: (field, value) => {
+    set(state => ({
+      contactErrors: {
+        ...state.contactErrors,
+        [field]: value,
+      },
+    }));
+  },
+
+  setErrors: errors => {
+    set(() => ({
+      contactErrors: errors,
+    }));
+  },
+
+  clearErrors: () => {
+    set(() => ({
+      customerErrors: {
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        message: '',
+      },
+    }));
+  },
+}));

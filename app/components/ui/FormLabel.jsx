@@ -24,7 +24,7 @@ const FormLabel = ({
       <span
         className={`${
           name === 'message' && 'pt-1'
-        } absolute left-2 transition-all duration-700 pointer-events-none text-xl lg:text-2xl bg-transparent w-full`}
+        } absolute left-2 transition-all duration-700 pointer-events-none text-lg bg-transparent w-full`}
       >
         {label}:
       </span>

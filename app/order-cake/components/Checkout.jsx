@@ -71,16 +71,14 @@ const Checkout = () => {
   }, [cakeForm, setErrors]);
 
   return (
-    <div className="text-white bg-[#a3a380] flex flex-col gap-3 justify-between w-full text-xl xl:text-sm 2xl:text-2xl p-5 rounded-2xl relative">
-      <h1 className="text-center text-2xl 2xl:text-4xl">Build a cake</h1>
-      <form>
-        <CakeForm
-          form={cakeForm}
-          setForm={setCakeForm}
-          error={cakeErrors}
-          setError={setErrors}
-        />
-      </form>
+    <div className="text-white bg-accent flex flex-col gap-3 justify-between w-full text-sm md:text-base p-5 rounded-2xl relative">
+      <h1 className="text-center text-2xl 2xl:text-4xl">Cake Options</h1>
+      <CakeForm
+        form={cakeForm}
+        setForm={setCakeForm}
+        error={cakeErrors}
+        setError={setErrors}
+      />
       <div className="flex justify-between gap-5 mt-5 lg:mt-0 2xl:mt-5">
         <Button
           ariaLabel="Back"

@@ -1,13 +1,13 @@
-import MenuWrapper from './components/MenuWrapper';
+import UnanimatedMenu from './components/UnanimatedMenu';
 export const metadata = {
   title: 'Menu | Gelato Gelato Pizzeria',
 };
 
 const page = () => {
   return (
-    <>
-      <MenuWrapper />
-    </>
+    <main aria-label="Menu Page">
+      <UnanimatedMenu />
+    </main>
   );
 };
 

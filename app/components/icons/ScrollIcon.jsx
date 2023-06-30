@@ -73,7 +73,7 @@ const ScrollIcon = () => {
       <div
         title="Scroll Down"
         ref={containerRef}
-        className={`hidden xl:block fixed bottom-6 right-0 scale-75 z-[997] ${
+        className={`hidden xl:block fixed -bottom-4 right-0 scale-75 z-[997] ${
           isMobile ? 'hidden' : 'block'
         }}`}
       >
@@ -90,7 +90,7 @@ const ScrollIcon = () => {
           aria-label="Scroll down indicator"
           src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-scrolldown-text.png"
           alt="circle scroll text"
-          className="w-full h-auto"
+          className="w-auto h-[197px]"
           width={193}
           height={197}
         />
@@ -100,7 +100,7 @@ const ScrollIcon = () => {
         title="Scroll to Top"
         onClick={handleScrollToTop}
         ref={buttonRef}
-        className="fixed bottom-24 right-3 mr-[1%] bg-[#a3a380] rounded-full p-6  text-white text-lg lg:text-2xl cursor-pointer z-[997]"
+        className="fixed bottom-24 right-3 mr-[1%] bg-accent rounded-full p-6  text-white text-lg lg:text-2xl cursor-pointer z-[997]"
       >
         <TbArrowBigUpFilled aria-label="Arrow up" />
       </button>

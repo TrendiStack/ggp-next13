@@ -15,9 +15,10 @@ const ImageReveal = () => {
       .timeline({
         scrollTrigger: {
           trigger: el,
-          start: 'top top',
+          start: 'top-=150 top',
           pin: true,
           scrub: 1,
+          end: '+=600',
         },
       })
       .from(el, {

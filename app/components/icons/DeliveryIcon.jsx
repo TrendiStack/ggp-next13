@@ -7,7 +7,7 @@ const DeliveryIcon = ({ src, className, href, title }) => {
       <Image
         src={src}
         alt={title}
-        className={` w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl relative lg:hover:-translate-y-5 duration-500 ${className}`}
+        className={` w-8 h-8 md:w-12 md:h-12 rounded-lg relative lg:hover:-translate-y-5 duration-500 ${className}`}
         height={64}
         width={64}
       />

@@ -33,29 +33,6 @@ const contactSchema = z.object({
     .max(1000, errorMessages.messageMax),
 });
 
-const reservationSchema = z.object({
-  name: z
-    .string()
-    .min(3, errorMessages.nameMin)
-    .max(100, errorMessages.nameMax),
-  email: z.string().email({
-    message: errorMessages.email,
-  }),
-  phone: z.string().min(10, errorMessages.phone).max(15, errorMessages.phone),
-  date: z.date().min(new Date(), {
-    message: errorMessages.date,
-  }),
-  time: z.string().min(3).max(100),
-  guests: z
-    .string()
-    .min(1, errorMessages.guestsMin)
-    .max(100, errorMessages.guestsMax),
-  message: z
-    .string()
-    .min(10, errorMessages.messageMin)
-    .max(1000, errorMessages.messageMax),
-});
-
 const customerSchema = z.object({
   name: z
     .string()
@@ -100,28 +77,9 @@ const cakeSchema = z.object({
   // customQuantity: z.string().min().max(20).optional(),
 });
 
-const orderSchema = z.object({
-  customer: customerSchema,
-  cake: cakeSchema,
-});
-
 export const validateContact = data => {
   try {
     contactSchema.parse(data);
-    return null;
-  } catch (error) {
-    if (error.formErrors) {
-      return error.formErrors.fieldErrors;
-    } else {
-      console.log(error);
-      return null;
-    }
-  }
-};
-
-export const validateReservation = data => {
-  try {
-    reservationSchema.parse(data);
     return null;
   } catch (error) {
     if (error.formErrors) {

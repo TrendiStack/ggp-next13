@@ -1,37 +1,14 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import menuStore from '../../../stores/menuStore';
-
 const Logo = () => {
-  const { menu } = menuStore();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setIsScrolled(window.pageYOffset >= 50);
-    });
-
-    return () => {
-      window.removeEventListener('scroll', () => {
-        setIsScrolled(window.pageYOffset > 0);
-      });
-    };
-  }, [isScrolled, setIsScrolled]);
   return (
     <a
       href="/"
       aria-label="Home Logo"
       title="Gelato Gelato Pizzeria"
-      className={`${
-        menu ? 'text-white' : 'text-[#252422]'
-      } text-center nav-title uppercase wagner transition-all duration-500
-    fixed left-1/2 transform -translate-x-1/2
-    ${isScrolled & !menu ? '-top-48' : 'top-9 md:top-10 '}
-    `}
+      className="text-white text-base md:text-3xl leading-none tracking-widest uppercase wagner transition-all duration-500"
     >
-      gelato gelato <br />
-      <span className="text-base md:text-xl lg:text-2xl">
+      gelato <br className="md:hidden" />
+      gelato <br />
+      <span className="max-md:text-[80%] md:tracking-[1.28rem]">
         <span className="text-green-800">piz</span>
         <span className="text-white">ze</span>
         <span className="text-red-600">ria</span>

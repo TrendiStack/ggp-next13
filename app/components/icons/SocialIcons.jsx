@@ -35,7 +35,7 @@ const SocialIcons = () => {
           rel="noreferrer"
           className={`${
             menu ? ' text-lg lg:text-3xl p-2 lg:p-8' : ''
-          } text-lg p-2 lg:p-4 bg-white text-[#252422] hover:text-white rounded-full hover:bg-[#a3a380] transition-colors duration-300 ease-in-out `}
+          } text-lg p-2 lg:p-4 bg-accent text-white rounded-full hover:bg-white hover:text-primary transition-colors duration-300 ease-in-out `}
         >
           {icon.icon}
         </Link>

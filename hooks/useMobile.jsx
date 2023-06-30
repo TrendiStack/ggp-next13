@@ -1,17 +1,14 @@
 import { useEffect, useState } from 'react';
 
 const useMobile = () => {
-  const [isMobile, setIsMobile] = useState(
-    typeof navigator !== 'undefined' &&
-      /iphone|ipad|ipod|android/i.test(navigator?.userAgent)
-  );
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (!isMobile) {
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-    }
+    setIsMobile(
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    );
   }, [isMobile]);
 
   return isMobile;

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import MenuFooter from './MenuFooter.jsx';
 import menuStore from '../../../stores/menuStore.js';
 import SocialIcons from '../icons/SocialIcons.jsx';
+import ContactScroll from '../ui/ContactScroll.jsx';
 
 const Menu = () => {
   const { menu, setMenu } = menuStore();
@@ -17,7 +18,6 @@ const Menu = () => {
   useEffect(() => {
     const el = menuRef.current;
     const list = listRef.current;
-    let tl = null;
 
     const menuAnimation = () => {
       const translateY = menu ? '0%' : '-100%';
@@ -27,37 +27,34 @@ const Menu = () => {
       });
     };
 
-    const staggeredList = () => {
-      tl = gsap.timeline({
-        defaults: {
-          ease: 'power1.out',
-        },
-        onComplete: () => {
-          tl.clear();
-        },
-      });
-
-      tl.fromTo(
-        list.children,
-        {
-          opacity: 0,
-          y: -120,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.1,
-        }
-      );
-    };
-
     menuAnimation();
-    staggeredList();
+
+    if (menu) {
+      gsap
+        .timeline({
+          defaults: {
+            ease: 'power2.inOut',
+            stagger: 0.2,
+          },
+        })
+        .to('#menu-list', {
+          opacity: 1,
+        })
+        .fromTo(
+          list.children,
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+
+            duration: 1,
+          }
+        );
+    }
 
     return () => {
       menuAnimation();
-      tl.clear();
     };
   }, [menu]);
 
@@ -66,7 +63,7 @@ const Menu = () => {
       aria-label="Navigation Menu"
       ref={menuRef}
       className={`
-     fixed
+      fixed
       top-0
       left-0
       w-full
@@ -82,6 +79,7 @@ const Menu = () => {
     >
       <ul
         aria-label="Menu options"
+        id="menu-list"
         ref={listRef}
         className="header-primary grid grid-cols-1 gap-2"
       >
@@ -91,7 +89,7 @@ const Menu = () => {
             setMenu(false);
           }}
         >
-          <Link href="/menu" title="Product Menu">
+          <Link id="list-item" href="/menu" title="Product Menu">
             Menu
           </Link>
         </li>
@@ -101,20 +99,11 @@ const Menu = () => {
             setMenu(false);
           }}
         >
-          <Link href="/order-cake" title="Order Cake">
+          <Link id="list-item" href="/order-cake" title="Order Cake">
             Order
           </Link>
         </li>
-        <li
-          aria-label="Contact"
-          onClick={() => {
-            setMenu(false);
-          }}
-        >
-          <Link href="/contact" title="Contact Us">
-            Contact
-          </Link>
-        </li>
+        <ContactScroll />
         <li
           aria-label="Cart"
           className="lg:hidden cursor-pointer"
@@ -123,7 +112,7 @@ const Menu = () => {
             toggleCart();
           }}
         >
-          Cart
+          <div id="list-item">Cart</div>
         </li>
         <li
           aria-label="Location and Contact Information"

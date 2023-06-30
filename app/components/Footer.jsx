@@ -23,9 +23,9 @@ const Footer = () => {
       aria-label="Footer"
       className={`
       bg-[#252422]
-      ${pathname === '/' ? '' : 'mt-32'}
+      ${pathname === '/' ? 'rounded-t-3xl' : ''}
       px-[5%] lg:px-[2%]
-      text-white py-10 text-xl rounded-t-3xl
+      text-white py-10 text-xl 
       `}
     >
       <Link
@@ -34,7 +34,9 @@ const Footer = () => {
         title="Gelato Gelato Pizzeria"
         className="font-semibold text-2xl lg:text-4xl cursor-pointer"
       >
-        Gelato Gelato Pizzeria
+        Gelato Gelato <span className="text-green-800">Piz</span>
+        <span className="text-white">ze</span>
+        <span className="text-red-600">ria</span>
       </Link>
       <div className="w-full h-[1px] bg-neutral-400 my-5"></div>
       <MenuFooter />

@@ -22,7 +22,7 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <article className="flex gap-5 bg-[#a3a380] rounded-lg p-2 text-sm lg:text-base">
+    <article className="flex gap-5 bg-accent rounded-lg p-2 text-sm lg:text-base">
       <Image
         src="https://gelatogelatobucket.s3.us-east-2.amazonaws.com/ggp-delivery-icons/ggp-cake-nobg.png"
         alt="cake"

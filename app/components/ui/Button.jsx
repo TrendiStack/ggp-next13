@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-import useMenu from '../../../stores/menuStore';
+import { gsap } from 'gsap';
+import { useEffect, useRef, useState } from 'react';
 import useClient from '../../../stores/clientStore';
 import useFormComplete from '../../../stores/formCompleteStore';
-import usePathname from '../../../hooks/usePathname';
+import useMenu from '../../../stores/menuStore';
 
 const Button = ({
   id,
@@ -17,37 +17,52 @@ const Button = ({
   noAni,
   disabled,
 }) => {
-  const setFormSent = useFormComplete(state => state.setFormSent);
-  const setFormCompleted = useFormComplete(state => state.setFormCompleted);
-  const menu = useMenu(state => state.menu);
-  const setMenu = useMenu(state => state.setMenu);
-  const handleClick = useMenu(state => state.handleClick);
-  const setHasMounted = useClient(state => state.setHasMounted);
   const [mouseOver, setMouseOver] = useState(false);
-  const pathname = usePathname();
+  const handleClick = useMenu(state => state.handleClick);
+  const setFormCompleted = useFormComplete(state => state.setFormCompleted);
+  const setFormSent = useFormComplete(state => state.setFormSent);
+  const setHasMounted = useClient(state => state.setHasMounted);
+  const setMenu = useMenu(state => state.setMenu);
+  const textOne = useRef(null);
+  const textTwo = useRef(null);
+
   const variants = {
-    menuBtn: `${
-      menu
-        ? 'bg-white text-[#252422] transition-colors duration-300 ease-in-out'
-        : 'bg-[#a3a380] text-white'
-    }  text-base md:text-xl lg:text-2xl p-3 md:p-5 aspect-square rounded-full`,
-
-    reservation: `${
-      menu
-        ? 'bg-white text-[#252422] transition-colors duration-300 ease-in-out'
-        : 'bg-[#a3a380] text-white'
-    } 
-      ${pathname === '/order-cake' && 'max-lg:hidden'}
-      text-base md:text-xl lg:text-3xl px-6 py-3 rounded-full fixed rotate-90  right-0
-      top-1/2 md:mt-10 transform translate-y-1/2 origin-top-right mx-[5%] lg:mx-[2%]`,
-
+    menuBtn: `bg-white text-[#252422] hover:bg-accent hover:text-white transition-colors duration-300 ease-in-out text-base md:text-xl p-3 aspect-square rounded-full`,
     large:
-      'bg-[#a3a380] text-white text-2xl font-medium px-10 py-3 2xl:px-14 2xl:py-5 rounded-full',
-
+      'bg-accent text-white text-2xl font-medium px-10 py-3 2xl:px-14 2xl:py-5 rounded-full',
     cartBtn: 'text-sm md:text-base font-bold py-2 px-4 rounded',
-    base: ` 
-    absolute left-5 lg:left-[2%] bottom-10 lg:bottom-24 lg:bottom-12 bg-[#a3a380] text-white rounded-full text-base md:text-xl lg:text-2xl py-4 px-8 text-2xl font-medium`,
+    base: 'absolute left-5 lg:left-[2%] bottom-10 lg:bottom-12 bg-accent text-white rounded-full text-base md:text-xl lg:text-2xl py-4 px-8 font-medium',
   };
+
+  useEffect(() => {
+    const el = textOne.current;
+    const el2 = textTwo.current;
+    if (el && el2) {
+      if (mouseOver) {
+        gsap.to(el, {
+          duration: 0.5,
+          y: '-100%',
+          ease: 'power3.inOut',
+        });
+        gsap.to(el2, {
+          duration: 0.5,
+          y: '0%',
+          ease: 'power3.inOut',
+        });
+      } else {
+        gsap.to(el, {
+          duration: 0.5,
+          y: '0%',
+          ease: 'power3.inOut',
+        });
+        gsap.to(el2, {
+          duration: 0.5,
+          y: '100%',
+          ease: 'power3.inOut',
+        });
+      }
+    }
+  }, [mouseOver]);
 
   return (
     <button
@@ -79,20 +94,10 @@ const Button = ({
           <>{children}</>
         ) : (
           <>
-            <p
-              aria-hidden="true"
-              className={`relative ${
-                mouseOver ? 'bottom-8' : 'bottom-0'
-              } transition-all duration-500`}
-            >
+            <p ref={textOne} aria-hidden="true" className={`relative`}>
               {children}
             </p>
-            <p
-              aria-hidden="true"
-              className={`absolute ${
-                mouseOver ? 'top-0' : 'top-8'
-              } transition-all duration-500`}
-            >
+            <p ref={textTwo} aria-hidden="true" className={`absolute`}>
               {children}
             </p>
           </>

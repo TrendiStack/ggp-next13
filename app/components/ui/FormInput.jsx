@@ -8,7 +8,8 @@ const FormInput = ({ htmlFor, inputType, name, value, onChange }) => {
           value={value}
           onChange={onChange}
           placeholder=" "
-          className="w-full h-20 lg:h-40 p-2 bg-transparent border-2 border-[#a3a380] rounded-lg focus:outline-none "
+          className="w-full p-2 bg-transparent border-2 border-primary rounded-lg focus:outline-none"
+          rows="8"
         />
       ) : (
         <input
@@ -18,7 +19,7 @@ const FormInput = ({ htmlFor, inputType, name, value, onChange }) => {
           value={value}
           onChange={onChange}
           placeholder=" "
-          className="indent-2 bg-transparent outline-none border-b-2 border-[#a3a380] pb-3 w-full rounded-none"
+          className="indent-2 bg-transparent outline-none border-b-2 border-primary pb-3 w-full rounded-none"
         />
       )}
     </>

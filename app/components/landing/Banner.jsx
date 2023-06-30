@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <section
       aria-label="About us"
-      className="flex flex-col gap-14 md:gap-24 text-center mt-36 sm:mt-48 md:mt-52 xl:mt-48 2xl:mt-96"
+      className="flex flex-col gap-14 md:gap-24 text-center"
     >
       <h1 className="header-secondary font-medium">
         Made
@@ -26,7 +26,7 @@ const Banner = () => {
           gelato and pizza.
         </p>
         <Link href="/menu">
-          <Button ariaLabel="menu" style="large" className="mt-14 md:mt-20">
+          <Button ariaLabel="menu" style="large" className="mt-14 md:mt-20 ">
             Menu
           </Button>
         </Link>

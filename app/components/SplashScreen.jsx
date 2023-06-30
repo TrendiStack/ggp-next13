@@ -64,7 +64,7 @@ const SplashScreen = ({ hasMounted = true }) => {
   return (
     <div
       ref={container}
-      className="bg-neutral-800 fixed top-0 left-0 w-full min-h-screen flex items-center justify-center header-primary text-white z-[9999]"
+      className="bg-primary fixed top-0 left-0 w-full min-h-screen flex items-center justify-center header-primary text-white z-[9999]"
     >
       <p ref={loadingText} className="flex relative opacity-0">
         Loading

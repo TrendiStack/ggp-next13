@@ -12,8 +12,8 @@ const FlavourButton = ({ selected, setSelected, category, type }) => {
         })
       }
       className={`
-          ${selected === category ? 'bg-[#a3a380]' : 'bg-white'}
-          uppercase cursor-pointer w-full max-w-[368px] text-center py-3 px-6 lg:py-6 rounded-full hover:bg-[#252422] hover:text-white transition-colors duration-300`}
+          ${selected === category ? 'bg-accent' : 'bg-primary'}
+          uppercase cursor-pointer w-full max-w-[368px] text-center py-3 px-6 lg:py-6 rounded-full text-white hover:bg-accent transition-colors duration-300`}
     >
       {category}
     </h3>

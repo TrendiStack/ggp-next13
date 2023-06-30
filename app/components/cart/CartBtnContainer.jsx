@@ -14,7 +14,7 @@ const CartBtnContainer = ({
 ${cartOpen ? 'translate-x-0' : 'translate-x-full'}
 fixed bottom-5 right-0 max-md:w-full max-xl:w-1/2 w-2/6 z-[2000] transition-all duration-500 ease-in-out`}
     >
-      <div className="px-[5%] lg:px-[2%]">
+      <div className="text-white px-[5%] lg:px-[2%]">
         <div className="flex justify-between md:text-xl">
           <p>
             Subtotal:{' '}
@@ -28,7 +28,7 @@ fixed bottom-5 right-0 max-md:w-full max-xl:w-1/2 w-2/6 z-[2000] transition-all 
           <Button
             ariaLabel="Continue Checkout"
             style="cartBtn"
-            className="mt-5 w-full bg-white"
+            className="mt-5 w-full bg-white text-primary"
             onClick={() => {
               cart.length !== 0 && setPage(2);
             }}

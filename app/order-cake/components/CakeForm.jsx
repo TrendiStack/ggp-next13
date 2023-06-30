@@ -61,7 +61,7 @@ const CakeForm = ({ form, setForm, error }) => {
   }, [form.shape, setForm]);
 
   return (
-    <div className={`grid grid-cols-1 gap-5`}>
+    <form className="grid grid-cols-1 gap-5">
       <div>
         <CakeLabel htmlFor="cakeFlavor" title="Flavours">
           Flavours - <span className="text-[70%]">Pick up to two*</span>
@@ -129,7 +129,7 @@ const CakeForm = ({ form, setForm, error }) => {
           error={error.customQuantity}
         />
       )} */}
-    </div>
+    </form>
   );
 };
 

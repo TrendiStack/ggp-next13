@@ -2,7 +2,7 @@ const RestaurantHours = () => {
   return (
     <section
       aria-label="Restaurant Hours"
-      className="pt-[60vh] pb-32 font-light"
+      className="pt-[60vh] font-light container mx-auto"
     >
       <div className="grid grid-cols-1 gap-14 lg:gap-36 2xl:gap-56">
         <div className="footer-header text-center">
@@ -10,7 +10,7 @@ const RestaurantHours = () => {
             Located at 3650 <br /> Langstaff Rd, <br /> Woodbridge, ON L4L 9A8
           </h2>
         </div>
-        <div className="container mx-auto px-[5%] lg:px-[2%]">
+        <div className="xl:mx-32">
           <div className="flex flex-col gap-10 text-center">
             <h3 className="text-3xl md:text-5xl">Hours of Operation</h3>
             <ul

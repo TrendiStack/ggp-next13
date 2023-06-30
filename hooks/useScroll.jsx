@@ -1,13 +1,19 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import Lenis from '@studio-freight/lenis';
+import useMobile from './useMobile';
 import useScrolling from '../stores/scrollingStore';
 
 const useScroll = () => {
+  const isMobile = useMobile();
+  const pathname = usePathname();
   const returnToTop = useScrolling(state => state.returnToTop);
-  const setReturnToTop = useScrolling(state => state.setReturnToTop);
+  const router = useRouter();
+  const scrollToContact = useScrolling(state => state.scrollToContact);
   const setIsScrolling = useScrolling(state => state.setIsScrolling);
+  const setScrollToContact = useScrolling(state => state.setScrollToContact);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -28,11 +34,32 @@ const useScroll = () => {
 
     if (returnToTop) {
       lenis.scrollTo(0, document.body.offsetHeight);
+    } else if (scrollToContact) {
+      if (pathname === '/') {
+        const contact = document.getElementById('contact');
+        if (isMobile) {
+          lenis.scrollTo(contact.offsetTop, document.body.offsetHeight);
+        } else {
+          setTimeout(() => {
+            lenis.scrollTo(contact.offsetTop - 150, document.body.offsetHeight);
+          }, 100);
+        }
+        setTimeout(() => {
+          setScrollToContact(false);
+        }, 100);
+      }
     }
     return () => {
       lenis.destroy();
     };
-  }, [returnToTop, setIsScrolling, setReturnToTop]);
+  }, [
+    returnToTop,
+    setIsScrolling,
+    scrollToContact,
+    router,
+    pathname,
+    setScrollToContact,
+  ]);
 
   useEffect(() => {
     let timeoutId;

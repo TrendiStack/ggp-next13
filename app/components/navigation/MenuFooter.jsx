@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ContactScroll from '../ui/ContactScroll';
 
 const MenuFooter = ({ menuItem, className }) => {
   return (
@@ -30,11 +31,7 @@ const MenuFooter = ({ menuItem, className }) => {
               Order
             </Link>
           </li>
-          <li>
-            <Link href="/contact" title="Contact Us">
-              Contact
-            </Link>
-          </li>
+          <ContactScroll />
           <li>
             <Link
               href="https://www.google.com/maps?ll=43.808928,-79.54804&z=17&t=m&hl=en-US&gl=US&mapclient=embed&cid=16934071278796745487"

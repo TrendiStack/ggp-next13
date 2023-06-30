@@ -25,14 +25,13 @@ const Cart = () => {
     clearErrors,
   } = useCustomerFormStore(state => state);
 
-  const customerFieldErrors = validateCustomer(customerForm);
-
   const handleCustomer = e => {
     const { name, value } = e.target;
     setCustomerForm([name], value);
   };
 
   const handleNext = () => {
+    const customerFieldErrors = validateCustomer(customerForm);
     if (customerFieldErrors) {
       setErrors(customerFieldErrors);
       return true;
@@ -88,7 +87,7 @@ const Cart = () => {
       <main
         className={`
       ${cartOpen ? 'translate-x-0' : 'translate-x-full'}
-      fixed min-h-screen max-md:w-full max-xl:w-1/2 w-2/6 bg-[#252422] right-0 top-0 z-[2000]
+      fixed min-h-screen max-md:w-full max-xl:w-1/2 w-2/6 bg-primary right-0 top-0 z-[2000]
       transition-all duration-500 ease-in-out pt-6
       `}
       >
@@ -134,7 +133,6 @@ const Cart = () => {
               handleCustomer={handleCustomer}
               setForm={setCustomerForm}
               error={customerErrors}
-              setError={setErrors}
             />
           </div>
         )}

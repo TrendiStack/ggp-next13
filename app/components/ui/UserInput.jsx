@@ -41,7 +41,7 @@ const UserInput = ({
   };
 
   const handleplaceholder = () => {
-    return Boolean(error) ? '#b91c1c' : value ? 'white' : '#404040';
+    return Boolean(error) ? '#b91c1c' : value ? 'black' : '#404040';
   };
 
   const [menuPortalTarget, setMenuPortalTarget] = useState(null);
@@ -55,7 +55,7 @@ const UserInput = ({
       ...provided,
       border: `2px solid ${Boolean(error) ? '#b91c1c' : 'white'}}`,
       borderRadius: '0.5rem',
-      backgroundColor: 'transparent',
+      backgroundColor: 'white',
       cursor: 'pointer',
       '&:hover': {
         border: '2px solid white',
@@ -91,7 +91,7 @@ const UserInput = ({
     },
     placeholder: (provided, state) => ({
       ...provided,
-      fontSize: '70%',
+      fontSize: '100%',
       fontWeight: '600',
       color: handleplaceholder(),
     }),
