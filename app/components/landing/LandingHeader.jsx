@@ -13,28 +13,8 @@ const mulish = Mulish({
 
 const LandingHeader = () => {
   const imgRef = useRef(null);
-  const emptyConeRef = useRef(null);
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const el = emptyConeRef.current;
-    if (!el) return;
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: 'top+=100px bottom-=100px',
-          end: 'bottom',
-          scrub: 1,
-        },
-      })
-      .to(el, {
-        y: '30%',
-        duration: 5,
-        ease: 'power2.inOut',
-      });
-  }, []);
-  useEffect(() => {
     const screenwidth = window.innerWidth;
     const el = imgRef.current;
     if (!el) return;
@@ -95,7 +75,7 @@ const LandingHeader = () => {
   return (
     <div
       ref={imgRef}
-      className="relative min-h-[75vh] lg:min-h-screen bg-img1 bg-cover bg-center font-semibold text-[#252422]"
+      className="relative min-h-[75vh] lg:min-h-screen bg-img1 bg-cover bg-center font-semibold"
     >
       <div className="absolute top-0 left-0 bg-black opacity-40 h-full w-full"></div>
       <div className="w-full text-white text-center absolute top-1/2 -translate-y-1/2">

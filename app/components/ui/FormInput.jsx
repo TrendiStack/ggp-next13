@@ -10,6 +10,7 @@ const FormInput = ({ htmlFor, inputType, name, value, onChange }) => {
           placeholder=" "
           className="w-full p-2 bg-transparent border-2 border-primary rounded-lg focus:outline-none"
           rows="8"
+          maxLength={500}
         />
       ) : (
         <input

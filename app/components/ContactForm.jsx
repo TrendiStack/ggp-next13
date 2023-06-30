@@ -61,7 +61,7 @@ const ContactForm = () => {
     <form
       aria-label="Contact Form"
       onSubmit={handleSubmit}
-      className="flex flex-col gap-10"
+      className="flex flex-col gap-8"
     >
       <div className="w-full">
         <FormLabel
@@ -119,6 +119,13 @@ const ContactForm = () => {
           onChange={handleChange}
         />
         {errors.message && <ErrorText>{errors.message}</ErrorText>}
+        <p
+          className={`${
+            form.message.length === 500 ? 'animate-bounce text-red-800' : ''
+          } text-right `}
+        >
+          {form.message.length} /500
+        </p>
       </div>
 
       <Button

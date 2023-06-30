@@ -30,7 +30,7 @@ const contactSchema = z.object({
   message: z
     .string()
     .min(10, errorMessages.messageMin)
-    .max(1000, errorMessages.messageMax),
+    .max(500, errorMessages.messageMax),
 });
 
 const customerSchema = z.object({

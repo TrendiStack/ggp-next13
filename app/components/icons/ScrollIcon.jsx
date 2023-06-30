@@ -100,7 +100,7 @@ const ScrollIcon = () => {
         title="Scroll to Top"
         onClick={handleScrollToTop}
         ref={buttonRef}
-        className="fixed bottom-24 right-3 mr-[1%] bg-accent rounded-full p-6  text-white text-lg lg:text-2xl cursor-pointer z-[997]"
+        className="fixed bottom-24 right-3 mr-[1%] bg-accent rounded-full p-6 text-white text-lg lg:text-2xl cursor-pointer z-[997]"
       >
         <TbArrowBigUpFilled aria-label="Arrow up" />
       </button>

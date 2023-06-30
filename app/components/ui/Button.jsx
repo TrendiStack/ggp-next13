@@ -31,7 +31,7 @@ const Button = ({
     large:
       'bg-accent text-white text-2xl font-medium px-10 py-3 2xl:px-14 2xl:py-5 rounded-full',
     cartBtn: 'text-sm md:text-base font-bold py-2 px-4 rounded',
-    base: 'absolute left-5 lg:left-[2%] bottom-10 lg:bottom-12 bg-accent text-white rounded-full text-base md:text-xl lg:text-2xl py-4 px-8 font-medium',
+    base: 'absolute left-5 lg:left-[2%] bottom-5 lg:bottom-12 bg-accent text-white rounded-full text-base md:text-xl lg:text-2xl py-4 px-8 font-medium',
   };
 
   useEffect(() => {
