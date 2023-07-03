@@ -47,7 +47,11 @@ const Nav = () => {
         id="nav"
         aria-label="Navigation Bar"
         className={`
-        ${isScrolled || menu || isMobile ? 'opacity-1' : 'opacity-0'}
+        ${
+          isScrolled || menu || isMobile
+            ? 'opacity-1'
+            : 'opacity-0 pointer-events-none'
+        }
         ${isMobile ? 'relative' : 'fixed'}
         bg-primary navigation flex justify-between items-center py-5  top-0 left-0 w-full z-[1000] px-[5%] lg:px-[2%] transition-all duration-500
         `}
