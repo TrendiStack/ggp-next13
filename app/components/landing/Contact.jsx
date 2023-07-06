@@ -14,7 +14,7 @@ const Contact = () => {
       </div>
       <div className="flex flex-col gap-10 2xl:w-full">
         <p className="text-xl">
-          Send us a message, criticism or love, or a booking enquiry. We will
+          Send us a message, criticism or love, or a booking inquiry. We will
           answer at our earliest convenience!
         </p>
         <ContactForm />
