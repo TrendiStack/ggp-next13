@@ -20,10 +20,16 @@ const AlternativeHeader = ({ route }) => {
         <h1
           className={`${
             route === 'Our Menu' && 'hidden lg:block'
-          } lg:relative header-secondary left-32 bottom-10 w-full`}
+          } header-secondary w-full`}
         >
           {route} <br />
+          {route === 'Thanks for ordering!' && (
+            <span className="text-xl">
+              You will receive an email confirmation shortly
+            </span>
+          )}
         </h1>
+
         {route !== 'Our Menu' && (
           <>
             <p className="mt-2 lg:hidden">Scroll down</p>
@@ -41,6 +47,7 @@ const AlternativeHeader = ({ route }) => {
           />
         </div>
       </div>
+
       {route === 'Our Menu' && (
         <Button ariaLabel="View full menu" style="base">
           <Link href="menu.pdf" target="_blank">
