@@ -103,7 +103,6 @@ const UserInput = ({
         <Select
           id={id}
           name={id}
-          isSearchable={false}
           onChange={onChange}
           options={options}
           placeholder={error ? error : value ? value : handleValue}

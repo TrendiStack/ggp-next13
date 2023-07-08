@@ -12,6 +12,7 @@ const CakeForm = ({ form, setForm, error }) => {
   const excludedFlavours = cakes.excluded;
   const allFlavours = [...flavours, ...gelatoFlavours, ...sorbetFlavours]
     .filter(flavour => !excludedFlavours.includes(flavour))
+    .sort()
     .map(flavour => (flavour = { value: flavour, label: flavour }));
   const shapes = cakes.shapes.map(
     shape => (shape = { value: shape, label: shape })
