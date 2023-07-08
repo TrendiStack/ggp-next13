@@ -64,19 +64,19 @@ const Nav = () => {
           </Button>
         </div>
         <ul className="flex gap-5 text-white text-xl max-md:hidden">
-          <li aria-label="Cart" className="relative top-[3px]">
+          {/* <li aria-label="Cart" className="relative top-[3px]">
             <CartIcon />
-          </li>
+          </li> */}
           <li aria-label="Menu">
             <Link href="/menu" title="Product Menu">
               Menu
             </Link>
           </li>
-          <li aria-label="Order">
+          {/* <li aria-label="Order">
             <Link href="/order-cake" title="Order Cake">
               Order
             </Link>
-          </li>
+          </li> */}
           <li
             onClick={handleScrollToContact}
             aria-label="Contact"
