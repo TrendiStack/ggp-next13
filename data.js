@@ -1,43 +1,43 @@
 export const sorbet = [
   {
     id: 1,
-    name: 'bilberry - sorbet',
+    name: 'bilberry',
     colorHex: '#4F86F7',
     price: 2.99,
   },
   {
     id: 2,
-    name: 'blackberry - sorbet',
+    name: 'blackberry',
     colorHex: '#2C333E',
     price: 2.99,
   },
   {
     id: 3,
-    name: 'raspberry - sorbet',
+    name: 'raspberry',
     colorHex: '#C42C48',
     price: 2.99,
   },
   {
     id: 4,
-    name: 'lemon - sorbet',
+    name: 'lemon',
     colorHex: '#E6E279',
     price: 2.99,
   },
   {
     id: 5,
-    name: 'mango - sorbet',
+    name: 'mango',
     colorHex: '#FFBF34',
     price: 2.99,
   },
   {
     id: 6,
-    name: 'blood orange - sorbet',
+    name: 'blood orange',
     colorHex: '#BC3823',
     price: 2.99,
   },
   {
     id: 7,
-    name: 'strawberry - sorbet',
+    name: 'strawberry',
     colorHex: '#9A1900',
     price: 2.99,
   },
@@ -119,7 +119,6 @@ export const gelato = [
   {
     id: 13,
     name: 'bacio',
-
     price: 2.99,
   },
   {
@@ -423,7 +422,6 @@ export const meat = [
 ];
 
 export const cakes = {
-  flavours: ['chocolate', 'vanilla', 'strawberry', 'lemon', 'raspberry'],
   excluded: ['bilberry', 'blackberry', 'raspberry', 'cream caramel', 'malaga'],
   shapes: ['round', 'rectangle', 'heart', 'log'],
   sizes: ['8"', '9"', '10"', '10" x 14"'],

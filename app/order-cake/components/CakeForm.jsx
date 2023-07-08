@@ -8,9 +8,8 @@ import CakeLabel from './CakeLabel';
 const CakeForm = ({ form, setForm, error }) => {
   const gelatoFlavours = gelato.map(flavour => flavour.name);
   const sorbetFlavours = sorbet.map(flavour => flavour.name);
-  const flavours = cakes.flavours;
   const excludedFlavours = cakes.excluded;
-  const allFlavours = [...flavours, ...gelatoFlavours, ...sorbetFlavours]
+  const allFlavours = [...gelatoFlavours, ...sorbetFlavours]
     .filter(flavour => !excludedFlavours.includes(flavour))
     .sort()
     .map(flavour => (flavour = { value: flavour, label: flavour }));
@@ -28,9 +27,9 @@ const CakeForm = ({ form, setForm, error }) => {
       (form.shape === 'heart' && size !== '10"'),
   }));
 
-  const numbers = Array.from({ length: 10 }, (_, i) => i + 1)
-    // .concat('other')
-    .map(number => (number = { value: number, label: number }));
+  const numbers = Array.from({ length: 10 }, (_, i) => i + 1).map(
+    number => (number = { value: number, label: number })
+  );
 
   const handleSelect = selectedValue => {
     const { value } = selectedValue;
@@ -39,10 +38,6 @@ const CakeForm = ({ form, setForm, error }) => {
       setForm('customQuantity', '');
     }
   };
-  // const handleCustomQuantity = e => {
-  //   setForm('customQuantity', e.target.value);
-  // };
-
   const handleFlavour = selectedValue => {
     if (selectedValue && selectedValue.length <= 2) {
       setForm('flavour', selectedValue);
@@ -116,20 +111,6 @@ const CakeForm = ({ form, setForm, error }) => {
           error={error.quantity}
         />
       </div>
-      {/* {form.quantity === 'other' && (
-        <UserInput
-          id="customQuantity"
-          inputType="input"
-          max="100"
-          min="1"
-          onChange={handleCustomQuantity}
-          type="number"
-          value={form.customQuantity}
-          placeholder="Enter quantity..."
-          className="mt-1"
-          error={error.customQuantity}
-        />
-      )} */}
     </form>
   );
 };
