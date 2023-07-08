@@ -79,6 +79,10 @@ const DateSelect = ({ setForm, reservation, error }) => {
                 ? new Date()
                 : new Date(Date.now() + 2 * 24 * 60 * 60 * 1000)
             }
+            disabledDay={date => {
+              const day = date.getDay();
+              return day === 1;
+            }}
             className="max-md:text-[0.6rem]"
           />
         </div>

@@ -158,6 +158,11 @@ export const gelato = [
     colorHex: '#F3E0BE',
     price: 2.99,
   },
+  {
+    id: 20,
+    name: 'banana',
+    price: 2.99,
+  },
 ];
 
 export const soy = [
