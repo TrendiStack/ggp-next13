@@ -11,6 +11,7 @@ const CakeForm = ({ form, setForm, error }) => {
   const flavours = cakes.flavours;
   const excludedFlavours = cakes.excluded;
   const allFlavours = [...flavours, ...gelatoFlavours, ...sorbetFlavours]
+    .filter((flavour, i, arr) => arr.indexOf(flavour) === i)
     .filter(flavour => !excludedFlavours.includes(flavour))
     .sort()
     .map(flavour => (flavour = { value: flavour, label: flavour }));
