@@ -1,19 +1,19 @@
 export const sorbet = [
   {
     id: 1,
-    name: 'bilberry',
+    name: 'bilberry - sorbet',
     colorHex: '#4F86F7',
     price: 2.99,
   },
   {
     id: 2,
-    name: 'blackberry',
+    name: 'blackberry - sorbet',
     colorHex: '#2C333E',
     price: 2.99,
   },
   {
     id: 3,
-    name: 'raspberry',
+    name: 'raspberry - sorbet',
     colorHex: '#C42C48',
     price: 2.99,
   },
@@ -25,19 +25,19 @@ export const sorbet = [
   },
   {
     id: 5,
-    name: 'mango',
+    name: 'mango - sorbet',
     colorHex: '#FFBF34',
     price: 2.99,
   },
   {
     id: 6,
-    name: 'blood orange',
+    name: 'blood orange - sorbet',
     colorHex: '#BC3823',
     price: 2.99,
   },
   {
     id: 7,
-    name: 'strawberry',
+    name: 'strawberry - sorbet',
     colorHex: '#9A1900',
     price: 2.99,
   },
