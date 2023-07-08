@@ -93,7 +93,7 @@ const Menu = () => {
             Menu
           </Link>
         </li>
-        {/* <li
+        <li
           aria-label="Order"
           onClick={() => {
             setMenu(false);
@@ -102,7 +102,7 @@ const Menu = () => {
           <Link id="list-item" href="/order-cake" title="Order Cake">
             Order
           </Link>
-        </li> */}
+        </li>
         <ContactScroll />
         <li
           aria-label="Cart"
