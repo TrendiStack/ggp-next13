@@ -19,7 +19,7 @@ export const sorbet = [
   },
   {
     id: 4,
-    name: 'lemon',
+    name: 'lemon - sorbet',
     colorHex: '#E6E279',
     price: 2.99,
   },
