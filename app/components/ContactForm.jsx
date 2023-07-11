@@ -49,6 +49,8 @@ const ContactForm = () => {
     }
   };
 
+  console.log(process.env.NEXT_PUBLIC_URL);
+
   useEffect(() => {
     for (const [key, value] of Object.entries(form)) {
       if (form[key].length > 0) {
