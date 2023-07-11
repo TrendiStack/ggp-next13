@@ -40,7 +40,7 @@ const ContactForm = () => {
     const isInvalid = validation();
     try {
       if (isInvalid) return;
-      await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/contact`, form, {
+      await axios.post(`https://www.gelatogelato.ca/api/contact`, form, {
         withCredentials: true,
       });
       toaster.success('Message sent successfully!');
