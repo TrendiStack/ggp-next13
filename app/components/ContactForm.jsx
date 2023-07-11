@@ -75,6 +75,7 @@ const ContactForm = () => {
           inputType="text"
           label="Subject"
           onChange={handleChange}
+          value={form.subject}
         />
         {errors.subject && <ErrorText>{errors.subject}</ErrorText>}
       </div>
@@ -87,6 +88,7 @@ const ContactForm = () => {
           inputType="text"
           label="Name"
           onChange={handleChange}
+          value={form.name}
         />
         {errors.name && <ErrorText>{errors.name}</ErrorText>}
       </div>
@@ -98,6 +100,7 @@ const ContactForm = () => {
           inputType="tel"
           label="Phone"
           onChange={handleChange}
+          value={form.phone}
         />
         {errors.phone && <ErrorText>{errors.phone}</ErrorText>}
       </div>
@@ -109,6 +112,7 @@ const ContactForm = () => {
           inputType="email"
           label="Email"
           onChange={handleChange}
+          value={form.email}
         />
         {errors.email && <ErrorText>{errors.email}</ErrorText>}
       </div>
@@ -121,6 +125,7 @@ const ContactForm = () => {
           inputType="message"
           label="Message"
           onChange={handleChange}
+          value={form.message}
         />
         {errors.message && <ErrorText>{errors.message}</ErrorText>}
         <p
