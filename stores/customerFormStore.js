@@ -104,4 +104,22 @@ export const useContactFormStore = create(set => ({
       },
     }));
   },
+  resetForm: () => {
+    set(() => ({
+      contactForm: {
+        subject: '',
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      },
+      contactErrors: {
+        subject: '',
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      },
+    }));
+  },
 }));

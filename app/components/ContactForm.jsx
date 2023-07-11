@@ -17,6 +17,7 @@ const ContactForm = () => {
     setErrors: setError,
     setIndividualError,
     clearErrors,
+    resetForm,
   } = useContactFormStore();
 
   const handleChange = e => {
@@ -44,6 +45,7 @@ const ContactForm = () => {
         withCredentials: true,
       });
       toaster.success('Message sent successfully!');
+      resetForm();
     } catch (error) {
       console.log(error);
     }
